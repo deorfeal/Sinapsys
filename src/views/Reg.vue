@@ -53,7 +53,7 @@
                         <p class="entrance-form__box-text">
                             Пароль
                         </p>
-                        <input class="entrance-form__box-input" type="password" placeholder="***************" v-bind="firstPasswordData">
+                        <input class="entrance-form__box-input" type="password" placeholder="***************" v-model="this.firstPasswordData">
                         <p class="entrance-form__box-subtext">
                             Обязательное поле.
                         </p>
@@ -62,7 +62,7 @@
                         <p class="entrance-form__box-text">
                             Повторите пароль
                         </p>
-                        <input class="entrance-form__box-input" type="password" placeholder="***************" v-bind="secondPasswordData">
+                        <input class="entrance-form__box-input" type="password" placeholder="***************" v-model="this.secondPasswordData">
                         <p class="entrance-form__box-subtext">
                             Обязательное поле.
                         </p>
@@ -109,8 +109,10 @@ export default {
                 }
             }
             if ( this.firstPasswordData != this.secondPasswordData ) {
-                item.parentNode.classList.remove('entrance-form__box--disabled')
-            } 
+                document.querySelectorAll('.entrance-form__box-different')[0].classList.add('entrance-form__box-different--disabled')
+            } else {
+                document.querySelectorAll('.entrance-form__box-different')[0].classList.remove('entrance-form__box-different--disabled')
+            }
         }
     }
 }
@@ -141,10 +143,8 @@ export default {
         @include adaptiv-value("line-height", 20, 15, 1);
         color: #EC4848;
     }
-    .entrance-form__box--disabled {
-        .entrance-form__box-different {
-            display: block;
-        }
+    .entrance-form__box-different--disabled  {
+        display: block;
     }
 }
 
