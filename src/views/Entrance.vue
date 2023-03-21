@@ -88,7 +88,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../assets/scss/style.scss';
 @import '../assets/scss/vars';
 
 

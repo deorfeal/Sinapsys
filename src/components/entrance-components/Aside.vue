@@ -17,7 +17,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../../assets/scss/style.scss';
 @import '../../assets/scss/vars';
 .entrance-aside {
     position: relative;
@@ -33,7 +32,7 @@ export default {
 
     &__img {
         position: absolute;
-        z-index: -1;
+        z-index: 1;
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -41,6 +40,8 @@ export default {
 
     &__title {
         font-weight: 600;
+        z-index: 2;
+        position: relative;
         @include adaptiv-value("margin-bottom", 65, 0, 1);
         @include adaptiv-value("font-size", 65, 30, 1);
         @include adaptiv-value("line-height", 70, 35, 1);
@@ -51,6 +52,8 @@ export default {
     }
 
     &__text {
+        z-index: 2;
+        position: relative;
         @include adaptiv-value("font-size", 45, 24, 1);
         @include adaptiv-value("line-height", 54, 28, 1);
         text-align: center;

@@ -7,6 +7,7 @@ body {
 	// font-family: "Poppins", sans-serif;
 	// font-family: "Rubik", sans-serif;
 	font-weight: 500;
+	background: #F8FCFF;
 }
 .wrapper {
 	display: flex;
@@ -29,4 +30,15 @@ body {
 	max-width: 1920px;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+#app {
+    display: flex;
+	height: unset;
+}
+
+.logo {}
+
+.logo-img {
+	max-width: 220px;
 }
