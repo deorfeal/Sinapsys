@@ -1,5 +1,5 @@
 <template>
-    <div class="main">
+    <div class="main main-grow">
         <div class="main__test-results test-results">
             <a class="test-results__link" href="#">
                 <svg width="32" height="28" viewBox="0 0 32 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -44,25 +44,27 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../../assets/scss/vars';
+
 .test-results {
-    padding-top: 155px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     max-width: 875px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 30px;
+    margin-right: 30px;
 
     &__link {
         display: flex;
         gap: 10px;
         align-items: center;
-        font-size: 24px;
-        line-height: 24px;
         color: #1B2559;
         align-self: flex-start;
-        margin-bottom: 50px;
+
+        @include adaptiv-value('font-size', 24, 16, 1);
+        @include adaptiv-value('line-height', 24, 24, 1);
+        @include adaptiv-value('margin-bottom', 50, 20, 1);
     }
 
     &__btn {
@@ -79,6 +81,14 @@ export default {
         background: #1294F2;
         border-radius: 6px;
         margin-left: auto;
+        border: 1px solid transparent;
+        transition: background 0.3s, color 0.3s, border 0.3s;
+
+        &:hover {
+            background: #fff;
+            color: #1294F2;
+            border: 1px solid #1294F2;
+        }
     }
 
     &__btn--bottom {
@@ -86,25 +96,63 @@ export default {
     }
 
     &__inner {
-        padding: 15px 70px 30px 20px;
+        @include adaptiv-value('padding-top', 15, 15, 1);
+        @include adaptiv-value('padding-bottom', 30, 22, 1);
+        @include adaptiv-value('padding-right', 70, 22, 1);
+        @include adaptiv-value('padding-left', 20, 22, 1);
         background: #FFFFFF;
         border-radius: 8px;
     }
 
     &__title {
         font-weight: 600;
-        font-size: 24px;
-        line-height: 24px;
-        margin-bottom: 12px;
+        @include adaptiv-value('font-size', 24, 16, 1);
+        @include adaptiv-value('line-height', 24, 24, 1);
+        @include adaptiv-value('margin-bottom', 12, 2, 1);
         color: #1B2559;
     }
 
     &__text {
         font-weight: 400;
-        font-size: 20px;
         line-height: 24px;
-        margin-bottom: 20px;
+        @include adaptiv-value('font-size', 20, 12, 1);
+        margin-bottom: 30px;
         color: #1B2559;
+    }
+}
+
+@media (max-width: 550px) {
+    .test-results__btn {
+        display: none;
+    }
+    .test-results__inner {
+        margin-bottom: 20px;
+    }
+    .test-results__btn--bottom {
+        display: flex;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        color: #FFFFFF;
+        padding: 6px;
+        background: #1294F2;
+        border-radius: 6px;
+        width: 145px;
+        max-width: 145px;
+        margin-left: auto;
+        margin-bottom: unset;
+    }
+
+}
+@media (max-width: 400px) {
+    .test-results__title {
+        max-width: 250px;
+    }
+    .test-results__text {
+        max-width: 270px;
     }
 }
 </style>

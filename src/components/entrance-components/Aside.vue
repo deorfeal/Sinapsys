@@ -18,6 +18,7 @@ export default {
 
 <style lang="scss">
 @import '../../assets/scss/vars';
+
 .entrance-aside {
     position: relative;
     width: 50%;
@@ -27,8 +28,10 @@ export default {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 95px;
+    padding-right: 95px;
+    width: 960px;
+    min-width: 960px;
 
     &__img {
         position: absolute;
@@ -64,25 +67,31 @@ export default {
     }
 }
 
-@media (max-height: 1050px) {
+// @media (max-height: 1050px) {
+//    .entrance-aside {
+//        min-height: unset;
+//        height: 100%;
+//    }
+//} 
+
+@media(max-width: 1700px) {
     .entrance-aside {
-        min-height: unset;
-        height: 100%;
+        width: unset;
+        min-width: unset;
     }
 }
-
 @media(max-width: 950px) {
     .entrance-aside {
         display: none;
     }
 }
 
-@media (max-height: 850px) {
-    #app {
-        height: unset;
-    }
-    .entrance-aside {
-        height: 100vh;
-    }
-}
+// @media (max-height: 850px) {
+//    #app {
+//        height: unset;
+//    }
+//    .entrance-aside {
+//        height: 100vh;
+//    }
+// }
 </style>

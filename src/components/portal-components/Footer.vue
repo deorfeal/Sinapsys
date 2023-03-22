@@ -87,9 +87,9 @@ export default {
         font-size: 12px;
         line-height: 27px;
         color: #1B2559;
-
+        transition: color 0.3s;
         &:hover {
-            text-decoration: underline;
+            color: #1294F2;
         }
     }
 }
@@ -108,9 +108,20 @@ export default {
         display: flex;
         gap: 13px;
         align-items: center;
+     
     }
 
-    &__row-link {}
+    &__row-link {
+        display: block;
+        svg path {
+            transition: fill 0.3s;
+        }
+        svg path {
+            &:hover {
+                fill: #1294F2;
+            }
+        }
+    }
 
     &:nth-child(3) {
         .footer-box__link {
@@ -120,10 +131,24 @@ export default {
             color: #1B2559;
             margin-bottom: 13px;
             display: block;
+            transition: color 0.3s;
             &:hover {
-                text-decoration: underline;
+                color: #1294F2;
             }
         }
+    }
+}
+
+@media (max-width: 1100px) {
+    .footer {
+        gap: 30px;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 800px) {
+    .footer {
+        display: none;
     }
 }
 </style>

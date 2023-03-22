@@ -1,5 +1,5 @@
 <template>
-    <main class="main">
+    <main class="main main-grow">
         <div class="main__recall recall">
             <h1 class="recall__title">
                 Напишите отзыв
@@ -26,10 +26,22 @@
                     placeholder="Поделитесь вашим мнением о курсе......."></textarea>
                 <div class="recall__buttons">
                     <a class="recall__buttons-link" href="#">
-                        Вернуться на главную
+                        <span>
+                            Вернуться 
+                        </span>
+                        &nbsp; 
+                        <span>
+                            на главную
+                        </span>
                     </a>
                     <a class="recall__buttons-btn" href="#">
-                        Отправить отзыв
+                        <span>
+                            Отправить 
+                        </span>
+                        &nbsp; 
+                        <span>
+                            отзыв
+                        </span>
                     </a>
                 </div>
             </div>
@@ -44,35 +56,43 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../../assets/scss/vars';
 .recall {
     display: flex;
     justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 30px;
+    margin-right: 30px;
     max-width: 995px;
-    padding-top: 220px;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 240px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     &__title {
+        text-align: center;
         font-weight: 600;
-        font-size: 36px;
-        line-height: 24px;
+
         color: #1B2559;
-        margin-bottom: 35px;
+
+        @include adaptiv-value('font-size', 36, 16, 1);
+        @include adaptiv-value('line-height', 38, 24, 1);
+        @include adaptiv-value('margin-bottom', 35, 20, 1);
     }
 
     &__inner {
         background: #FFFFFF;
         border-radius: 8px;
-        padding: 30px 65px;
+        @include adaptiv-value('padding-top', 30, 20, 1);
+        @include adaptiv-value('padding-bottom', 30, 25, 1);
+        @include adaptiv-value('padding-right', 65, 20, 1);
+        @include adaptiv-value('padding-left', 65, 20, 1);
+
     }
 
     &__subtitle {
-        font-size: 20px;
+        @include adaptiv-value('font-size', 20, 14, 1);
         line-height: 24px;
         color: #1B2559;
-        margin-bottom: 10px;
+        @include adaptiv-value('margin-bottom', 10, 4, 1);
         font-weight: 500;
     }
 
@@ -80,7 +100,7 @@ export default {
         display: flex;
         flex-direction: column;
         gap: 5px;
-        margin-bottom: 35px;
+        @include adaptiv-value('margin-bottom', 35, 10, 1);
     }
 
     &__list-item {
@@ -88,9 +108,11 @@ export default {
         font-size: 16px;
         line-height: 24px;
         color: #60678B;
-        padding-left: 25px;
+        @include adaptiv-value('padding-left', 25, 20, 1);
         position: relative;
-
+        @include adaptiv-value('font-size', 16, 14, 1);
+   
+       
         &::before {
             content: '';
             width: 2px;
@@ -98,8 +120,8 @@ export default {
             border-radius: 100%;
             background: #60678B;
             position: absolute;
-            left: 13px;
-            top: 50%;
+            @include adaptiv-value('left', 13, 8, 1);
+            top: 25%;
             transform: translateY(-50%);
         }
     }
@@ -111,15 +133,15 @@ export default {
         border: 1px solid #96A5B8;
         border-radius: 4px;
         font-weight: 400;
-        font-size: 16px;
         line-height: 24px;
+        @include adaptiv-value('font-size', 16, 12, 1);
         color: #96A5B8;
         padding: 12px 16px;
-        margin-bottom: 25px;
+        @include adaptiv-value('margin-bottom', 25, 15, 1);
 
         &::placeholder {
             font-weight: 400;
-            font-size: 16px;
+            @include adaptiv-value('font-size', 16, 12, 1);
             line-height: 24px;
             color: #96A5B8;
         }
@@ -129,38 +151,80 @@ export default {
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 30px;
+        @include adaptiv-value('gap', 30, 25, 1);
     }
 
     &__buttons-link {
-        font-size: 20px;
-        line-height: 24px;
         text-align: center;
         color: #1294F2;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 12px;
-        width: 285px;
-        max-width: 285px;
         border: 1px solid #1294F2;
         border-radius: 6px;
+
+        @include adaptiv-value('font-size', 20, 14, 1);
+        @include adaptiv-value('line-height', 24, 24, 1);
+        @include adaptiv-value('padding', 12, 6, 1);
+        @include adaptiv-value('width', 290, 250, 1);
+        @include adaptiv-value('max-width', 290, 250, 1);
+
+        transition: background 0.3s, color 0.3s;
+        &:hover {
+            background: #1294F2;
+            color: #fff;
+        }
     }
 
     &__buttons-btn {
-        font-size: 20px;
-        line-height: 24px;
+        @include adaptiv-value('font-size', 20, 14, 1);
+        @include adaptiv-value('line-height', 24, 24, 1);
+        @include adaptiv-value('padding', 13, 6, 1);
+        @include adaptiv-value('width', 230, 125, 1);
+        @include adaptiv-value('max-width', 230, 125, 1);
         text-align: center;
         display: flex;
         justify-content: center;
         align-items: center;
         color: #FFFFFF;
-        padding: 13px;
-        width: 230px;
-        max-width: 230px;
-
+      
         background: #1294F2;
         border-radius: 6px;
+
+        border: 1px solid transparent;
+        transition: background 0.3s, color 0.3s, border 0.3s;
+        &:hover {
+            background: #fff;
+            color: #1294F2;
+            border: 1px solid #1294F2;
+        }
+    }
+}
+@media (max-width: 1050px) {
+    .recall__textarea {
+        width: 100%;
+    }
+}
+@media (max-width: 550px) {
+    .recall__buttons-btn {
+        span:last-child {
+            display: none;
+        }
+    }
+    .recall__buttons-link {
+        width: 125px;
+        span:last-child {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .recall__subtitle {
+        max-width: 200px;
+    }
+    .recall__list-item {
+        max-width: 300px;
     }
 }
 </style>

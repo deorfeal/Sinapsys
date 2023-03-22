@@ -18,6 +18,9 @@ import Main from "@/views/portal/Main.vue";
 import Catalog from "@/views/portal/Catalog.vue";
 import CursPreview from "@/views/portal/Curs-preview.vue";
 import Profile from "@/views/portal/Profile.vue";
+import Settings from "@/views/portal/Settings.vue";
+import ErrorPage from "@/views/portal/Error-page.vue";
+import MyCourses from "@/views/portal/My-courses.vue";
 
 const routes = [{
         path: "/",
@@ -99,8 +102,22 @@ const routes = [{
         name: "profile",
         component: Profile,
     },
+    {
+        path: "/settings",
+        name: "settings",
+        component: Settings,
+    },
+    {
+        path: "/Error-page",
+        name: "Error-page",
+        component: ErrorPage,
+    },
+    {
+        path: "/my-courses",
+        name: "my-courses",
+        component: MyCourses,
+    },
 
-    
 ];
 
 const router = createRouter({

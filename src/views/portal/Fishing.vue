@@ -1,5 +1,5 @@
 <template>
-    <div class="main main-grow">
+    <div class="main main-grow main-fishing">
         <div class="main__fishing fishing">
             <h2 class="fishing__title">
                 Вы попались на фишинговое письмо!
@@ -67,7 +67,12 @@
                     Назад
                 </a>
                 <a class="fishing__buttons-btn" href="#">
-                    Перейти на сайт
+                    <span>
+                        Перейти
+                    </span>
+                    <span>
+                        на сайт
+                    </span>
                 </a>
             </div>
         </div>
@@ -81,6 +86,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../../assets/scss/vars';
+
 .main-grow {
     display: flex;
     justify-content: center;
@@ -88,100 +95,123 @@ export default {
     flex-direction: column;
     height: 100%;
     padding: 70px 0;
+    // @include adaptiv-value('padding-left', 70, 50, 1);
+    // @include adaptiv-value('padding-right', 70, 50, 1);
 }
 
 .fishing {
     background: #FFFFFF;
     border-radius: 8px;
     max-width: 1120px;
-    padding: 30px 35px 40px 35px;
 
+    @include adaptiv-value('padding-top', 30, 75, 1);
+    @include adaptiv-value('padding-bottom', 40, 70, 1);
+    @include adaptiv-value('padding-left', 35, 50, 1);
+    @include adaptiv-value('padding-right', 35, 50, 1);
+    
     &__title {
         font-weight: 600;
-        font-size: 24px;
-        line-height: 24px;
-        margin-bottom: 15px;
         justify-content: center;
         display: flex;
         align-items: center;
         text-align: center;
         color: #1B2559;
+
+        @include adaptiv-value('font-size', 24, 16, 1);
+        @include adaptiv-value('line-height', 26, 24, 1);
+        @include adaptiv-value('margin-bottom', 15, 12, 1);
     }
 
     &__text {
         font-weight: 300;
         font-size: 15px;
         line-height: 26px;
-        margin-bottom: 25px;
         color: #60678B;
+        @include adaptiv-value('margin-bottom', 25, 20, 1);
     }
 
     &__img {
-        max-width: 541px;
-        max-height: 178px;
+        @include adaptiv-value('max-width', 541, 271, 1);
+        @include adaptiv-value('max-height', 178, 108, 1);
         object-fit: cover;
         margin-left: auto;
         margin-right: auto;
         display: block;
-        margin-bottom: 50px;
+        @include adaptiv-value('margin-bottom', 50, 25, 1);
     }
 
     &__subtext {
-        font-size: 20px;
-        line-height: 41px;
-        margin-bottom: 40px;
         display: flex;
+        text-align: center;
         align-items: center;
         justify-content: center;
         color: #1B2559;
+
+        @include adaptiv-value('font-size', 20, 14, 1);
+        @include adaptiv-value('line-height', 26, 24, 1);
+        @include adaptiv-value('margin-bottom', 40, 20, 1);
 
     }
 
     &__buttons {
         display: flex;
-        gap: 50px;
+        @include adaptiv-value('gap', 50, 20, 1);
         align-items: center;
         justify-content: center;
     }
 
     &__buttons-link {
-        font-size: 20px;
-        line-height: 24px;
+        @include adaptiv-value('font-size', 20, 14, 1);
+        @include adaptiv-value('line-height', 24, 24, 1);
+        @include adaptiv-value('padding', 12, 4, 1);
+        @include adaptiv-value('width', 180, 120, 1);
+        @include adaptiv-value('max-width', 180, 120, 1);
         text-align: center;
         color: #1294F2;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 12px;
-        width: 180px;
-        max-width: 180px;
+
         border: 1px solid #1294F2;
         border-radius: 6px;
+        transition: background 0.3s, color 0.3s;
+
+        &:hover {
+            background: #1294F2;
+            color: #fff;
+        }
     }
 
     &__buttons-btn {
-        font-size: 20px;
-        line-height: 24px;
         text-align: center;
         display: flex;
         justify-content: center;
         align-items: center;
         color: #FFFFFF;
-        padding: 14px;
-        width: 225px;
-        max-width: 225px;
-
+        @include adaptiv-value('font-size', 20, 14, 1);
+        @include adaptiv-value('line-height', 24, 24, 1);
+        @include adaptiv-value('padding', 12, 4, 1);
+        @include adaptiv-value('width', 225, 120, 1);
+        @include adaptiv-value('max-width', 225, 120, 1);
         background: #1294F2;
         border-radius: 6px;
+        border: 1px solid transparent;
+        transition: background 0.3s, color 0.3s, border 0.3s;
+
+        &:hover {
+            background: #fff;
+            color: #1294F2;
+            border: 1px solid #1294F2;
+        }
     }
 }
 
 .fishing-content {
     display: flex;
-    gap: 75px;
+    @include adaptiv-value('gap', 75, 25, 1);
     align-items: flex-start;
     justify-content: center;
-    margin-bottom: 30px;
+    @include adaptiv-value('margin-bottom', 30, 35, 1);
 
     &__box {
         max-width: 255px;
@@ -190,21 +220,34 @@ export default {
         width: 255px;
         justify-content: center;
         align-items: center;
-        gap: 10px;
+        @include adaptiv-value('gap', 10, 12, 1);
+
+        svg {
+            @include adaptiv-value('width', 50, 36, 1);
+            @include adaptiv-value('height', 55, 40, 1);
+        }
 
         &:nth-child(2) {
-            gap: 15px;
+            @include adaptiv-value('gap', 15, 12, 1);
+            svg {
+                @include adaptiv-value('width', 48, 36, 1);
+                @include adaptiv-value('height', 46, 36, 1);
+            }
         }
 
         &:nth-child(3) {
-            gap: 20px;
+            @include adaptiv-value('gap', 20, 12, 1);
+            svg {
+                @include adaptiv-value('width', 60, 36, 1);
+                @include adaptiv-value('height', 45, 27, 1);
+            }
         }
     }
 
     &__box-text {
         font-weight: 400;
-        font-size: 14px;
-        line-height: 17px;
+        @include adaptiv-value('font-size', 14, 12, 1);
+        @include adaptiv-value('line-height', 17, 14, 1);
         display: flex;
         align-items: center;
         text-align: center;
@@ -212,4 +255,40 @@ export default {
 
     }
 }
-</style>
+
+@media(max-width: 1000px) {
+    .fishing-content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .main-fishing {
+        display: block !important;
+    }
+}
+
+@media (max-width: 550px) {
+    .fishing {
+        background: #F8FCFF;
+    }
+
+    .fishing__buttons-btn {
+        span:last-child {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .fishing__img {
+        width: 100%;
+        max-width: 100%;
+        min-height: 107px;
+    }
+
+    .fishing__subtext {
+        max-width: 270px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}</style>

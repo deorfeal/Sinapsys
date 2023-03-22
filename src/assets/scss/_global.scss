@@ -7,7 +7,26 @@ body {
 	// font-family: "Poppins", sans-serif;
 	// font-family: "Rubik", sans-serif;
 	font-weight: 500;
-	background: #F8FCFF;
+	background: #f8fcff;
+	/* width */
+	&::-webkit-scrollbar {
+		width: 3px;
+	}
+
+	/* Track */
+	&::-webkit-scrollbar-track {
+		background: #f1f1f1;
+	}
+
+	/* Handle */
+	&::-webkit-scrollbar-thumb {
+		background: #888;
+	}
+
+	/* Handle on hover */
+	&::-webkit-scrollbar-thumb:hover {
+		background: #555;
+	}
 }
 .wrapper {
 	display: flex;
@@ -33,12 +52,32 @@ body {
 }
 
 #app {
-    display: flex;
+	display: flex;
 	height: unset;
 }
 
-.logo {}
+.logo {
+}
 
 .logo-img {
 	max-width: 220px;
+}
+
+.big-wrapper {
+	width: 1920px;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1920px;
+	display: flex;
+	min-height: 100vh;
+	// overflow: hidden;
+	.wrapper {
+		width: 100%;
+	}
+}
+
+.main-grow {
+	width: 100%;
+	min-height: 100vh;
+	padding: unset !important;
 }

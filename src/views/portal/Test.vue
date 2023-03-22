@@ -1,5 +1,5 @@
 <template>
-    <div class="main">
+    <div class="main main-grow">
         <div class="main__test test">
             <a class="test__link" href="#">
                 <svg width="32" height="28" viewBox="0 0 32 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -28,7 +28,13 @@
                         Назад
                     </a>
                     <a class="test__buttons-btn" href="#">
-                        Перейти к тесту
+                        <span>
+                            Перейти
+                        </span>
+                        &nbsp;
+                        <span>
+                            к тесту
+                        </span>
                     </a>
                 </div>
             </div>
@@ -43,21 +49,23 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../../assets/scss/vars';
 .test {
     max-width: 1120px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 180px;
-
+    margin-left: 30px;
+    margin-right: 30px;
     &__link {
-        font-size: 16px;
-        line-height: 24px;
-        color: #1B2559;
+     
         display: flex;
         align-items: center;
         gap: 10px;
-        margin-bottom: 25px;
+        @include adaptiv-value('margin-bottom', 25, 20, 1);
         display: none;
+        span {
+            font-size: 16px;
+            line-height: 24px;
+            color: #1B2559;
+        }
     }
 
     &__inner {
@@ -70,56 +78,98 @@ export default {
 
     &__box-title {
         font-weight: 600;
-        font-size: 24px;
-        line-height: 24px;
+        @include adaptiv-value('font-size', 24, 16, 1);
+        @include adaptiv-value('line-height', 24, 24, 1);
+        @include adaptiv-value('margin-bottom', 25, 4, 1);
         color: #1B2559;
-        margin-bottom: 25px;
     }
 
     &__box-text {
         font-weight: 400;
-        font-size: 16px;
         line-height: 24px;
-        margin-bottom: 65px;
+        @include adaptiv-value('font-size', 16, 12, 1);
+        margin-bottom: 75px;
         color: #60678B;
     }
 
     &__buttons {
         display: flex;
-        gap: 50px;
+        @include adaptiv-value('gap', 50, 25, 1);
         align-items: center;
         justify-content: center;
     }
 
     &__buttons-link {
-        font-size: 20px;
-        line-height: 24px;
         text-align: center;
         color: #1294F2;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 12px;
-        width: 185px;
-        max-width: 185px;
         border: 1px solid #1294F2;
         border-radius: 6px;
+        transition: background 0.3s, color 0.3s;
+
+        @include adaptiv-value('font-size', 20, 16, 1);
+        @include adaptiv-value('line-height', 24, 24, 1);
+        @include adaptiv-value('padding', 12, 6, 1);
+        @include adaptiv-value('width', 185, 125, 1);
+        @include adaptiv-value('max-width', 185, 125, 1);
+        &:hover {
+            background: #1294F2;
+            color: #fff;
+        }
     }
 
     &__buttons-btn {
-        font-size: 20px;
-        line-height: 24px;
         text-align: center;
         display: flex;
         justify-content: center;
         align-items: center;
         color: #FFFFFF;
-        padding: 13px;
-        width: 220px;
-        max-width: 220px;
 
         background: #1294F2;
         border-radius: 6px;
+
+        @include adaptiv-value('font-size', 20, 16, 1);
+        @include adaptiv-value('line-height', 24, 24, 1);
+        @include adaptiv-value('padding', 13, 6, 1);
+        @include adaptiv-value('width', 220, 125, 1);
+        @include adaptiv-value('max-width', 220, 125, 1);
+
+        border: 1px solid transparent;
+        transition: background 0.3s, color 0.3s, border 0.3s;
+        &:hover {
+            background: #fff;
+            color: #1294F2;
+            border: 1px solid #1294F2;
+        }
+    }
+}
+
+@media (max-width: 1250px) {
+    .test__buttons-btn:last-child {
+        span:last-child {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .test__inner {
+        padding: unset;
+        background: unset;
+    }
+    .test__box {
+        background: #fff;
+        padding: 15px 22px 13px 22px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+    .test__box-text {
+        margin-bottom: 0;
+    }
+    .test__link {
+        display: flex;
     }
 }
 </style>

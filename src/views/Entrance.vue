@@ -97,7 +97,9 @@ export default {
 }
 
 .entrance {
-    height: 100%;
+    min-height: 1024px;
+	width: 1920px;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -332,6 +334,9 @@ export default {
 
     #app {
         height: unset;
+    }
+    .entrance  {
+        min-height: unset !important;
     }
 }
 </style>

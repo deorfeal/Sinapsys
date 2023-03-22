@@ -220,6 +220,16 @@ export default {
         line-height: 24px;
         color: #1B2559;
         margin-bottom: 40px;
+        transition: color 0.3s;
+        &:hover {
+            color: #1294F2;
+            svg path {
+                fill: #1294F2;
+            }
+        }
+        svg path {
+            transition: fill 0.3s;
+        }
     }
 }
 
@@ -327,6 +337,13 @@ export default {
 
         color: #FFFFFF;
 
+        border: 1px solid transparent;
+        transition: background 0.3s, color 0.3s, border 0.3s;
+        &:hover {
+            background: #fff;
+            color: #1294F2;
+            border: 1px solid #1294F2;
+        }
     }
 
     &__text {

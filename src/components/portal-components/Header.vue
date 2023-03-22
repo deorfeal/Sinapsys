@@ -1,5 +1,16 @@
 <template>
     <header class="header">
+        <button class="header__burger" @click="$emit('openSideMenu')">
+            <span>
+
+            </span>
+            <span>
+                
+            </span>
+            <span>
+                
+            </span>
+        </button>
         <h1 class="header__title">
             {{ this.title }}
         </h1>
@@ -27,7 +38,7 @@
             </div>
             <div class="header-user-nav__box header-user-nav-box">
                 <div class="header-user-nav-box__user header-user-nav-box-user">
-                    <a class="header-user-nav-box-user__link" href="#">
+                    <a class="header-user-nav-box-user__link" href="#" @click="openProfileWindow">
                         <img class="header-user-nav-box-user__link-img" src="../../../public/images/header-user-icon.svg"
                             alt="user-icon">
                     </a>
@@ -116,18 +127,37 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../../assets/scss/vars';
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 40px 55px 30px 55px;
+    @include adaptiv-value('padding-top', 40, 15, 1);
+    @include adaptiv-value('padding-bottom', 30, 15, 1);
+    @include adaptiv-value('padding-right', 55, 30, 1);
+    @include adaptiv-value('padding-left', 55, 30, 1);
     background: #FFFFFF;
+    &__burger {
+        margin-right: 35px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        width: 27px;
+        min-width: 27px;
+        height: 21px;
+        display: none;
+        span {
+            height: 3px;
+            background: rgba(0, 0, 0, 0.35);
+            width: 100%;
+        }
+    }
     &__title {
         font-weight: 600;
-        font-size: 28px;
-        line-height: 30px;
         color: #1B2559;
-    //    margin-right: 220px;
+        @include adaptiv-value('font-size', 28, 22, 1);
+        @include adaptiv-value('line-height', 30, 24, 1);
 
     }
 
@@ -243,11 +273,14 @@ export default {
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(27, 37, 89, 0.1);
     border-radius: 4px;
-    padding: 35px 25px;
+    @include adaptiv-value('padding-top', 35, 25, 1);
+    @include adaptiv-value('padding-bottom', 35, 25, 1);
+    @include adaptiv-value('padding-right', 25, 5, 1);
+    @include adaptiv-value('padding-left', 25, 10, 1);
     position: absolute;
     top: 60px;
     z-index: 10;
-    width: 310px;
+    @include adaptiv-value('width', 310, 250, 1);
     justify-content: center;
     align-items: center;
     right: 0;
@@ -266,12 +299,62 @@ export default {
 
     &__list-link {
         font-weight: 500;
-        font-size: 16px;
+        @include adaptiv-value('font-size', 16, 14, 1);
         line-height: 24px;
         display: flex;
         gap: 18px;
         align-items: center;
         color: #1B2559;
+        transition: color 0.3s;
+        &:hover {
+            color: #1294F2;
+        }
     }
 }
+
+
+@media (max-width: 1600px) {
+    .header__form {
+        width: 350px;
+    }
+}
+
+@media (max-width: 1450px) {
+    .header-user-nav-box-user__column {
+        display: none;
+    }
+}
+
+@media (max-width: 1300px) {
+    .header__form {
+        margin-left: 60px;
+        margin-right: 60px;
+        width: 100%;
+    } 
+    .header__burger {
+        display: flex;
+    }
+}
+
+@media (max-width: 1000px) {
+    .header__form {
+        display: none;
+    }
+    .header__title {
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 700px){
+    .header-user-nav-box-user__button {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .header-user-nav__langs {
+        display: none;
+    }
+}
+
 </style>

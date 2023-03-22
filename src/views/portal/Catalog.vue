@@ -184,7 +184,16 @@ export default {
         font-size: 24px;
         line-height: 26px;
         color: #1B2559;
-
+        transition: color 0.3s;
+        &:hover {
+            color: #1294F2;
+            svg path {
+                fill: #1294F2;
+            }
+        }
+        svg path {
+            transition: fill 0.3s;
+        }
     }
 
     &__top-text {
@@ -253,6 +262,12 @@ export default {
         color: #1294F2;
         border: 1px solid #1294F2;
         border-radius: 6px;
+
+        transition: background 0.3s, color 0.3s;
+        &:hover {
+            background: #1294F2;
+            color: #fff;
+        }
     }
 
     &__buttons-button {
@@ -270,6 +285,14 @@ export default {
         color: #fff;
         border: 1px solid #1294F2;
         border-radius: 6px;
+
+        border: 1px solid transparent;
+        transition: background 0.3s, color 0.3s, border 0.3s;
+        &:hover {
+            background: #fff;
+            color: #1294F2;
+            border: 1px solid #1294F2;
+        }
     }
 
     &__buttons-button--lock {
@@ -280,6 +303,11 @@ export default {
         display: flex;
         justify-content: center;
         border: 1px solid #CECECE;
+        &:hover {
+            background: #CECECE;
+            color: #96A5B8;
+            border: 1px solid #CECECE;
+        }
     }
 }
 

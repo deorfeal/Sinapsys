@@ -1,8 +1,8 @@
 <template>
     <div class="big-wrapper">
-        <Aside :activeLink="0"/>
+        <Aside :activeLink="0" :sideMenuActive="this.sideMenuActive"/>
         <div class="wrapper">
-            <Header :searchIsActive="true" :title="'Главная'"/>
+            <Header :searchIsActive="true" :title="'Главная'" @openSideMenu="SideMenuToActive"/>
             <main class="main main-main">
                 <section class="main__top main-top">
                     <div class="main-top__level main-top-level">
@@ -254,6 +254,7 @@
                                     </p>
                                 </div>
                                 <div class="lessons-item__content lessons-item-content">
+                                    <div class="lessons-item-content__wrap">
                                     <div class="lessons-item-content__info">
                                         <p class="lessons-item-content__info-text">
                                             4
@@ -262,6 +263,7 @@
                                             </span>
                                         </p>
                                     </div>
+                                </div>
                                     <a class="lessons-item-content__link" href="#">
                                         Продолжить
                                     </a>
@@ -284,6 +286,7 @@
                                     </p>
                                 </div>
                                 <div class="lessons-item__content lessons-item-content">
+                                    <div class="lessons-item-content__wrap">
                                     <div class="lessons-item-content__info">
                                         <p class="lessons-item-content__info-text">
                                             2
@@ -291,6 +294,7 @@
                                                 Урок
                                             </span>
                                         </p>
+                                    </div>
                                     </div>
                                     <a class="lessons-item-content__link" href="#">
                                         Продолжить
@@ -313,6 +317,7 @@
                                     </p>
                                 </div>
                                 <div class="lessons-item__content lessons-item-content">
+                                    <div class="lessons-item-content__wrap">
                                     <div class="lessons-item-content__info">
                                         <p class="lessons-item-content__info-text">
                                             1
@@ -321,6 +326,7 @@
                                             </span>
                                         </p>
                                     </div>
+                                    </div>
                                     <a class="lessons-item-content__link" href="#">
                                         Продолжить
                                     </a>
@@ -328,9 +334,9 @@
                             </div>
                         </div>
                     </div>
-                </section>
-            </main>
-            <Footer />
+                </section> 
+            </main> 
+            <Footer /> 
         </div>
     </div>
 </template>
@@ -354,28 +360,35 @@ export default {
                 enable: false
             },
         })
+    },
+    data() {
+        return {
+            sideMenuActive: false,
+        }
+    },
+    methods: {
+        SideMenuToActive() {
+            if( this.sideMenuActive == true ) {
+                this.sideMenuActive = false
+            } else {
+                this.sideMenuActive = true
+            }
+        }
     }
 }
 </script>
 
 <style lang="scss">
+@import '../../assets/scss/vars';
 .main-main {
-    padding: 20px 55px 30px 55px;
-}
-
-.big-wrapper {
-    width: 1920px;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-
-    .wrapper {
-        width: 100%;
-    }
+    @include adaptiv-value('padding-top', 20, 30, 1);
+    @include adaptiv-value('padding-bottom', 30, 30, 1);
+    @include adaptiv-value('padding-right', 55, 30, 1);
+    @include adaptiv-value('padding-left', 55, 30, 1);
 }
 
 .main-top {
-    margin-bottom: 50px;
+    @include adaptiv-value('margin-bottom', 50, 25, 1);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -385,40 +398,43 @@ export default {
 .main-top-level {
     background: #FFFFFF;
     border-radius: 16px;
-    padding: 30px 50px 40px 40px;
+    @include adaptiv-value('padding-top', 30, 20, 1);
+    @include adaptiv-value('padding-bottom', 40, 20, 1);
+    @include adaptiv-value('padding-right', 50, 20, 1);
+    @include adaptiv-value('padding-left', 40, 20, 1);
     flex-grow: 1;
     max-width: 450px;
     min-height: 390px;
 
     &__title {
         font-weight: 600;
-        font-size: 24px;
-        line-height: 28px;
+        @include adaptiv-value('font-size', 24, 20, 1);
+        @include adaptiv-value('line-height', 28, 24, 1);
+        @include adaptiv-value('margin-bottom', 65, 20, 1);
         color: #1B2559;
-        margin-bottom: 65px;
     }
 
     &__inner {}
 
     &__text {
         font-weight: 500;
-        font-size: 24px;
         line-height: 20px;
         color: #1B2559;
-        margin-bottom: 25px;
+        @include adaptiv-value('font-size', 24, 20, 1);
+        @include adaptiv-value('margin-bottom', 25, 20, 1);
     }
 
     &__row {
         background: #E9EDF7;
         height: 6px;
-        width: 355px;
         border-radius: 10px;
-        margin-bottom: 15px;
+        @include adaptiv-value('margin-bottom', 15, 10, 1);
         position: relative;
+        @include adaptiv-value('width', 355, 265, 1);
 
         span {
             background: #1294F2;
-            width: 240px;
+            @include adaptiv-value('width', 240, 209, 1);
             height: 6px;
             position: absolute;
             top: 0;
@@ -429,9 +445,10 @@ export default {
 
     &__subtext {
         font-weight: 400;
-        font-size: 16px;
         line-height: 24px;
         margin-bottom: 25px;
+        @include adaptiv-value('font-size', 16, 14, 1);
+        @include adaptiv-value('margin-bottom', 25, 10, 1);
         color: #1B2559;
     }
 }
@@ -439,7 +456,7 @@ export default {
 .main-top-level-item {
     flex-grow: 1;
     display: flex;
-    gap: 15px;
+    @include adaptiv-value('gap', 15, 10, 1);
     margin-bottom: 15px;
 
     &:last-child {
@@ -454,22 +471,26 @@ export default {
 
     &__box-procents {
         font-weight: 400;
-        font-size: 20px;
         line-height: 24px;
+        @include adaptiv-value('font-size', 20, 16, 1);
         color: #1B2559;
     }
 
     &__box-text {
         font-weight: 400;
-        font-size: 16px;
+        @include adaptiv-value('font-size', 16, 12, 1);
         line-height: 24px;
         color: #FBA63C;
     }
 }
 
 .main-top-rait {
+    max-width: 450px;
     min-width: 450px;
-    padding: 30px 50px 55px 30px;
+    @include adaptiv-value('padding-top', 30, 20, 1);
+    @include adaptiv-value('padding-bottom', 55, 35, 1);
+    @include adaptiv-value('padding-right', 50, 10, 1);
+    @include adaptiv-value('padding-left', 30, 20, 1);
     flex-grow: 1;
     background: #FFFFFF;
     border-radius: 16px;
@@ -477,10 +498,10 @@ export default {
 
     &__title {
         font-weight: 600;
-        font-size: 24px;
-        line-height: 26px;
         color: #1B2559;
-        margin-bottom: 40px;
+
+        @include adaptiv-value('font-size', 24, 20, 1);
+        @include adaptiv-value('margin-bottom', 40, 20, 1);
     }
 
     &__inner {}
@@ -489,30 +510,29 @@ export default {
         max-width: 370px;
         display: flex;
         flex-direction: column;
-        gap: 25px;
+        @include adaptiv-value('gap', 25, 15, 1);
     }
 
     &__list-item {
         display: flex;
-        gap: 15px;
         font-weight: 400;
-        font-size: 20px;
         line-height: 24px;
         color: #1B2559;
-
+        @include adaptiv-value('gap', 15, 3, 1);
+        @include adaptiv-value('font-size', 20, 16, 1);
         span:first-child {
-            width: 30px;
+            @include adaptiv-value('width', 30, 25, 1);
         }
 
         span:last-child {
-            width: 60px;
+            @include adaptiv-value('width', 60, 50, 1);
             color: #1294F2;
             text-align: right;
         }
 
         p {
-            width: 190px;
             margin-right: auto;
+            @include adaptiv-value('width', 190, 160, 1);
         }
 
         &:last-child {
@@ -524,9 +544,8 @@ export default {
 .main-top-rait-row {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin-bottom: 45px;
-
+    @include adaptiv-value('margin-bottom', 45, 15, 1);
+    @include adaptiv-value('gap', 45, 10, 1);
     &__buttons {
         display: flex;
         gap: 20px;
@@ -534,7 +553,9 @@ export default {
 
         .mixitup-control-active {
             position: relative;
-
+            &:hover {
+                color: #1B2559;
+            }
             &::before {
                 content: '';
                 width: 40px;
@@ -551,14 +572,18 @@ export default {
 
     &__buttons-btn {
         font-weight: 400;
-        font-size: 20px;
+        @include adaptiv-value('font-size', 20, 16, 1);
         line-height: 24px;
         color: #1B2559;
+        transition: color 0.3s;
+        &:hover {
+            color: #1294F2;
+        }
     }
 
     &__text {
         font-weight: 500;
-        font-size: 20px;
+        @include adaptiv-value('font-size', 20, 16, 1);
         line-height: 24px;
         color: #1B2559;
     }
@@ -568,20 +593,20 @@ export default {
     background: #FFFFFF;
     border-radius: 16px;
     min-height: 390px;
-    padding: 30px;
     max-width: 450px;
-
+    @include adaptiv-value('padding', 30, 20, 1);
     &__title {
         font-weight: 600;
-        font-size: 24px;
+        @include adaptiv-value('font-size', 24, 20, 1);
         line-height: 24px;
         color: #1B2559;
-        margin-bottom: 30px;
+        @include adaptiv-value('margin-bottom', 30, 20, 1);
     }
 
     &__link {
         display: block;
-        margin-bottom: 20px;
+
+        @include adaptiv-value('margin-bottom', 20, 5, 1);
     }
 
     &__link-img {
@@ -590,17 +615,21 @@ export default {
 
     &__date {
         font-weight: 400;
-        font-size: 16px;
+        @include adaptiv-value('font-size', 16, 12, 1);
         line-height: 24px;
-        margin-bottom: 15px;
+        @include adaptiv-value('margin-bottom', 15, 0, 1);
         color: #1B2559;
     }
 
     &__text {
         font-weight: 400;
-        font-size: 16px;
+        @include adaptiv-value('font-size', 16, 14, 1);
         line-height: 24px;
         color: #1B2559;
+        transition: color 0.3s;
+        &:hover {
+            color: #000;
+        }
     }
 }
 
@@ -608,9 +637,9 @@ export default {
 
 .lessons {
     &__title {
-        margin-left: 55px;
         font-weight: 600;
-        font-size: 24px;
+        @include adaptiv-value('margin-left', 55, 20, 1);
+        @include adaptiv-value('font-size', 24, 20, 1);
         line-height: 27px;
         color: #1B2559;
         margin-bottom: 25px;
@@ -619,7 +648,7 @@ export default {
     &__inner {
         display: flex;
         justify-content: space-between;
-        gap: 55px;
+        gap: 50px;
     }
 }
 
@@ -638,7 +667,7 @@ export default {
         }
     }
     &__img {
-        margin-bottom: 20px;
+        @include adaptiv-value('margin-bottom', 20, 15, 1);
     }
 
     &__inner {
@@ -655,16 +684,16 @@ export default {
 
     &__box-title {
         font-weight: 600;
-        font-size: 20px;
+        @include adaptiv-value('font-size', 20, 16, 1);
         line-height: 24px;
-        margin-bottom: 20px;
+        @include adaptiv-value('margin-bottom', 20, 10, 1);
         color: #1B2559;
         max-width: 200px;
     }
 
     &__box-text {
         font-weight: 500;
-        font-size: 16px;
+        @include adaptiv-value('font-size', 16, 14, 1);
         line-height: 24px;
         color: #1B2559;
         margin-bottom: 10px;
@@ -672,7 +701,7 @@ export default {
 
     &__box-subtext {
         font-weight: 500;
-        font-size: 15px;
+        @include adaptiv-value('font-size', 15, 12, 1);
         line-height: 24px;
         color: #AEB5D7;
         max-width: 250px;
@@ -683,7 +712,7 @@ export default {
     display: flex;
     flex-direction: column;
     gap: 15px;
-
+    &__wrap {}
     &__info {
         display: flex;
         flex-direction: column;
@@ -691,8 +720,10 @@ export default {
         align-items: center;
         border-radius: 100%;
         border: 10px solid #FFC44C;
-        width: 112px;
-        height: 112px;
+        @include adaptiv-value('width', 112, 77, 1);
+        @include adaptiv-value('height', 112, 77, 1);
+        @include adaptiv-value('max-width', 112, 77, 1);
+        @include adaptiv-value('max-height', 122, 77, 1);
     }
 
     &__info-text {
@@ -701,12 +732,12 @@ export default {
         justify-content: center;
         align-items: center;
         font-weight: 600;
-        font-size: 32px;
+        @include adaptiv-value('font-size', 32, 24, 1);
         line-height: 24px;
         color: rgba(#1B2559, $alpha: 0.4);
         span {
             font-weight: 400;
-            font-size: 16px;
+            @include adaptiv-value('font-size', 16, 14, 1);
             line-height: 24px;
             color: #1B2559;
         }
@@ -714,7 +745,6 @@ export default {
 
     &__link {
         font-weight: 400;
-        font-size: 12px;
         line-height: 24px;
         display: flex;
         justify-content: center;
@@ -724,10 +754,158 @@ export default {
         padding: 4px;
         border: 1px solid #1294F2;
         border-radius: 6px;
-        width: 110px;
-        max-width: 110px;
+
+        @include adaptiv-value('width', 110, 100, 1);
+        @include adaptiv-value('max-width', 110, 100, 1);
+        @include adaptiv-value('font-size', 12, 10, 1);
+
+        transition: background 0.3s, color 0.3s;
+        &:hover {
+            background: #1294F2;
+            color: #fff;
+        }
     }
 }
 
+@media (max-width: 1916px) {
+    .lessons__inner {
+        gap: 10px;
+    }
+    .main-top {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 1850px) {
+    .main-top {
+        gap: 25px;
+    }
+    .lessons__inner {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 1800px) {
+    .main-top {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    .main-top-rait__list {
+        width: 100%;
+    }
+    .main-top-rait {
+        min-width: unset;
+    }
+    .main-top-rait {
+        max-width: unset;
+    }
+}
+
+@media (max-width: 1400px) {
+    .main-top-rait {
+        width: 100%;
+        max-width: 100%;
+    }
+    .main-main {
+        .main-top-level {
+            max-width: 100%;
+        }
+    }
+    .main-top-advise {
+        max-width: 100%;
+        width: 100%;
+    }
+    .lessons__inner {
+        flex-direction: column;
+    }
+    .lessons-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .lessons__inner {
+        gap: 25px;
+    }
+}
+
+@media (max-width: 1300px) {
+    .main-top-rait {
+        max-width: 450px;
+    }
+    .main-main {
+        .main-top-level {
+            max-width: 100%;
+        }
+    }
+    .main-top-advise {
+        max-width: 100%;
+        width: 100%;
+    }
+    .main-top-rait__list {
+        max-width: unset;
+    }
+    .main-top-rait__row {
+        justify-content: space-between;
+    }
+    .main-top-advise__link {
+    
+    }
+}
+
+@media (max-width: 950px) {
+    .main-top-rait {
+        max-width: 100%;
+    }
+    .main-main {
+        .main-top-level {
+            min-height: unset;
+        }
+    }
+    .main-top-advise {
+        min-height: unset;
+    }
+    .main-top-rait {
+        min-height: unset;
+    }
+} 
+
+@media (max-width: 550px) {
+    .lessons-item {
+        padding: 0 0 20px 0;
+    }
+    .lessons-item__inner {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    .lessons-item__img {
+        width: 100%;
+        height: unset;
+    }
+    .lessons-item-content__wrap {
+        flex-grow: 1;
+    }
+    .lessons-item-content__info {
+        margin-left: auto;
+    }
+    .lessons-item-content__info {
+
+        border: 6px solid #FFC44C;
+    }
+    .lessons-item:nth-child(2) .lessons-item-content__info {
+        border: 6px solid #EC4848;
+    }
+    .lessons-item:nth-child(3) .lessons-item-content__info {
+        border: 10px solid #5DC983;
+    }
+}
+
+@media (max-width: 400px) {
+    .main-top-advise__text {
+        max-width: 220px;
+        display: block;
+    }
+}
 
 // // </style>

@@ -64,10 +64,19 @@
 
 <script>
 export default {
-    props: ['activeLink'],
+    props: ['activeLink', 'sideMenuActive'],
     mounted() {
             document.querySelectorAll('.main-aside__list-item')[this.activeLink].classList.add('main-aside__list-item--active')
     },
+    watch: {
+        sideMenuActive() {
+            if ( this.sideMenuActive == true ) {
+                document.querySelector('.main-aside').classList.add('main-aside--active')
+            } else {
+                document.querySelector('.main-aside').classList.remove('main-aside--active')
+            }
+        }
+    }
 }
 </script>
 
@@ -144,4 +153,34 @@ export default {
             fill: #96A5B8;
         }
     }
-}</style>
+}
+.main-aside--active {
+    display: block !important;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    height: 100vh;
+    padding-top: 25px;
+    min-width: 295px;
+    max-width: 295px;
+}
+@media (max-width: 1300px) {
+    .main-aside {
+        display: none;
+    }
+    .main-aside__logo {
+        margin-bottom: 40px;
+    }
+    .main-aside__list-item {
+        padding-left: 75px;
+    }
+    .main-aside__list-item--active::before {
+        left: 20px;
+        width: 16px;
+    }
+    .main-aside__list {
+        gap: 40px;
+    }
+}
+</style>

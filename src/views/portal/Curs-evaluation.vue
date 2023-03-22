@@ -1,5 +1,5 @@
 <template>
-    <main class="main">
+    <main class="main main-grow">
         <form class="main__curs-evaluation curs-evaluation" action="#">
             <h1 class="curs-evaluation__title">
                 Оцените курс
@@ -31,7 +31,6 @@ export default {
 
 <style lang="scss">
 .curs-evaluation {
-    margin-top: 170px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -90,6 +89,12 @@ export default {
         max-width: 285px;
         border: 1px solid #1294F2;
         border-radius: 6px;
+
+        transition: background 0.3s, color 0.3s;
+        &:hover {
+            background: #1294F2;
+            color: #fff;
+        }
     }
 
     &__buttons-btn {
@@ -106,6 +111,14 @@ export default {
 
         background: #1294F2;
         border-radius: 6px;
+
+        border: 1px solid transparent;
+        transition: background 0.3s, color 0.3s, border 0.3s;
+        &:hover {
+            background: #fff;
+            color: #1294F2;
+            border: 1px solid #1294F2;
+        }
     }
 }
 </style>

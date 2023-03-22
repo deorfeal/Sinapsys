@@ -1,5 +1,5 @@
 <template>
-    <div class="main">
+    <div class="main main-grow">
         <div class="main__questions questions">
             <a class="questions__link" href="#">
                 <svg width="32" height="28" viewBox="0 0 32 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -395,24 +395,27 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../../assets/scss/vars';
+
 .questions {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 150px 0 400px;
     width: 1120px;
     max-width: 1120px;
     margin-left: auto;
+    padding-left: 30px;
+    padding-right: 30px;
     margin-right: auto;
 
     &__link {
         font-weight: 500;
-        font-size: 24px;
         line-height: 24px;
+        @include adaptiv-value('font-size', 24, 16, 1);
+        @include adaptiv-value('margin-bottom', 35, 20, 1);
         color: #1B2559;
         gap: 10px;
-        margin-bottom: 35px;
         align-items: center;
         display: flex;
         margin-right: auto;
@@ -420,18 +423,24 @@ export default {
 
     &__buttons {
         display: flex;
-        gap: 10px;
+        @include adaptiv-value('gap', 10, 5, 1);
         align-items: center;
-        margin-bottom: 55px;
+        @include adaptiv-value('margin-bottom', 55, 20, 1);
+        flex-wrap: wrap;
+        justify-content: center;
 
         .mixitup-control-active {
             background: #1294F2;
             font-weight: 400;
-            font-size: 16px;
-            line-height: 24px;
+            @include adaptiv-value('font-size', 16, 14, 1);
             font-family: "Rubik", sans-serif;
             width: 55px;
             height: 30px;
+            color: #fff;
+
+            &:hover {
+                color: #fff;
+            }
         }
     }
 
@@ -445,6 +454,13 @@ export default {
         flex-direction: row;
         align-items: center;
         color: #fff;
+        transition: background 0.3s;
+        color: transparent;
+
+        &:hover {
+            background: #1294F2;
+            color: transparent;
+        }
     }
 
     &__inner {
@@ -461,11 +477,10 @@ export default {
 
     &__box-title {
         font-weight: 600;
-        font-size: 24px;
-        line-height: 28px;
-        margin-bottom: 30px;
+        @include adaptiv-value('font-size', 24, 16, 1);
+        @include adaptiv-value('line-height', 28, 24, 1);
+        @include adaptiv-value('margin-bottom', 30, 8, 1);
         color: #1B2559;
-
     }
 
     &__box-answers {
@@ -475,7 +490,7 @@ export default {
         align-items: flex-start;
         justify-content: flex-start;
         margin-bottom: 25px;
-        padding-left: 30px;
+        @include adaptiv-value('padding-left', 30, 20, 1);
         /* Customize the label (the container) */
         .container {
             display: block;
@@ -483,10 +498,10 @@ export default {
             padding-left: 40px;
             cursor: pointer;
             font-weight: 500;
-            font-size: 20px;
-            line-height: 24px;    
+            line-height: 24px;
+            @include adaptiv-value('font-size', 24, 14, 1);
             color: #1B2559;
-            
+
             -webkit-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
@@ -508,23 +523,19 @@ export default {
         /* Create a custom radio button */
         .checkmark {
             position: absolute;
-            top: 0;
+            @include adaptiv-value('top', 0, 4, 1);
             left: 0;
-            height: 24px;
-            width: 24px;
+            @include adaptiv-value('height', 24, 16, 1);
+            @include adaptiv-value('width', 24, 16, 1);
             border: 3px solid #1294F2;
             border-radius: 50%;
         }
 
         /* On mouse-over, add a grey background color */
-        .container:hover input~.checkmark {
-         
-        }
+        .container:hover input~.checkmark {}
 
         /* When the radio button is checked, add a blue background */
-        .container input:checked~.checkmark {
-          
-        }
+        .container input:checked~.checkmark {}
 
         /* Create the indicator (the dot/circle - hidden when not checked) */
         .checkmark:after {
@@ -544,8 +555,8 @@ export default {
             top: 50%;
             left: 50%;
             transform: translateY(-50%) translateX(-50%);
-            width: 8px;
-            height: 8px;
+            @include adaptiv-value('height', 8, 6, 1);
+            @include adaptiv-value('width', 8, 6, 1);
             border-radius: 50%;
             background: #1294F2;
         }
@@ -554,39 +565,78 @@ export default {
     &__buttons {
         display: flex;
         align-items: center;
-        gap: 50px;
+        @include adaptiv-value('gap', 50, 25, 1);
         justify-content: center;
     }
 
     &__buttons-link {
-        font-size: 20px;
-        line-height: 24px;
         text-align: center;
         color: #1294F2;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 12px;
-        width: 180px;
-        max-width: 180px;
         border: 1px solid #1294F2;
         border-radius: 6px;
+
+        @include adaptiv-value('font-size', 20, 16, 1);
+        @include adaptiv-value('line-height', 24, 24, 1);
+        @include adaptiv-value('padding', 12, 6, 1);
+        @include adaptiv-value('width', 180, 125, 1);
+        @include adaptiv-value('max-width', 180, 125, 1);
+
+        transition: background 0.3s, color 0.3s;
+
+        &:hover {
+            background: #1294F2;
+            color: #fff;
+        }
     }
 
     &__buttons-btn {
-        font-size: 20px;
-        line-height: 24px;
         text-align: center;
         display: flex;
         justify-content: center;
         align-items: center;
         color: #FFFFFF;
-        padding: 13px;
-        width: 180px;
-        max-width: 180px;
 
         background: #1294F2;
         border-radius: 6px;
+
+        border: 1px solid transparent;
+        transition: background 0.3s, color 0.3s, border 0.3s;
+
+        @include adaptiv-value('font-size', 20, 16, 1);
+        @include adaptiv-value('line-height', 24, 24, 1);
+        @include adaptiv-value('padding', 13, 6, 1);
+        @include adaptiv-value('width', 180, 160, 1);
+        @include adaptiv-value('max-width', 180, 160, 1);
+        &:hover {
+            background: #fff;
+            color: #1294F2;
+            border: 1px solid #1294F2;
+        }
     }
 }
-</style>
+
+@media (max-width: 1200px) {
+    .questions {
+        width: 100%;
+    }
+}
+
+@media (max-width: 550px) {
+    .questions__inner {
+        background: transparent;
+        padding: 0;
+    }
+
+    .questions-item__box {
+        background: #fff;
+        border-radius: 8px;
+        padding: 16px 20px 12px 22px;
+        margin-bottom: 20px;
+    }
+    .questions-item__box-answers {
+        margin-bottom: 0;
+    }
+}</style>
