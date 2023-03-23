@@ -1,8 +1,8 @@
 <template>
     <div class="big-wrapper">
-        <Aside :activeLink="3" />
+        <Aside :activeLink="3" :sideMenuActive="this.sideMenuActive"/>
         <div class="wrapper">
-            <Header :searchIsActive="true" :title="'Мой профиль'" />
+            <Header :searchIsActive="true" :title="'Мой профиль'" @openSideMenu="SideMenuToActive"/>
             <main class="main main-profile">
                 <form class="main__profile profile" action="#">
                     <div class="profile__top profile-top">
@@ -98,7 +98,8 @@
                             Дата регистрации: 26.12.2022
                         </p>
                     </div>
-                    <SettingsOfProfileVue @clickOnButton="changedInfo"/>
+                    <SettingsOfProfileVue @clickOnButton="changedInfo"/> 
+                    <button class="profile__btn" type="submit">Сохранить</button>
                 </form>
             </main>
             <Footer />
@@ -120,31 +121,53 @@ export default {
     },
     methods: {
         changedInfo() {
+        },
+        SideMenuToActive() {
+            if (this.sideMenuActive == true) {
+                this.sideMenuActive = false
+            } else {
+                this.sideMenuActive = true
+            }
         }
-    }
+    },
+    data() {
+        return {
+            sideMenuActive: false,
+        }
+    },
 }
 </script>
 
 
 <style lang="scss">
+@import '../../assets/scss/vars';
+
 .main-profile {
-    padding: 20px 55px 45px 55px;
+    @include adaptiv-value('padding-top', 20, 30, 1);
+    @include adaptiv-value('padding-right', 55, 30, 1);
+    @include adaptiv-value('padding-bottom', 45, 30, 1);
+    @include adaptiv-value('padding-left', 55, 30, 1);
 }
+
 
 // 
 
-.profile {}
+.profile {
+    &__btn {
+        display: none;
+    }
+}
 
 .profile-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 25px;
+    @include adaptiv-value('margin-bottom', 25, 30, 1);
 
     &__link {
         margin-left: -6px;
         font-weight: 500;
-        font-size: 24px;
+        @include adaptiv-value('font-size', 24, 16, 1);
         line-height: 26px;
         color: #1B2559;
         display: flex;
@@ -152,12 +175,15 @@ export default {
         align-items: center;
 
         transition: color 0.3s;
+
         &:hover {
             color: #1294F2;
+
             svg path {
                 fill: #1294F2;
             }
         }
+
         svg path {
             transition: fill 0.3s;
         }
@@ -180,6 +206,7 @@ export default {
 
         border: 1px solid transparent;
         transition: background 0.3s, color 0.3s, border 0.3s;
+
         &:hover {
             background: #fff;
             color: #1294F2;
@@ -193,20 +220,24 @@ export default {
     border-radius: 16px;
     display: flex;
     justify-content: space-between;
-    padding: 25px 20px 25px 35px;
-    margin-bottom: 30px;
+    @include adaptiv-value('padding-top', 25, 23, 1);
+    @include adaptiv-value('padding-right', 20, 23, 1);
+    @include adaptiv-value('padding-bottom', 25, 23, 1);
+    @include adaptiv-value('padding-left', 35, 23, 1);
+    @include adaptiv-value('margin-bottom', 30, 35, 1);
+    gap: 15px;
 
     &__level {
         margin-left: auto;
     }
 
     &__text {
-        margin-left: 90px;
+        margin-left: auto;
         font-weight: 500;
-        font-size: 16px;
         line-height: 24px;
+        @include adaptiv-value('font-size', 16, 14, 1);
+        text-align: right;
         align-self: flex-end;
-
         color: #1294F2;
 
     }
@@ -215,28 +246,28 @@ export default {
 .profile-info-box {
     display: flex;
     align-items: center;
-    gap: 45px;
+    @include adaptiv-value('gap', 45, 15, 1);
 
     &__img {
-        width: 184px;
-        height: 184px;
+        @include adaptiv-value('width', 184, 67, 1);
+        @include adaptiv-value('height', 184, 67, 1);
     }
 
     &__column {}
 
     &__column-title {
         font-weight: 600;
-        font-size: 24px;
+        @include adaptiv-value('font-size', 24, 16, 1);
+        @include adaptiv-value('margin-bottom', 20, 0, 1);
         line-height: 24px;
-        margin-bottom: 20px;
         color: #1B2559;
     }
 
     &__column-text {
         font-weight: 500;
-        font-size: 20px;
+        @include adaptiv-value('font-size', 20, 14, 1);
+        @include adaptiv-value('margin-bottom', 12, 4, 1);
         line-height: 24px;
-        margin-bottom: 12px;
         color: #1B2559;
 
         &:last-child {
@@ -244,4 +275,47 @@ export default {
         }
     }
 }
-</style>
+
+@media (max-width: 1700px) {
+    .profile-info {
+        flex-direction: column;
+    }
+
+    .main-profile {
+        .main-top-level__inner {
+            margin-left: unset;
+            @include adaptiv-value('margin-top', 50, 30, 1);
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .profile-info-box {
+        align-items: flex-start;
+    }
+
+    .profile-top__btn {
+        display: none;
+    }
+
+    .profile-top__link {
+        margin-left: unset;
+    }
+
+    .profile__btn {
+        display: flex;
+        justify-content: center;
+        margin-left: auto;
+        text-align: center;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
+        text-align: center;
+        color: #FFFFFF;
+        padding: 6px;
+        background: #1294F2;
+        border-radius: 6px;
+        width: 130px;
+        max-width: 130px;
+    }
+}</style>

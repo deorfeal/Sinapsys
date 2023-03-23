@@ -21,6 +21,10 @@ import Profile from "@/views/portal/Profile.vue";
 import Settings from "@/views/portal/Settings.vue";
 import ErrorPage from "@/views/portal/Error-page.vue";
 import MyCourses from "@/views/portal/My-courses.vue";
+import VideoLesson from "@/views/portal/Video-lesson.vue";
+import TestLesson from "@/views/portal/Test-lesson.vue";
+import BigCatalog from "@/views/portal/Big-catalog.vue";
+
 
 const routes = [{
         path: "/",
@@ -116,6 +120,21 @@ const routes = [{
         path: "/my-courses",
         name: "my-courses",
         component: MyCourses,
+    },
+    {
+        path: "/video-lesson",
+        name: "video-lesson",
+        component: VideoLesson,
+    },
+    {
+        path: "/test-lesson",
+        name: "test-lesson",
+        component: TestLesson,
+    },
+    {
+        path: "/big-catalog",
+        name: "big-catalog",
+        component: BigCatalog,
     },
 
 ];

@@ -1,8 +1,8 @@
 <template>
     <div class="big-wrapper">
-        <Aside :activeLink="0" :sideMenuActive="this.sideMenuActive"/>
+        <Aside :activeLink="0" :sideMenuActive="this.sideMenuActive" />
         <div class="wrapper">
-            <Header :searchIsActive="true" :title="'Главная'" @openSideMenu="SideMenuToActive"/>
+            <Header :searchIsActive="true" :title="'Главная'" @openSideMenu="SideMenuToActive" />
             <main class="main main-main">
                 <section class="main__top main-top">
                     <div class="main-top__level main-top-level">
@@ -255,15 +255,15 @@
                                 </div>
                                 <div class="lessons-item__content lessons-item-content">
                                     <div class="lessons-item-content__wrap">
-                                    <div class="lessons-item-content__info">
-                                        <p class="lessons-item-content__info-text">
-                                            4
-                                            <span>
-                                                Урок
-                                            </span>
-                                        </p>
+                                        <div class="lessons-item-content__info">
+                                            <p class="lessons-item-content__info-text">
+                                                4
+                                                <span>
+                                                    Урок
+                                                </span>
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
                                     <a class="lessons-item-content__link" href="#">
                                         Продолжить
                                     </a>
@@ -287,14 +287,14 @@
                                 </div>
                                 <div class="lessons-item__content lessons-item-content">
                                     <div class="lessons-item-content__wrap">
-                                    <div class="lessons-item-content__info">
-                                        <p class="lessons-item-content__info-text">
-                                            2
-                                            <span>
-                                                Урок
-                                            </span>
-                                        </p>
-                                    </div>
+                                        <div class="lessons-item-content__info">
+                                            <p class="lessons-item-content__info-text">
+                                                2
+                                                <span>
+                                                    Урок
+                                                </span>
+                                            </p>
+                                        </div>
                                     </div>
                                     <a class="lessons-item-content__link" href="#">
                                         Продолжить
@@ -318,14 +318,14 @@
                                 </div>
                                 <div class="lessons-item__content lessons-item-content">
                                     <div class="lessons-item-content__wrap">
-                                    <div class="lessons-item-content__info">
-                                        <p class="lessons-item-content__info-text">
-                                            1
-                                            <span>
-                                                Урок
-                                            </span>
-                                        </p>
-                                    </div>
+                                        <div class="lessons-item-content__info">
+                                            <p class="lessons-item-content__info-text">
+                                                1
+                                                <span>
+                                                    Урок
+                                                </span>
+                                            </p>
+                                        </div>
                                     </div>
                                     <a class="lessons-item-content__link" href="#">
                                         Продолжить
@@ -334,9 +334,89 @@
                             </div>
                         </div>
                     </div>
-                </section> 
-            </main> 
-            <Footer /> 
+                </section>
+                <div class="main__terms-popup terms-popup" id="terms-popup">
+                    <div class="terms-popup__inner">
+                        <h2 class="terms-popup__title">
+                            Условия использования веб-сайта
+                        </h2>
+                        <ul class="terms-popup__list">
+                            <li class="terms-popup__list-item">
+                                <p class="terms-popup__list-text">
+                                    ВНИМАНИЕ! Внимательно ознакомьтесь с положениями, описанными в данном соглашении, перед
+                                    началом
+                                    использования веб-сайта KASPERSKY AUTOMATED SECURITY AWARENESS PLATFORM (далее
+                                    «Веб-сайт»).
+                                </p>
+                            </li>
+                            <li class="terms-popup__list-item">
+                                <p class="terms-popup__list-text">
+                                    Использование Веб-сайта означает ваше безоговорочное согласие с настоящими Условиями
+                                    использования. АО «Лаборатория Касперского» (далее Лаборатория Касперского,
+                                    Правообладатель)
+                                    оставляет за собой право без предварительных уведомлений в любое время и по своему
+                                    усмотрению
+                                    изменять настоящие Условия использования, а также модифицировать Веб-сайт или любую его
+                                    функциональность. Продолжение использования Веб-сайта после внесения изменений означает
+                                    принятие
+                                    вами таких изменений. Если вы не согласны со всеми Условиями использования Веб-сайта, вы
+                                    не
+                                    должны использовать Веб-сайт.
+                                </p>
+                            </li>
+                            <li class="terms-popup__list-item">
+                                <p class="terms-popup__list-text">
+                                    1. Права на интеллектуальную собственность
+                                </p>
+                            </li>
+                            <li class="terms-popup__list-item">
+                                <p class="terms-popup__list-text">
+                                    Лаборатория Касперского является владельцем всех прав на Веб-сайт, включая как
+                                    исключительные
+                                    права, так и другие применимые виды прав. Лаборатория Касперского имеет все необходимые
+                                    права,
+                                    включая права на интеллектуальную собственность, и лицензии на опубликованные на
+                                    Веб-сайте
+                                    материалы и информацию, включая, но не ограничиваясь текстовыми, графическими, фото-,
+                                    видео- и
+                                    аудиоматериалами, а также программами для ЭВМ независимо от их вида (все вместе далее
+                                    «Контент»).
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="terms-popup__entrance-form entrance-form__check">
+                        <div class="entrance-form__check-box">
+                            <label class="container">
+                                <a href="#">
+                                    Я прочитал(-а) условия пользования сервисом
+                                </a>
+                                <input type="checkbox" checked="checked">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="entrance-form__check-box">
+                            <label class="container">
+                                <a href="#">
+                                    Я согласен(-сна) с условиями пользования сервисом
+                                </a>
+                                <input type="checkbox" checked="checked">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <button class="terms-popup__btn" type="button">
+                        <span>
+                            Согласится и
+                        </span>
+                        <span>
+                            продолжить
+                        </span>
+
+                    </button>
+                </div>
+            </main>
+            <Footer />
         </div>
     </div>
 </template>
@@ -368,7 +448,7 @@ export default {
     },
     methods: {
         SideMenuToActive() {
-            if( this.sideMenuActive == true ) {
+            if (this.sideMenuActive == true) {
                 this.sideMenuActive = false
             } else {
                 this.sideMenuActive = true
@@ -380,6 +460,7 @@ export default {
 
 <style lang="scss">
 @import '../../assets/scss/vars';
+
 .main-main {
     @include adaptiv-value('padding-top', 20, 30, 1);
     @include adaptiv-value('padding-bottom', 30, 30, 1);
@@ -520,6 +601,7 @@ export default {
         color: #1B2559;
         @include adaptiv-value('gap', 15, 3, 1);
         @include adaptiv-value('font-size', 20, 16, 1);
+
         span:first-child {
             @include adaptiv-value('width', 30, 25, 1);
         }
@@ -546,6 +628,7 @@ export default {
     align-items: center;
     @include adaptiv-value('margin-bottom', 45, 15, 1);
     @include adaptiv-value('gap', 45, 10, 1);
+
     &__buttons {
         display: flex;
         gap: 20px;
@@ -553,9 +636,11 @@ export default {
 
         .mixitup-control-active {
             position: relative;
+
             &:hover {
                 color: #1B2559;
             }
+
             &::before {
                 content: '';
                 width: 40px;
@@ -576,6 +661,7 @@ export default {
         line-height: 24px;
         color: #1B2559;
         transition: color 0.3s;
+
         &:hover {
             color: #1294F2;
         }
@@ -595,6 +681,7 @@ export default {
     min-height: 390px;
     max-width: 450px;
     @include adaptiv-value('padding', 30, 20, 1);
+
     &__title {
         font-weight: 600;
         @include adaptiv-value('font-size', 24, 20, 1);
@@ -627,6 +714,7 @@ export default {
         line-height: 24px;
         color: #1B2559;
         transition: color 0.3s;
+
         &:hover {
             color: #000;
         }
@@ -656,16 +744,19 @@ export default {
     padding: 8px 8px 20px 8px;
     background: #FFFFFF;
     border-radius: 16px;
+
     &:nth-child(2) {
         .lessons-item-content__info {
             border: 10px solid #EC4848;
         }
     }
+
     &:nth-child(3) {
         .lessons-item-content__info {
             border: 10px solid #5DC983;
         }
     }
+
     &__img {
         @include adaptiv-value('margin-bottom', 20, 15, 1);
     }
@@ -678,9 +769,7 @@ export default {
         gap: 5px;
     }
 
-    &__box {
-     
-    }
+    &__box {}
 
     &__box-title {
         font-weight: 600;
@@ -712,7 +801,24 @@ export default {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    &__wrap {}
+    align-items: center;
+
+    &__wrap {
+        border-radius: 100%;
+        position: relative;
+        &::before {
+            content: '';
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border: 10px solid #CECECE;
+            position: absolute;
+            top: 0;
+            border-radius: 100%;
+            left: 0;
+        }
+    }
+
     &__info {
         display: flex;
         flex-direction: column;
@@ -735,6 +841,7 @@ export default {
         @include adaptiv-value('font-size', 32, 24, 1);
         line-height: 24px;
         color: rgba(#1B2559, $alpha: 0.4);
+
         span {
             font-weight: 400;
             @include adaptiv-value('font-size', 16, 14, 1);
@@ -760,17 +867,206 @@ export default {
         @include adaptiv-value('font-size', 12, 10, 1);
 
         transition: background 0.3s, color 0.3s;
+
         &:hover {
             background: #1294F2;
             color: #fff;
         }
     }
+
+    &__link--small {
+        @include adaptiv-value('width', 75, 75, 1);
+        @include adaptiv-value('max-width', 75, 75, 1);
+    }
 }
 
-@media (max-width: 1916px) {
+// 
+
+.terms-popup {
+    @include adaptiv-value('min-width', 675, 315, 1);
+    @include adaptiv-value('max-width', 675, 315, 1);
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(27, 37, 89, 0.1);
+    border-radius: 4px;
+    @include adaptiv-value('padding-top', 25, 20, 1);
+    @include adaptiv-value('padding-right', 30, 10, 1);
+    @include adaptiv-value('padding-bottom', 25, 50, 1);
+    @include adaptiv-value('padding-left', 30, 20, 1);
+    display: none;
+
+    // // //
+
+    /* Customize the label (the container) */
+    .container {
+        display: block;
+        position: relative;
+        @include adaptiv-value("padding-left", 40, 30, 1);
+        cursor: pointer;
+        font-weight: 400;
+        @include adaptiv-value("font-size", 15, 10, 1);
+        @include adaptiv-value("line-height", 25, 15, 1);
+        color: #1294F2;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        padding-right: unset;
+    }
+
+    /* Hide the browser's default checkbox */
+    .container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+    /* Create a custom checkbox */
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include adaptiv-value("height", 24, 16, 1);
+        @include adaptiv-value("width", 24, 16, 1);
+        border: 2px solid #96A5B8;
+        border-radius: 6px;
+    }
+
+    /* On mouse-over, add a grey background color */
+    .container:hover input~.checkmark {}
+
+    /* When the checkbox is checked, add a blue background */
+    .container input:checked~.checkmark {}
+
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    /* Show the checkmark when checked */
+    .container input:checked~.checkmark:after {
+        display: block;
+    }
+
+    /* Style the checkmark/indicator */
+    .container .checkmark:after {
+        @include adaptiv-value("height", 8, 6, 1);
+        @include adaptiv-value("width", 11, 8, 1);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        background-image: url(../../public/images/reg-two-tick-icon.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    // // // 
+
+    &__inner {
+        margin-bottom: 20px;
+        padding-right: 20px;
+        max-height: 600px;
+        overflow-y: scroll;
+
+        /* width */
+        &::-webkit-scrollbar {
+            width: 7px;
+        }
+
+        /* Track */
+        &::-webkit-scrollbar-track {
+            background: #E9EDF7;
+            border-radius: 15px;
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            background: #1294F2;
+            border-radius: 15px;
+        }
+
+        /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+    }
+
+    &__title {
+        font-weight: 700;
+        @include adaptiv-value('font-size', 20, 16, 1);
+        line-height: 24px;
+        color: #1B2559;
+        margin-bottom: 30px;
+        padding-left: 20px;
+    }
+
+    &__list {
+        padding-left: 20px;
+    }
+
+    &__list-item {
+        position: relative;
+
+        &::before {
+            content: '';
+            width: 3px;
+            height: 3px;
+            background: #1B2559;
+            position: absolute;
+            top: 10px;
+            left: -10px;
+        }
+    }
+
+    &__list-text {
+        font-weight: 500;
+        @include adaptiv-value('font-size', 16, 12, 1);
+        line-height: 24px;
+        color: #1B2559;
+    }
+
+    &__entrance-form {
+        padding-left: 20px;
+        margin-bottom: 20px;
+    }
+
+    &__btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 500;
+        @include adaptiv-value('font-size', 16, 14, 1);
+        line-height: 24px;
+        color: #FFFFFF;
+        text-align: center;
+
+        background: #1294F2;
+        border: 1px solid #1294F2;
+        border-radius: 6px;
+        @include adaptiv-value('padding', 12, 6, 1);
+        margin-left: auto;
+        margin-right: auto;
+        transition: background 0.3s, color 0.3s;
+
+        &:hover {
+            background: transparent;
+            color: #1294F2;
+        }
+    }
+}
+
+// // 
+
+@media (max-width: 1918px) {
     .lessons__inner {
         gap: 10px;
     }
+
     .main-top {
         gap: 10px;
     }
@@ -780,6 +1076,7 @@ export default {
     .main-top {
         gap: 25px;
     }
+
     .lessons__inner {
         flex-wrap: wrap;
         justify-content: flex-start;
@@ -791,12 +1088,15 @@ export default {
         flex-wrap: wrap;
         justify-content: flex-start;
     }
+
     .main-top-rait__list {
         width: 100%;
     }
+
     .main-top-rait {
         min-width: unset;
     }
+
     .main-top-rait {
         max-width: unset;
     }
@@ -807,26 +1107,36 @@ export default {
         width: 100%;
         max-width: 100%;
     }
+
     .main-main {
         .main-top-level {
             max-width: 100%;
         }
     }
+
     .main-top-advise {
         max-width: 100%;
         width: 100%;
     }
+
     .lessons__inner {
         flex-direction: column;
     }
+
     .lessons-item {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        align-items: flex-start;
+        gap: 30px;
     }
+
     .lessons__inner {
         gap: 25px;
+    }
+
+    .lessons-item__img {}
+
+    .lessons-item__inner {
+        margin-left: unset;
     }
 }
 
@@ -834,71 +1144,130 @@ export default {
     .main-top-rait {
         max-width: 450px;
     }
+
     .main-main {
         .main-top-level {
             max-width: 100%;
         }
     }
+
     .main-top-advise {
         max-width: 100%;
         width: 100%;
     }
+
     .main-top-rait__list {
         max-width: unset;
     }
+
     .main-top-rait__row {
         justify-content: space-between;
     }
-    .main-top-advise__link {
-    
-    }
+
+    .main-top-advise__link {}
 }
 
 @media (max-width: 950px) {
     .main-top-rait {
         max-width: 100%;
     }
+
     .main-main {
         .main-top-level {
             min-height: unset;
         }
     }
+
     .main-top-advise {
         min-height: unset;
     }
+
     .main-top-rait {
         min-height: unset;
     }
-} 
+}
+
+@media (max-width: 850px) {
+    .lessons-item {
+        flex-direction: column;
+        gap: 0;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .lessons-item__inner {
+        margin-left: auto;
+    }
+
+    .main-top-advise__link {
+        display: flex;
+        justify-content: center;
+    }
+}
 
 @media (max-width: 550px) {
     .lessons-item {
         padding: 0 0 20px 0;
     }
+
     .lessons-item__inner {
         margin-left: 15px;
         margin-right: 15px;
     }
+
     .lessons-item__img {
         width: 100%;
         height: unset;
     }
+
     .lessons-item-content__wrap {
         flex-grow: 1;
     }
+
     .lessons-item-content__info {
         margin-left: auto;
     }
+
     .lessons-item-content__info {
 
         border: 6px solid #FFC44C;
     }
+
     .lessons-item:nth-child(2) .lessons-item-content__info {
         border: 6px solid #EC4848;
     }
+
     .lessons-item:nth-child(3) .lessons-item-content__info {
         border: 10px solid #5DC983;
     }
+
+    .lessons-item-content {
+        align-items: center;
+    }
+
+    .lessons-item__box-title {
+        max-width: 160px;
+    }
+
+    // 
+    .terms-popup__btn {
+        width: 145px;
+
+        span:first-child {
+            display: none;
+        }
+    }
+
+    .terms-popup__entrance-form {
+        padding-left: 0;
+
+        .entrance-form__check-box a {
+            max-width: 230px;
+            display: block;
+        }
+    }
+
+    // // 
 }
 
 @media (max-width: 400px) {

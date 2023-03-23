@@ -63,12 +63,16 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../../assets/scss/vars';
 .footer {
-    padding: 15px 55px 60px 55px;
+    @include adaptiv-value('padding-top', 15, 10, 1);
+    @include adaptiv-value('padding-bottom', 60, 30, 1);
+    @include adaptiv-value('padding-right', 55, 30, 1);
+    @include adaptiv-value('padding-left', 55, 30, 1);
     background: #FFFFFF;
     display: flex;
     align-items: flex-start;
-    gap: 270px;
+    justify-content: space-between;
 
     &__box-copy {
         font-weight: 200;
@@ -141,14 +145,29 @@ export default {
 
 @media (max-width: 1100px) {
     .footer {
-        gap: 30px;
+        @include adaptiv-value('gap', 30, 15, 1);
         justify-content: space-between;
     }
 }
 
 @media (max-width: 800px) {
     .footer {
-        display: none;
+    }
+}
+@media (max-width: 750px) {
+    .footer {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer__list {
+        text-align: center;
+    }
+    .footer-box__link {
+        text-align: center;
+    }
+    .footer__box-copy {
+        text-align: center;
     }
 }
 </style>

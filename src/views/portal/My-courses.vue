@@ -1,8 +1,8 @@
 <template>
     <div class="big-wrapper">
-        <Aside :activeLink="1" />
+        <Aside :activeLink="1" :sideMenuActive="this.sideMenuActive"/>
         <div class="wrapper">
-            <Header :searchIsActive="false" :title="'Настройки'" />
+            <Header :searchIsActive="false" :title="'Мои курсы'" @openSideMenu="SideMenuToActive"/>
             <main class="main main-my-courses">
                 <section class="main__my-courses-top my-courses-top">
                     <div class="my-courses-top__box">
@@ -80,13 +80,15 @@
                                         </p>
                                     </div>
                                     <div class="lessons-item__content lessons-item-content">
-                                        <div class="lessons-item-content__info">
-                                            <p class="lessons-item-content__info-text">
-                                                4
-                                                <span>
-                                                    Урок
-                                                </span>
-                                            </p>
+                                        <div class="lessons-item-content__wrap">
+                                            <div class="lessons-item-content__info">
+                                                <p class="lessons-item-content__info-text">
+                                                    4
+                                                    <span>
+                                                        Урок
+                                                    </span>
+                                                </p>
+                                            </div>
                                         </div>
                                         <a class="lessons-item-content__link" href="#">
                                             Продолжить
@@ -110,16 +112,18 @@
                                         </p>
                                     </div>
                                     <div class="lessons-item__content lessons-item-content">
-                                        <div class="lessons-item-content__info">
-                                            <p class="lessons-item-content__info-text">
-                                                1
-                                                <span>
-                                                    Урок
-                                                </span>
-                                            </p>
+                                        <div class="lessons-item-content__wrap">
+                                            <div class="lessons-item-content__info">
+                                                <p class="lessons-item-content__info-text">
+                                                    1
+                                                    <span>
+                                                        Урок
+                                                    </span>
+                                                </p>
+                                            </div>
                                         </div>
-                                        <a class="lessons-item-content__link" href="#">
-                                            Продолжить
+                                        <a class="lessons-item-content__link lessons-item-content__link--small" href="#">
+                                            Начать
                                         </a>
                                     </div>
                                 </div>
@@ -139,13 +143,16 @@
                                         </p>
                                     </div>
                                     <div class="lessons-item__content lessons-item-content">
-                                        <div class="lessons-item-content__info">
-                                            <p class="lessons-item-content__info-text">
-                                                1
-                                                <span>
-                                                    Урок
-                                                </span>
-                                            </p>
+                                        <div class="lessons-item-content__wrap">
+                                            <div class="lessons-item-content__info">
+                                                
+                                                <p class="lessons-item-content__info-text">
+                                                    1
+                                                    <span>
+                                                        Урок
+                                                    </span>
+                                                </p>
+                                            </div>
                                         </div>
                                         <a class="lessons-item-content__link" href="#">
                                             Продолжить
@@ -171,10 +178,13 @@
                                         </p>
                                     </div>
                                     <div class="lessons-item__content lessons-item-content">
-                                        <div class="lessons-item-content__info">
-                                            <p class="lessons-item-content__info-text">
-                                                80%
-                                            </p>
+                                        <div class="lessons-item-content__wrap">
+                                            <div class="lessons-item-content__info">
+                                                <p class="lessons-item-content__info-text">
+                                                    80%
+                                                </p>
+                                            </div>
+
                                         </div>
                                         <a class="lessons-item-content__link" href="#">
                                             Продолжить
@@ -198,10 +208,12 @@
                                         </p>
                                     </div>
                                     <div class="lessons-item__content lessons-item-content">
-                                        <div class="lessons-item-content__info">
-                                            <p class="lessons-item-content__info-text">
-                                              60%
-                                            </p>
+                                        <div class="lessons-item-content__wrap">
+                                            <div class="lessons-item-content__info">
+                                                <p class="lessons-item-content__info-text">
+                                                  60%
+                                                </p>
+                                            </div>
                                         </div>
                                         <a class="lessons-item-content__link" href="#">
                                             Продолжить
@@ -229,13 +241,16 @@
                                         </p>
                                     </div>
                                     <div class="lessons-item__content lessons-item-content">
-                                        <div class="lessons-item-content__info">
-                                            <p class="lessons-item-content__info-text">
-                                                4
-                                                <span>
-                                                    Урок
-                                                </span>
-                                            </p>
+                                        <div class="lessons-item-content__wrap">
+                                            
+                                            <div class="lessons-item-content__info">
+                                                <p class="lessons-item-content__info-text">
+                                                    4
+                                                    <span>
+                                                        Урок
+                                                    </span>
+                                                </p>
+                                            </div>
                                         </div>
                                         <a class="lessons-item-content__link" href="#">
                                             Продолжить
@@ -258,13 +273,16 @@
                                         </p>
                                     </div>
                                     <div class="lessons-item__content lessons-item-content">
-                                        <div class="lessons-item-content__info">
-                                            <p class="lessons-item-content__info-text">
-                                                1
-                                                <span>
-                                                    Урок
-                                                </span>
-                                            </p>
+                                        <div class="lessons-item-content__wrap">
+                                            
+                                            <div class="lessons-item-content__info">
+                                                <p class="lessons-item-content__info-text">
+                                                    1
+                                                    <span>
+                                                        Урок
+                                                    </span>
+                                                </p>
+                                            </div>
                                         </div>
                                         <a class="lessons-item-content__link" href="#">
                                             Продолжить
@@ -290,10 +308,13 @@
                                         </p>
                                     </div>
                                     <div class="lessons-item__content lessons-item-content">
-                                        <div class="lessons-item-content__info">
-                                            <p class="lessons-item-content__info-text">
-                                               30%
-                                            </p>
+                                        <div class="lessons-item-content__wrap">
+                                            
+                                            <div class="lessons-item-content__info">
+                                                <p class="lessons-item-content__info-text">
+                                                   30%
+                                                </p>
+                                            </div>
                                         </div>
                                         <a class="lessons-item-content__link" href="#">
                                             Продолжить
@@ -321,13 +342,16 @@
                                         </p>
                                     </div>
                                     <div class="lessons-item__content lessons-item-content">
-                                        <div class="lessons-item-content__info">
-                                            <p class="lessons-item-content__info-text">
-                                                2
-                                                <span>
-                                                    Урок
-                                                </span>
-                                            </p>
+                                        <div class="lessons-item-content__wrap">
+                                            
+                                            <div class="lessons-item-content__info">
+                                                <p class="lessons-item-content__info-text">
+                                                    2
+                                                    <span>
+                                                        Урок
+                                                    </span>
+                                                </p>
+                                        </div>
                                         </div>
                                         <a class="lessons-item-content__link" href="#">
                                             Продолжить
@@ -350,13 +374,16 @@
                                         </p>
                                     </div>
                                     <div class="lessons-item__content lessons-item-content">
-                                        <div class="lessons-item-content__info">
-                                            <p class="lessons-item-content__info-text">
-                                                1
-                                                <span>
-                                                    Урок
-                                                </span>
-                                            </p>
+                                        <div class="lessons-item-content__wrap">
+                                            
+                                            <div class="lessons-item-content__info">
+                                                <p class="lessons-item-content__info-text">
+                                                    1
+                                                    <span>
+                                                        Урок
+                                                    </span>
+                                                </p>
+                                            </div>
                                         </div>
                                         <a class="lessons-item-content__link" href="#">
                                             Продолжить
@@ -382,10 +409,13 @@
                                         </p>
                                     </div>
                                     <div class="lessons-item__content lessons-item-content">
-                                        <div class="lessons-item-content__info">
-                                            <p class="lessons-item-content__info-text">
-                                                90%
-                                            </p>
+                                        <div class="lessons-item-content__wrap">
+                                            
+                                            <div class="lessons-item-content__info">
+                                                <p class="lessons-item-content__info-text">
+                                                    90%
+                                                </p>
+                                            </div>
                                         </div>
                                         <a class="lessons-item-content__link" href="#">
                                             Продолжить
@@ -413,13 +443,16 @@
                                         </p>
                                     </div>
                                     <div class="lessons-item__content lessons-item-content">
-                                        <div class="lessons-item-content__info">
-                                            <p class="lessons-item-content__info-text">
-                                                4
-                                                <span>
-                                                    Урок
-                                                </span>
-                                            </p>
+                                        <div class="lessons-item-content__wrap">
+                                            <div class="lessons-item-content__info">
+                                                <p class="lessons-item-content__info-text">
+                                                    4
+                                                    <span>
+                                                        Урок
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            
                                         </div>
                                         <a class="lessons-item-content__link" href="#">
                                             Продолжить
@@ -442,13 +475,16 @@
                                         </p>
                                     </div>
                                     <div class="lessons-item__content lessons-item-content">
-                                        <div class="lessons-item-content__info">
-                                            <p class="lessons-item-content__info-text">
-                                                1
-                                                <span>
-                                                    Урок
-                                                </span>
-                                            </p>
+                                        <div class="lessons-item-content__wrap">
+                                            <div class="lessons-item-content__info">
+                                                <p class="lessons-item-content__info-text">
+                                                    1
+                                                    <span>
+                                                        Урок
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            
                                         </div>
                                         <a class="lessons-item-content__link" href="#">
                                             Продолжить
@@ -474,10 +510,12 @@
                                         </p>
                                     </div>
                                     <div class="lessons-item__content lessons-item-content">
-                                        <div class="lessons-item-content__info">
-                                            <p class="lessons-item-content__info-text">
-                                                65%
-                                            </p>
+                                        <div class="lessons-item-content__wrap">
+                                            <div class="lessons-item-content__info">
+                                                <p class="lessons-item-content__info-text">
+                                                    65%
+                                                </p>
+                                            </div>
                                         </div>
                                         <a class="lessons-item-content__link" href="#">
                                             Продолжить
@@ -509,6 +547,7 @@ export default {
             currentValueOfTitle: 'Кибербезопастность',
             listOfTitles: [],
             valueOfInput: '',
+            sideMenuActive: false,
         }
     },
     mounted() {
@@ -520,6 +559,13 @@ export default {
         this.listOfTitles = allTitlesArray
     },
     methods: {
+        SideMenuToActive() {
+            if (this.sideMenuActive == true) {
+                this.sideMenuActive = false
+            } else {
+                this.sideMenuActive = true
+            }
+        },
         showFirstItems() {
             let ourButtons = document.querySelectorAll('.my-courses-top__btn')
             let lessonsInners = document.querySelectorAll('.lessons__inner')
@@ -671,9 +717,12 @@ export default {
 
 
 <style lang="scss">
+@import '../../assets/scss/vars';
 .main-my-courses {
-    padding: 20px 55px 100px 55px;
-
+    @include adaptiv-value('padding-top', 20, 30, 1);
+    @include adaptiv-value('padding-bottom', 100, 30, 1);
+    @include adaptiv-value('padding-right', 55, 30, 1);
+    @include adaptiv-value('padding-left', 55, 30, 1);
     .lessons-item:nth-child(2) {
         .lessons-item-content__info {
             border: 10px solid #E9EDF7;
@@ -690,8 +739,8 @@ export default {
 
     .lessons__title {
         margin-left: unset;
-        font-size: 28px;
-        line-height: 30px;
+        @include adaptiv-value('font-size', 28, 20, 1);
+        @include adaptiv-value('line-height', 30, 24, 1);
     }
 
     .lessons__inner {
@@ -712,7 +761,7 @@ export default {
 }
 
 .my-courses-top {
-    margin-bottom: 50px;
+    @include adaptiv-value('margin-bottom', 50, 25, 1);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -720,25 +769,23 @@ export default {
     &__box {
         display: flex;
         align-items: center;
-        gap: 40px;
+        @include adaptiv-value('gap', 40, 10, 1);
     }
 
     &__btn {
-        width: 210px;
         padding: 12px;
         font-weight: 500;
-        font-size: 24px;
+        @include adaptiv-value('font-size', 24, 15, 1);
         background: transparent;
         line-height: 26px;
         color: #60678B;
-        width: 175px;
-        max-width: 175px;
         border-radius: 10px;
         transition: color 0.3s, background 0.3s;
-
+        @include adaptiv-value('width', 175, 120, 1);
+        @include adaptiv-value('max-width', 175, 120, 1);
         &:last-child {
-            width: 210px;
-            max-width: 210px;
+            @include adaptiv-value('width', 210, 125, 1);
+            @include adaptiv-value('max-width', 210, 125, 1);
         }
         &:hover {
             color: #1294F2;
@@ -756,7 +803,7 @@ export default {
     &__form {
         background: #FFFFFF;
         border-radius: 15px;
-        width: 560px;
+        width: 100%;
         max-width: 560px;
         position: relative;
     }
@@ -825,6 +872,7 @@ export default {
         width: 270px;
         position: absolute;
         top: 60px;
+        z-index: 20;
         left: 0;
         background: #fff;
         border-radius: 6px;
@@ -833,7 +881,7 @@ export default {
 
     &__body-btn {
         font-weight: 500;
-        font-size: 16px;
+        @include adaptiv-value('font-size', 16, 14, 1);
         line-height: 24px;
         padding: 13px 24px 13px 24px;
         color: #96A5B8;
@@ -890,5 +938,65 @@ export default {
 
 .lessons__wrap--active {
     display: block;
+}
+@media (max-width: 1300px) {
+    .main-my-courses {
+        .lessons-item {
+            justify-content: center;
+        }
+        .lessons-item__inner {
+            margin-right: unset;
+        }
+    }
+}
+@media (max-width: 1050px) {
+    .my-courses-top {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    .my-courses-top__form {
+        display: block;
+        max-width: 100%;
+    }
+    .my-courses-top-select {
+        margin-right: 0;
+    }
+    .my-courses-top-select__body {
+        right: 0;
+        left: unset;
+    }
+}
+@media (max-width: 850px) {
+    .main-my-courses {
+        .lessons-item__inner {
+            margin-right: auto;
+        }
+    }
+}
+@media (max-width: 750px) {
+    .my-courses-top-select__box {
+        padding: 0;
+        border: unset;
+        p {
+            display: none;
+        }
+    }
+    .my-courses-top-select__body {
+        top: 40px;
+    }
+}
+@media (max-width: 550px) {
+    .main-my-courses {
+        .lessons-item__inner {
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+        .lessons__title {
+            margin-left: 20px;
+        }
+    }
+    .my-courses-top-select__body {
+        width: 230px;
+    }
 }
 </style>

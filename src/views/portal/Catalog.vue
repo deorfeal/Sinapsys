@@ -1,8 +1,8 @@
 <template>
     <div class="big-wrapper">
-        <Aside :activeLink="1" />
+        <Aside :activeLink="1" :sideMenuActive="this.sideMenuActive"/>
         <div class="wrapper">
-            <Header :searchIsActive="false" :title="'Каталог'"/>
+            <Header :searchIsActive="false" :title="'Каталог'" @openSideMenu="SideMenuToActive"/>
             <main class="main main-catalog">
                 <section class="main__catalog catalog">
                     <div class="catalog__top">
@@ -158,18 +158,35 @@ export default {
         Header,
         Footer
     },
+    data() {
+        return {
+            sideMenuActive: false,
+        }
+    },
+    methods: {
+        SideMenuToActive() {
+            if (this.sideMenuActive == true) {
+                this.sideMenuActive = false
+            } else {
+                this.sideMenuActive = true
+            }
+        }
+    }
 }
 </script>
 
 <style lang="scss">
-
+@import '../../assets/scss/vars';
 .main-catalog {
-    padding: 30px 55px 40px 55px;
+    @include adaptiv-value('padding-top', 30, 30, 1);
+    @include adaptiv-value('padding-right', 55, 30, 1);
+    @include adaptiv-value('padding-bottom', 40, 30, 1);
+    @include adaptiv-value('padding-left', 55, 30, 1);
 }
 .catalog {
-
+ 
     &__top {
-        margin-bottom: 40px;
+        @include adaptiv-value('margin-bottom', 40, 20, 1);
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -181,7 +198,7 @@ export default {
         align-items: center;
         margin-left: -10px;
         font-weight: 500;
-        font-size: 24px;
+        @include adaptiv-value('font-size', 24, 16, 1);
         line-height: 26px;
         color: #1B2559;
         transition: color 0.3s;
@@ -206,7 +223,7 @@ export default {
     &__inner {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        @include adaptiv-value('gap', 10, 15, 1);
     }
 }
 
@@ -217,19 +234,27 @@ export default {
     &__inner {
         background: #FFFFFF;
         border-radius: 0px 0px 16px 16px;
-        padding: 20px 40px 30px 45px;
+
+        @include adaptiv-value('padding-top', 20, 23, 1);
+        @include adaptiv-value('padding-right', 40, 25, 1);
+        @include adaptiv-value('padding-bottom', 30, 15, 1);
+        @include adaptiv-value('padding-left', 45, 15, 1);
     }
 
     &__top {
         background: #1294F2;
         border-radius: 16px;
-        padding: 28px 48px;
+        @include adaptiv-value('padding-top', 28, 16, 1);
+        @include adaptiv-value('padding-right', 48, 22, 1);
+        @include adaptiv-value('padding-bottom', 28, 16, 1);
+        @include adaptiv-value('padding-left', 48, 22, 1);
     }
+
 
     &__top-text {
         font-weight: 500;
-        font-size: 20px;
-        line-height: 24px;
+        @include adaptiv-value('font-size', 20, 16, 1);
+        @include adaptiv-value('line-height', 24, 18, 1);
         color: #FFFFFF;
     }
 
@@ -240,21 +265,20 @@ export default {
         line-height: 24px;
         color: #60678B;
 
+        @include adaptiv-value('font-size', 16, 14, 1);
+  
+
     }
 
     &__buttons {
         display: flex;
-        gap: 25px;
+        @include adaptiv-value('gap', 25, 20, 1);
         justify-content: flex-end;
     }
 
     &__buttons-link {
         font-weight: 500;
-        font-size: 16px;
         line-height: 24px;
-        padding: 10px;
-        width: 160px;
-        max-width: 160px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -262,6 +286,10 @@ export default {
         color: #1294F2;
         border: 1px solid #1294F2;
         border-radius: 6px;
+        @include adaptiv-value('font-size', 16, 14, 1);
+        @include adaptiv-value('width', 160, 115, 1);
+        @include adaptiv-value('max-width', 160, 115, 1);
+        @include adaptiv-value('padding', 10, 4, 1);
 
         transition: background 0.3s, color 0.3s;
         &:hover {
@@ -272,11 +300,7 @@ export default {
 
     &__buttons-button {
         font-weight: 500;
-        font-size: 16px;
         line-height: 24px;
-        padding: 10px;
-        width: 140px;
-        max-width: 140px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -285,6 +309,11 @@ export default {
         color: #fff;
         border: 1px solid #1294F2;
         border-radius: 6px;
+
+        @include adaptiv-value('font-size', 16, 14, 1);
+        @include adaptiv-value('width', 140, 115, 1);
+        @include adaptiv-value('max-width', 140, 115, 1);
+        @include adaptiv-value('padding', 10, 4, 1);
 
         border: 1px solid transparent;
         transition: background 0.3s, color 0.3s, border 0.3s;
@@ -319,25 +348,42 @@ export default {
 
     &__box-title {
         font-weight: 600;
-        font-size: 20px;
-        line-height: 24px;
         margin-bottom: 15px;
         color: #1B2559;
+
+        @include adaptiv-value('font-size', 20, 16, 1);
+        @include adaptiv-value('line-height', 24, 18, 1);
     }
 
     &__box-text {
         font-weight: 400;
-        font-size: 16px;
-        line-height: 24px;
+        @include adaptiv-value('font-size', 16, 14, 1);
+        @include adaptiv-value('line-height', 24, 24, 1);
         margin-bottom: 10px;
         color: #96A5B8;
     }
 
     &__text {
         font-weight: 600;
-        font-size: 18px;
         line-height: 24px;
         color: #1294F2;
+
+        @include adaptiv-value('font-size', 18, 14, 1);
+    }
+}
+@media (max-width: 1300px) {
+    .catalog__top-link {
+        margin-left: unset;
+    }
+}
+@media (max-width: 700px) {
+    .catalog__top-text {
+        display: none;
+    }
+}
+@media (max-width: 550px) {
+    .catalog-item__buttons {
+        justify-content: center;
     }
 }
 </style>

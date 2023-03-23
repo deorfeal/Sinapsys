@@ -1,8 +1,8 @@
 <template>
     <div class="big-wrapper">
-        <Aside :activeLink="1" />
+        <Aside :activeLink="1" :sideMenuActive="this.sideMenuActive"/>
         <div class="wrapper">
-            <Header :searchIsActive="false" :title="'Мои Курсы'"/>
+            <Header :searchIsActive="false" :title="'Мои Курсы'" @openSideMenu="SideMenuToActive"/>
             <main class="main main-curs-preview">
                 <section class="main__rurs-preview curs-preview">
                     <a class="curs-preview__link" href="#">
@@ -61,7 +61,12 @@
                                 </span>
                             </div>
                             <a class="curs-preview-top__column-link" href="#">
-                                Начать
+                                <span>
+                                    Начать
+                                </span>
+                                <span>
+Продолжить
+                                </span>
                             </a>
                         </div>
                     </div>
@@ -198,12 +203,31 @@ export default {
         Header,
         Footer
     },
+    data() {
+        return {
+            sideMenuActive: false,
+        }
+    },
+    methods: {
+        SideMenuToActive() {
+            if (this.sideMenuActive == true) {
+                this.sideMenuActive = false
+            } else {
+                this.sideMenuActive = true
+            }
+        }
+    }
 }
 </script>
 
 <style lang="scss">
+@import '../../assets/scss/vars';
+
 .main-curs-preview {
-    padding: 30px 55px 110px 55px;
+    @include adaptiv-value('padding-top', 30, 30, 1);
+    @include adaptiv-value('padding-right', 55, 30, 1);
+    @include adaptiv-value('padding-bottom', 110, 30, 1);
+    @include adaptiv-value('padding-left', 55, 30, 1);
 }
 
 // 
@@ -216,17 +240,20 @@ export default {
         gap: 10px;
 
         font-weight: 500;
-        font-size: 24px;
+        @include adaptiv-value('font-size', 24, 16, 1);
         line-height: 24px;
         color: #1B2559;
-        margin-bottom: 40px;
+        @include adaptiv-value('margin-bottom', 40, 35, 1);
         transition: color 0.3s;
+
         &:hover {
             color: #1294F2;
+
             svg path {
                 fill: #1294F2;
             }
         }
+
         svg path {
             transition: fill 0.3s;
         }
@@ -234,11 +261,12 @@ export default {
 }
 
 .curs-preview-top {
-    margin-bottom: 40px;
+    @include adaptiv-value('margin-bottom', 40, 5, 1);
 
     &__wrapper {
         display: flex;
-        gap: 50px;
+        @include adaptiv-value('gap', 50, 10, 1);
+        justify-content: flex-start;
     }
 
     &__wrap {
@@ -248,7 +276,12 @@ export default {
         justify-content: space-between;
     }
 
-    &__img {}
+    &__img {
+        object-fit: cover;
+        border-radius: 16px;
+        @include adaptiv-value('width', 365, 165, 1);
+        @include adaptiv-value('height', 192, 135, 1);
+    }
 
     &__inner {
         display: flex;
@@ -261,7 +294,7 @@ export default {
 
     &__row-text {
         font-weight: 400;
-        font-size: 16px;
+        @include adaptiv-value('font-size', 16, 12, 1);
         line-height: 24px;
         text-align: right;
         color: #1B2559;
@@ -292,23 +325,24 @@ export default {
 
     &__date {
         font-weight: 500;
-        font-size: 20px;
+        @include adaptiv-value('font-size', 20, 12, 1);
+        @include adaptiv-value('margin-bottom', 25, 0, 1);
         line-height: 24px;
         color: #1294F2;
-        margin-bottom: 25px;
     }
 
     &__title {
         font-weight: 500;
-        font-size: 28px;
         line-height: 32px;
         color: #1B2559;
-        margin-bottom: 30px;
+
+        @include adaptiv-value('font-size', 28, 14, 1);
+        @include adaptiv-value('margin-bottom', 30, 0, 1);
     }
 
     &__subtitle {
         font-weight: 500;
-        font-size: 24px;
+        @include adaptiv-value('font-size', 24, 10, 1);
         line-height: 26px;
         color: #96A5B8;
     }
@@ -320,13 +354,12 @@ export default {
     align-items: flex-end;
 
     &__link {
-        margin-bottom: 25px;
-        padding: 16px;
+        @include adaptiv-value('font-size', 20, 16, 1);
+        @include adaptiv-value('margin-bottom', 25, 15, 1);
         background: #1294F2;
         border-radius: 6px;
-
+        @include adaptiv-value('padding', 16, 6, 1);
         font-weight: 500;
-        font-size: 20px;
         line-height: 24px;
         width: 230px;
         max-width: 230px;
@@ -339,6 +372,7 @@ export default {
 
         border: 1px solid transparent;
         transition: background 0.3s, color 0.3s, border 0.3s;
+
         &:hover {
             background: #fff;
             color: #1294F2;
@@ -348,10 +382,11 @@ export default {
 
     &__text {
         font-weight: 500;
-        font-size: 20px;
+        @include adaptiv-value('font-size', 20, 16, 1);
+        @include adaptiv-value('margin-bottom', 30, 0, 1);
         line-height: 24px;
         color: #96A5B8;
-        margin-bottom: 30px;
+        text-align: right;
     }
 
     &__row {}
@@ -371,17 +406,18 @@ export default {
 
     &__text {
         font-weight: 600;
-        font-size: 24px;
         line-height: 26px;
-        margin-bottom: 25px;
         color: #1B2559;
+
+        @include adaptiv-value('font-size', 24, 16, 1);
+        @include adaptiv-value('margin-bottom', 25, 10, 1);
     }
 
     &__subtext {
         font-weight: 400;
-        font-size: 20px;
+        @include adaptiv-value('font-size', 20, 12, 1);
+        @include adaptiv-value('margin-bottom', 40, 25, 1);
         line-height: 24px;
-        margin-bottom: 40px;
         color: #60678B;
     }
 }
@@ -390,10 +426,11 @@ export default {
 
     &__text {
         font-weight: 600;
-        font-size: 24px;
         line-height: 26px;
         margin-bottom: 15px;
         color: #1B2559;
+
+        @include adaptiv-value('font-size', 24, 16, 1);
     }
 
     &__inner {
@@ -405,18 +442,23 @@ export default {
 
 .curs-preview-bottom-item {
     display: flex;
-    gap: 35px;
     align-items: center;
+    @include adaptiv-value('gap', 35, 15, 1);
 
-    &__img {}
+    &__img {
+        object-fit: cover;
+        @include adaptiv-value('width', 297, 167, 1);
+        @include adaptiv-value('height', 127, 94, 1);
+        border-radius: 6px;
+    }
 
     &__box {}
 
     &__box-title {
         font-weight: 500;
-        font-size: 20px;
-        line-height: 24px;
-        margin-bottom: 15px;
+        @include adaptiv-value('font-size', 20, 12, 1);
+        @include adaptiv-value('line-height', 24, 15, 1);
+        @include adaptiv-value('margin-bottom', 15, 2, 1);
 
         color: #1B2559;
     }
@@ -427,11 +469,65 @@ export default {
 
     &__box-text {
         font-weight: 400;
-        font-size: 16px;
+        @include adaptiv-value('font-size', 16, 10, 1);
         line-height: 24px;
         color: #60678B;
     }
 }
 
+@media (max-width: 800px) {
+    .curs-preview-top-content {
+        display: none;
+    }
+
+    .curs-preview-top__row {
+        display: none;
+    }
+
+    .curs-preview-top__column {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .curs-preview-top__column-text {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 24px;
+        text-align: right;
+        color: #1B2559;
+        margin-bottom: 20px;
+    }
+
+    .curs-preview-top__column-row {
+        height: 6px;
+        width: 100%;
+        background: #E9EDF7;
+        border-radius: 15px;
+        margin-bottom: 15px;
+    }
+
+    .curs-preview-top__column-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #1294F2;
+        border-radius: 10px;
+        padding: 12px;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 24px;
+        color: #FFFFFF;
+        span:last-child {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .curs-preview-bottom-item {
+        align-items: flex-start;
+    }
+}
 
 // // </style>

@@ -1,8 +1,8 @@
 <template>
     <div class="big-wrapper">
-        <Aside :activeLink="3" />
+        <Aside :activeLink="3" :sideMenuActive="this.sideMenuActive"/>
         <div class="wrapper">
-            <Header :searchIsActive="false" :title="'Настройки'" />
+            <Header :searchIsActive="false" :title="'Настройки'" @openSideMenu="SideMenuToActive" />
             <main class="main main-profile main-settings">
                 <form class="main__profile profile" action="#">
                     <div class="profile__info profile-info">
@@ -13,6 +13,10 @@
                                 <h2 class="profile-info-box__column-title">
                                     Аида Кожабай
                                 </h2>
+                                <p class="profile-info-box__column-text">
+                                    Возраст:
+                                    <span>27 лет</span>
+                                </p>
                                 <p class="profile-info-box__column-text">
                                     Должность:
                                     <span>Менеджер</span>
@@ -27,6 +31,7 @@
                         </a>
                     </div>
                     <SettingsOfProfileVue @clickOnButton="changedInfo" />
+                    <button class="profile__btn" type="submit">Сохранить</button>
                 </form>
             </main>
             <Footer />
@@ -46,15 +51,29 @@ export default {
         Footer,
         SettingsOfProfileVue,
     },
+    data() {
+        return {
+            sideMenuActive: false,
+        }
+    },
     methods: {
-        changedInfo() {
+          changedInfo() {
+        },
+        SideMenuToActive() {
+            if (this.sideMenuActive == true) {
+                this.sideMenuActive = false
+            } else {
+                this.sideMenuActive = true
+            }
         }
     }
+    
 }
 </script>
 
 
 <style lang="scss">
+@import '../../assets/scss/vars';
 .profile-info__btn {
     font-weight: 500;
     font-size: 20px;
@@ -82,6 +101,39 @@ export default {
 .main-settings {
     .profile-info {
         padding: 40px 30px 40px 35px;
+        @include adaptiv-value('padding-top', 40, 30, 1);
+        @include adaptiv-value('padding-right', 40, 25, 1);
+        @include adaptiv-value('padding-bottom', 40, 30, 1);
+        @include adaptiv-value('padding-left', 35, 25, 1);
+        @include adaptiv-value('margin-bottom', 35, 25, 1);
+    }
+}
+@media (max-width: 1700px) {
+    .main-settings {
+        .profile-info {
+            flex-direction: row;
+        }
+    }
+}
+@media (max-width: 650px) {
+    .main-settings {
+        .profile-info {
+            flex-direction: column;
+            gap: 30px;
+        }
+    }
+}
+@media (max-width: 550px) {
+    .main-settings {
+        .profile-info__btn {
+            display: none;
+        }
+        .profile-settings__btn {
+            display: none;
+        }
+        .profile-settings {
+            padding-bottom: 30px;
+        }
     }
 }
 </style>

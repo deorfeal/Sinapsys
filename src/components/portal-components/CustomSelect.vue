@@ -49,14 +49,15 @@ export default {
 };
 </script>
   
-<style>
+<style lang="scss">
+@import '../../assets/scss/vars';
 .custom-select {
     position: relative;
-    width: 330px;
+    @include adaptiv-value('width', 330, 175, 1);
+    @include adaptiv-value('height', 50, 35, 1);
+    @include adaptiv-value('min-height', 50, 35, 1);
     text-align: left;
     outline: none;
-    height: 50px;
-    min-height: 50px;
     line-height: 35px;
     max-width: 330px;
 }
@@ -66,14 +67,16 @@ export default {
     border-radius: 4px;
     border: 1px solid #60678B;
     font-weight: 400;
-    font-size: 16px;
+    @include adaptiv-value('font-size', 16, 14, 1);
     line-height: 24px;
     color: #60678B;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    padding-left: 16px;
     cursor: pointer;
     user-select: none;
+
+    @include adaptiv-value('padding-top', 12, 6, 1);
+    @include adaptiv-value('padding-right', 10, 10, 1);
+    @include adaptiv-value('padding-bottom', 12, 6, 1);
+    @include adaptiv-value('padding-left', 16, 15, 1);
 }
 
 .custom-select .selected.open {

@@ -111,30 +111,34 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../../assets/scss/vars';
 .profile-settings {
     background: #FFFFFF;
     border-radius: 16px;
     position: relative;
-    padding: 30px 90px 105px 35px;
+
+    @include adaptiv-value('padding-top', 30, 20, 1);
+    @include adaptiv-value('padding-right', 90, 25, 1);
+    @include adaptiv-value('padding-bottom', 105, 60, 1);
+    @include adaptiv-value('padding-left', 35, 25, 1);
     display: flex;
     justify-content: space-between;
-    gap: 50px;
+    @include adaptiv-value('gap', 50, 25, 1);
 
     &__btn {
         font-weight: 500;
-        font-size: 20px;
         line-height: 24px;
-
+        @include adaptiv-value('font-size', 20, 14, 1);
         text-align: center;
-        padding: 12px;
+        @include adaptiv-value('padding', 12, 4, 1);
         background: #1294F2;
         border-radius: 6px;
         color: #FFFFFF;
         position: absolute;
-        bottom: 30px;
-        right: 90px;
-        width: 155px;
-        max-width: 155px;
+        @include adaptiv-value('width', 155, 120, 1);
+        @include adaptiv-value('max-width', 155, 120, 1);
+        @include adaptiv-value('right', 90, 25, 1);
+        @include adaptiv-value('bottom', 30, 20, 1);
 
         border: 1px solid transparent;
         transition: background 0.3s, color 0.3s, border 0.3s;
@@ -149,26 +153,26 @@ export default {
 .profile-settings-item {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    @include adaptiv-value('gap', 30, 25, 1);
 }
 
 .profile-settings-item-box {
     &__title {
         font-weight: 500;
-        font-size: 22px;
+        @include adaptiv-value('font-size', 22, 16, 1);
         line-height: 24px;
-        margin-bottom: 25px;
+        @include adaptiv-value('margin-bottom', 25, 15, 1);
         color: #1B2559;
 
     }
 }
 
 .profile-settings-item-box-row {
-    padding-left: 55px;
+    @include adaptiv-value('padding-left', 55, 0, 1);
     display: flex;
     align-items: center;
-    margin-bottom: 25px;
-    gap: 15px;
+    @include adaptiv-value('margin-bottom', 25, 15, 1);
+    @include adaptiv-value('gap', 15, 5, 1);
 
     &:last-child {
         margin-bottom: 0;
@@ -176,7 +180,7 @@ export default {
 
     &__text {
         font-weight: 400;
-        font-size: 20px;
+        @include adaptiv-value('font-size', 20, 14, 1);
         line-height: 24px;
         color: #60678B;
         width: 200px;
@@ -188,20 +192,41 @@ export default {
 
     &__input {
         font-weight: 400;
-        font-size: 16px;
+        @include adaptiv-value('font-size', 16, 14, 1);
         line-height: 24px;
         border: 1px solid #60678B;
         border-radius: 4px;
         color: #60678B;
-        padding: 12px 12px 12px 16px;
-        width: 330px;
+        @include adaptiv-value('padding-top', 12, 6, 1);
+        @include adaptiv-value('padding-right', 12, 10, 1);
+        @include adaptiv-value('padding-bottom', 12, 6, 1);
+        @include adaptiv-value('padding-left', 16, 15, 1);
+        @include adaptiv-value('width', 330, 175, 1);
 
         &::placeholder {
             font-weight: 400;
-            font-size: 16px;
+            @include adaptiv-value('font-size', 16, 14, 1);
             line-height: 24px;
             color: #60678B;
         }
+    }
+}
+@media (max-width: 1850px) {
+    .profile-settings {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media (max-width: 550px) {
+    .profile-settings {
+        margin-bottom: 25px;
+    }
+    .profile-settings-item-box-row__text {
+        max-width: 85px;
+    }
+    .profile-settings-item-box-row {
+        align-items: flex-start;
     }
 }
 </style>

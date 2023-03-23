@@ -334,6 +334,9 @@ export default {
     .header__burger {
         display: flex;
     }
+    .header__title {
+        margin-right: auto;
+    }
 }
 
 @media (max-width: 1000px) {
