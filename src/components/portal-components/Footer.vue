@@ -67,13 +67,12 @@ export default {
 .footer {
     @include adaptiv-value('padding-top', 15, 10, 1);
     @include adaptiv-value('padding-bottom', 60, 30, 1);
-    @include adaptiv-value('padding-right', 55, 30, 1);
+    @include adaptiv-value('padding-right', 65, 30, 1);
     @include adaptiv-value('padding-left', 55, 30, 1);
     background: #FFFFFF;
     display: flex;
     align-items: flex-start;
-    justify-content: space-between;
-
+    gap: 270px;
     &__box-copy {
         font-weight: 200;
         font-size: 12px;
@@ -143,12 +142,12 @@ export default {
     }
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1350px) {
     .footer {
-        @include adaptiv-value('gap', 30, 15, 1);
         justify-content: space-between;
+        @include adaptiv-value('gap', 30, 15, 1);
     }
-}
+} 
 
 @media (max-width: 800px) {
     .footer {

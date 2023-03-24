@@ -1,8 +1,8 @@
 <template>
     <div class="big-wrapper">
-        <Aside :activeLink="3" :sideMenuActive="this.sideMenuActive"/>
+        <Aside :activeLink="3" :sideMenuActive="this.sideMenuActive" :isAdmin="false"/>
         <div class="wrapper">
-            <Header :searchIsActive="false" :title="'Настройки'" @openSideMenu="SideMenuToActive" />
+            <Header :searchIsActive="false" :title="'Настройки'" @openSideMenu="SideMenuToActive" :isAdmin="false"/>
             <main class="main main-profile main-settings">
                 <form class="main__profile profile" action="#">
                     <div class="profile__info profile-info">

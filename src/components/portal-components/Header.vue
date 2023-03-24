@@ -47,7 +47,7 @@
                             Аида Кожабай
                         </p>
                         <p class="header-user-nav-box-user__column-subtext">
-                            пользователь
+                            {{firstCurrentText}}
                         </p>
                     </div>
                     <button class="header-user-nav-box-user__button" @click="openProfileWindow">
@@ -68,7 +68,7 @@
                                         fill="#1B2559" />
                                 </svg>
                                 <span>
-                                    Портал администратора
+                                   {{secondCurrentText}}
                                 </span>
                             </a>
                         </li>
@@ -113,7 +113,7 @@
 
 <script>
 export default {
-    props: ['searchIsActive', 'title'],
+    props: ['searchIsActive', 'title', 'isAdmin'],
     methods: {
         openProfileWindow() {
             if ( document.querySelector('.header-user-nav-box').classList.contains('header-user-nav-box--active') ) {
@@ -121,6 +121,25 @@ export default {
             } else {
                 document.querySelector('.header-user-nav-box').classList.add('header-user-nav-box--active')
             }
+        }
+    },
+    data() {
+        return {
+            firstCurrentText: '',
+            secondCurrentText: '',
+            firstText: 'администратор',
+            secondText: 'Портал пользователья',
+            thirdText: 'пользователь',
+            fourthText: 'Портал администратора',
+        }
+    },
+    mounted() {
+        if ( this.isAdmin == true ) {
+            this.firstCurrentText = this.firstText
+            this.secondCurrentText = this.secondText
+        } else {
+            this.firstCurrentText = this.thirdText
+            this.secondCurrentText = this.fourthText
         }
     }
 }
@@ -173,6 +192,21 @@ export default {
         padding: 17px 30px 17px 50px;
         border-radius: 16px;
         width: 100%;
+        font-size: 16px;
+        line-height: 17px;
+        font-weight: 500;
+        color: #96A5B8;
+        letter-spacing: 0.14px;
+        &::placeholder {
+            font-size: 16px;
+            line-height: 17px;
+            font-weight: 500;
+            color: #96A5B8;
+            letter-spacing: 0.14px;
+        }
+        &:focus::placeholder {
+            color: transparent;
+        }
     }
 
     &__form-btn {

@@ -1,8 +1,8 @@
 <template>
     <div class="big-wrapper">
-        <Aside :activeLink="1" :sideMenuActive="this.sideMenuActive"/>
+        <Aside :activeLink="1" :sideMenuActive="this.sideMenuActive" :isAdmin="false"/>
         <div class="wrapper">
-            <Header :searchIsActive="false" :title="'Мои Курсы'" @openSideMenu="SideMenuToActive"/>
+            <Header :searchIsActive="false" :title="'Мои Курсы'" @openSideMenu="SideMenuToActive" :isAdmin="false"/>
             <main class="main main-curs-preview">
                 <section class="main__rurs-preview curs-preview">
                     <a class="curs-preview__link" href="#">

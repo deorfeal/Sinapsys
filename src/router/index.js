@@ -24,6 +24,10 @@ import MyCourses from "@/views/portal/My-courses.vue";
 import VideoLesson from "@/views/portal/Video-lesson.vue";
 import TestLesson from "@/views/portal/Test-lesson.vue";
 import BigCatalog from "@/views/portal/Big-catalog.vue";
+import AdminMain from "@/views/administrator/Admin-main.vue";
+import AdminProfile from "@/views/administrator/Admin-profile.vue";
+import AdminCatalogPublish from "@/views/administrator/Admin-catalog-publish.vue";
+import NewCurs from "@/views/administrator/New-curs.vue";
 
 
 const routes = [{
@@ -136,6 +140,30 @@ const routes = [{
         name: "big-catalog",
         component: BigCatalog,
     },
+    {
+        path: "/admin-main",
+        name: "admin-main",
+        component: AdminMain,
+    },
+    {
+        path: "/admin-profile",
+        name: "admin-profile",
+        component: AdminProfile,
+    },
+
+    {
+        path: "/admin-catalog-publish",
+        name: "admin-catalog-publish",
+        component: AdminCatalogPublish,
+    },
+    {
+        path: "/new-curs",
+        name: "new-curs",
+        component: NewCurs,
+    },
+ 
+    
+    
 
 ];
 

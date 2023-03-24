@@ -1,8 +1,8 @@
 <template>
     <div class="big-wrapper">
-        <Aside :activeLink="1" :sideMenuActive="this.sideMenuActive"/>
+        <Aside :activeLink="1" :sideMenuActive="this.sideMenuActive" :isAdmin="false"/>
         <div class="wrapper">
-            <Header :searchIsActive="false" :title="'Каталог'" @openSideMenu="SideMenuToActive"/>
+            <Header :searchIsActive="false" :title="'Каталог'" @openSideMenu="SideMenuToActive" :isAdmin="false"/>
             <main class="main main-catalog">
                 <section class="main__catalog catalog">
                     <div class="catalog__top">

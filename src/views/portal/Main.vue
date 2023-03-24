@@ -1,8 +1,8 @@
 <template>
     <div class="big-wrapper">
-        <Aside :activeLink="0" :sideMenuActive="this.sideMenuActive" />
+        <Aside :activeLink="0" :sideMenuActive="this.sideMenuActive" :isAdmin="false"/>
         <div class="wrapper">
-            <Header :searchIsActive="true" :title="'Главная'" @openSideMenu="SideMenuToActive" />
+            <Header :searchIsActive="true" :title="'Главная'" @openSideMenu="SideMenuToActive" :isAdmin="false"/>
             <main class="main main-main">
                 <section class="main__top main-top">
                     <div class="main-top__level main-top-level">
@@ -335,6 +335,7 @@
                         </div>
                     </div>
                 </section>
+                <a ref="forPopup" data-fancybox class="main__for-popup" href="#terms-popup"></a>
                 <div class="main__terms-popup terms-popup" id="terms-popup">
                     <div class="terms-popup__inner">
                         <h2 class="terms-popup__title">
@@ -440,6 +441,9 @@ export default {
                 enable: false
             },
         })
+        setTimeout(()=> {
+            this.$refs.forPopup.click()
+        }, 1000)
     },
     data() {
         return {
@@ -806,17 +810,18 @@ export default {
     &__wrap {
         border-radius: 100%;
         position: relative;
-        &::before {
-            content: '';
-            width: 100%;
-            height: 100%;
-            background: transparent;
-            border: 10px solid #CECECE;
-            position: absolute;
-            top: 0;
-            border-radius: 100%;
-            left: 0;
-        }
+
+        //&::before {
+        //    content: '';
+        //    width: 100%;
+        //    height: 100%;
+        //    background: transparent;
+        //    border: 10px solid #CECECE;
+        //    position: absolute;
+        //    top: 0;
+        //    border-radius: 100%;
+        //    left: 0;
+        //}
     }
 
     &__info {
@@ -1077,18 +1082,17 @@ export default {
         gap: 25px;
     }
 
-    .lessons__inner {
-        flex-wrap: wrap;
-        justify-content: flex-start;
+    //.lessons__inner {
+    //    flex-wrap: wrap;
+    //  justify-content: flex-start;
+    // } 
+    .main-main {
+        padding-left: 30px;
+        padding-right: 30px;
     }
 }
 
 @media (max-width: 1800px) {
-    .main-top {
-        flex-wrap: wrap;
-        justify-content: flex-start;
-    }
-
     .main-top-rait__list {
         width: 100%;
     }
@@ -1102,11 +1106,160 @@ export default {
     }
 }
 
-@media (max-width: 1400px) {
-    .main-top-rait {
+@media (max-width: 1750px) {
+    .lessons-item {
+        max-width: 400px;
+    }
+    .lessons-item__img {
         width: 100%;
+    }
+    .main-main {
+        .main-top-level {
+            max-width: 400px;
+            flex-grow: 1;
+        }
+        .main-top-level__row {
+            width: 100%;
+        }
+    }
+    .main-top-advise {
+        max-width: 400px;
+    }
+    .main-top { 
+        gap: 10px;
+    }
+    .main-top-rait {
+        max-width: 400px;
+    }
+
+    .main-top-rait-row__buttons {
+        display: flex;
+        gap: 15px;
+    }
+    .main-top-rait {
+        padding-right: 20px;
+    }
+
+    .main-top-rait-row {
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 1600px) {
+    .main-top-rait {
+        max-width: 380px;
+    }
+    .main-top-rait__title {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    .main-top-rait-row__buttons-btn {
+        font-size: 16px;
+    }
+    .main-top-rait-row__text {
+        font-size: 16px;
+    }
+    .main-top-rait__list-item {
+        font-size: 16px;
+    }
+
+    .main-main {
+        .main-top-level {
+            max-width: 380px;
+        }
+    
+        .main-top-level__row span {
+            width: 200px;
+        }
+    }
+
+    .main-top-advise {
+        max-width: 380px;
+    }
+
+    .lessons-item {
+        max-width: 380px;
+    }
+}
+
+@media (max-width: 1550px) {
+    .main-top-rait {
+        max-width: 350px;
+    }
+    .main-main {
+        .main-top-level {
+            max-width: 350px;
+        }
+    }
+    .main-top-advise {
+        max-width: 350px;
+    }
+    .lessons-item {
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .main-top {
+        gap: 25px;
+    }
+    .lessons-item {
+        max-width: unset;
+    }
+    .lessons-item__img {
+        width: unset;
+    }
+    .lessons-item__inner {
+        max-width: unset;
+        justify-content: space-between;
+        width: 100%;
+        margin-right: unset;
+    }
+        .main-top {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+     }
+     .main-top-rait-row {
+        justify-content: unset;
+     }
+     .main-top-rait__title {
+        @include adaptiv-value('font-size', 24, 20, 1);
+        @include adaptiv-value('margin-bottom', 40, 20, 1);
+     }
+     .main-top-rait-row__buttons-btn {
+        @include adaptiv-value('font-size', 20, 16, 1);
+     }
+     .main-top-rait-row__text {
+        @include adaptiv-value('font-size', 20, 16, 1);
+     }
+     .main-top-rait__list-item {
+        @include adaptiv-value('gap', 15, 3, 1);
+        @include adaptiv-value('font-size', 20, 16, 1);
+     }
+     .main-top-rait-row {
+        max-width: 370px;
+        justify-content: space-between;
+     }
+     .main-main {
+         .main-top-level__row {
+            @include adaptiv-value('width', 355, 265, 1);
+         }
+         .main-top-level {
+            width: unset;
+         }
+     }
+    .main-top-rait {
         max-width: 100%;
     }
+
+    .main-top-advise {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    
 
     .main-main {
         .main-top-level {
@@ -1138,11 +1291,17 @@ export default {
     .lessons-item__inner {
         margin-left: unset;
     }
+
+    .lessons-item__img {
+        margin-bottom: 0;
+    }
 }
 
 @media (max-width: 1300px) {
+    .lessons-item__inner {
+ 
+    }
     .main-top-rait {
-        max-width: 450px;
     }
 
     .main-main {
@@ -1203,9 +1362,34 @@ export default {
         display: flex;
         justify-content: center;
     }
+    .lessons-item__inner {
+        justify-content: center;
+    }
+    .lessons-item__img {
+        @include adaptiv-value('margin-bottom', 20, 15, 1);
+    }
+}
+
+@media (max-width: 750px) {
+    .main-main {
+        .main-top-level {
+            width: 100%;
+        }
+    }
+    .main-top-rait-row {
+        justify-content: space-between;
+        max-width: 100%;
+    }
 }
 
 @media (max-width: 550px) {
+    .main-top-advise {
+        align-items: flex-start;
+    }
+    .lessons-item__inner {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
     .lessons-item {
         padding: 0 0 20px 0;
     }

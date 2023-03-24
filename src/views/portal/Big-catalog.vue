@@ -1,8 +1,8 @@
 <template>
     <div class="big-wrapper">
-        <Aside :activeLink="2" :sideMenuActive="this.sideMenuActive"/>
+        <Aside :activeLink="2" :sideMenuActive="this.sideMenuActive" :isAdmin="false"/>
         <div class="wrapper">
-            <Header :searchIsActive="false" :title="'Каталог'" @openSideMenu="SideMenuToActive"/>
+            <Header :searchIsActive="false" :title="'Каталог'" @openSideMenu="SideMenuToActive" :isAdmin="false"/>
             <main class="main main-my-courses main-big-catalog">
                 <section class="main__my-courses-top my-courses-top">
                     <div class="my-courses-top__select my-courses-top-select">
@@ -309,18 +309,18 @@
                     </div>
                 </section>
                 <div class="main__big-catalog-bottom big-catalog-bottom">
-                    <div class="big-catalog-bottom__box">
-                        <p class="big-catalog-bottom__box-text"> 
+                    <div class="big-catalog-bottom__box big-catalog-bottom-box">
+                        <p class="big-catalog-bottom__box-text">
 
                         </p>
                         <!--  -->
                     </div>
                     <div class="big-catalog-bottom__buttons">
                         <button class="big-catalog-bottom__buttons-btn">
-                            
+
                         </button>
                     </div>
-                </div>  
+                </div>
             </main>
             <Footer />
         </div>
@@ -489,6 +489,19 @@ export default {
         max-width: unset;
     }
 
+    .lessons-item {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .lessons-item__inner {
+        flex-grow: 1;
+    }
+
+    .lessons-item__box {
+        flex-grow: 1;
+    }
+
     .lessons-item__inner {
         flex-direction: column;
         gap: 20px;
@@ -540,6 +553,7 @@ export default {
         border: 1px solid #1294F2;
         border-radius: 6px;
         transition: background 0.3s, color 0.3s;
+
         &:hover {
             background: transparent;
             color: #1294F2;
@@ -577,11 +591,25 @@ export default {
             border-radius: 16px;
         }
 
+    }
+
+}
+
+@media(max-width: 1400px) {
+    .main-big-catalog {
         .lessons-item-content {
             justify-content: flex-end;
         }
+        .lessons-item {
+            flex-direction: row;
+        }
+        .lessons-item__img {
+            width: unset;
+        }
+        .lessons__inner {
+            gap: 25px;
+        }
     }
-
 }
 
 @media (max-width: 1050px) {
@@ -603,6 +631,14 @@ export default {
         .lessons-item {
             gap: 0;
         }
+        .lessons-item {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .lessons-item__img {
+            margin-right: auto;
+        }
     }
 }
 
@@ -621,11 +657,18 @@ export default {
             order: 2;
             margin-left: 55px;
         }
+
         .lessons-item__box-text {
             color: #60678B;
         }
+
         .lessons-item-content {
             justify-content: center;
+        }
+        .lessons-item__img {
+            margin-right: auto;
+            margin-left: auto;
+            width: 100%;
         }
     }
 

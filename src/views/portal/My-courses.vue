@@ -1,8 +1,8 @@
 <template>
     <div class="big-wrapper">
-        <Aside :activeLink="1" :sideMenuActive="this.sideMenuActive"/>
+        <Aside :activeLink="1" :sideMenuActive="this.sideMenuActive" :isAdmin="false"/>
         <div class="wrapper">
-            <Header :searchIsActive="false" :title="'Мои курсы'" @openSideMenu="SideMenuToActive"/>
+            <Header :searchIsActive="false" :title="'Мои курсы'" @openSideMenu="SideMenuToActive" :isAdmin="false"/>
             <main class="main main-my-courses">
                 <section class="main__my-courses-top my-courses-top">
                     <div class="my-courses-top__box">
@@ -729,10 +729,6 @@ export default {
         }
     }
 
-    .lessons__inner {
-        justify-content: flex-start;
-    }
-
     .lessons__wrap {
         margin-bottom: 40px;
     }
@@ -745,6 +741,17 @@ export default {
 
     .lessons__inner {
         display: none;
+        gap: 55px;
+        justify-content: flex-start;
+    }
+
+    .lessons-item {
+        width: 100%;
+        max-width: 450px;
+    }
+
+    .lessons-item__img {
+        width: 100%;
     }
 
     .lessons__inner--active {
@@ -761,6 +768,7 @@ export default {
 }
 
 .my-courses-top {
+    gap: 35px;
     @include adaptiv-value('margin-bottom', 50, 25, 1);
     display: flex;
     align-items: center;
@@ -938,6 +946,13 @@ export default {
 
 .lessons__wrap--active {
     display: block;
+}
+@media (max-width: 1400px) {
+    .main-my-courses {
+        .lessons__inner {
+            gap: 25px;
+        }
+    }
 }
 @media (max-width: 1300px) {
     .main-my-courses {
