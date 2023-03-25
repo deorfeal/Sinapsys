@@ -1,5 +1,5 @@
 <template>
-    <div class="custom-select-lang" :tabindex="tabindex" @blur="open = false">
+    <div class="custom-select-new-curs" :tabindex="tabindex" @blur="open = false">
         <div class="selected" :class="{ open: open }" @click="open = !open">
             {{ selected }}
         </div>
@@ -51,20 +51,20 @@ export default {
   
 <style lang="scss">
 @import '../../assets/scss/vars';
-.custom-select-lang {
+.custom-select-new-curs {
     position: relative;
-    @include adaptiv-value('width', 330, 175, 1);
+    @include adaptiv-value('width', 390, 175, 1);
     @include adaptiv-value('height', 50, 35, 1);
     @include adaptiv-value('min-height', 50, 35, 1);
     text-align: left;
     outline: none;
     line-height: 35px;
-    max-width: 105px;
+    max-width: 390px;
     background: #fff;
     
 }
 
-.custom-select-lang .selected {
+.custom-select-new-curs .selected {
     background-color: transparent;
     border: 1px solid #96A5B8;
     border-radius: 4px;
@@ -75,17 +75,17 @@ export default {
     cursor: pointer;
     user-select: none;
 
-    @include adaptiv-value('padding-top', 8, 8, 1);
-    @include adaptiv-value('padding-right', 13, 13, 1);
-    @include adaptiv-value('padding-bottom', 8, 8, 1);
+    @include adaptiv-value('padding-top', 12, 8, 1);
+    @include adaptiv-value('padding-right', 12, 13, 1);
+    @include adaptiv-value('padding-bottom', 12, 8, 1);
     @include adaptiv-value('padding-left', 16, 16, 1);
 }
 
-.custom-select-lang .selected.open {
+.custom-select-new-curs .selected.open {
     border-radius: 6px 6px 0px 0px;
 }
 
-.custom-select-lang .selected:after {
+.custom-select-new-curs .selected:after {
     position: absolute;
     content: "";
     background-image: url(../../../public/images/reg-two-arrow.svg);
@@ -98,12 +98,12 @@ export default {
     transform: translateY(-50%);
 }
 
-.custom-select-lang .selected.open::after {
+.custom-select-new-curs .selected.open::after {
     transform: translateY(-20%) rotate(180deg);
     top: 11px !important;
 }
 
-.custom-select-lang .items {
+.custom-select-new-curs .items {
     color: #2C2C2C;
     border-radius: 0px 0px 6px 6px;
     overflow: hidden;
@@ -118,7 +118,7 @@ export default {
  
 }
 
-.custom-select-lang .items div {
+.custom-select-new-curs .items div {
     font-size: 16px;
     line-height: 24px;
     color: #96A5B8;
@@ -129,7 +129,7 @@ export default {
     transition: background 0.3s;
 }
 
-.custom-select-lang .items div:hover {
+.custom-select-new-curs .items div:hover {
     background-color: #f5f5f5;
 }
 

@@ -2,7 +2,7 @@
     <div class="big-wrapper">
         <Aside :activeLink="1" :sideMenuActive="this.sideMenuActive" :isAdmin="true" />
         <div class="wrapper">
-            <Header :searchIsActive="true" :title="'Каталог'" @openSideMenu="SideMenuToActive" :isAdmin="true" />
+            <Header :searchIsActive="false" :title="'Каталог'" @openSideMenu="SideMenuToActive" :isAdmin="true" />
             <main class="main main-publish">
                 <section class="main__publish-top publish-top">
                     <a class="publish-top__link" href="#">
@@ -551,10 +551,17 @@ export default {
 
 .publish-top-box {
     position: relative;
-
+    cursor: pointer;
+    &:hover {
+        .publish-top-box__btn {
+            opacity: 1;
+        }  
+    }
     &__img {}
 
     &__btn {
+        opacity: 0;
+        transition: opacity 0.3s;
         display: flex;
         gap: 10px;
         align-items: center;

@@ -28,7 +28,14 @@ import AdminMain from "@/views/administrator/Admin-main.vue";
 import AdminProfile from "@/views/administrator/Admin-profile.vue";
 import AdminCatalogPublish from "@/views/administrator/Admin-catalog-publish.vue";
 import NewCurs from "@/views/administrator/New-curs.vue";
-
+import NewLesson from "@/views/administrator/New-lesson.vue";
+import NewLessonEnd from "@/views/administrator/New-lesson-end.vue";
+import NewTest from "@/views/administrator/New-test.vue";
+import NewQuestion from "@/views/administrator/New-question.vue";
+import Import from "@/views/administrator/Import.vue";
+import UserInfo from "@/views/administrator/User-info.vue";
+import AuthorInfo from "@/views/administrator/Author-info.vue";
+import CompanySettings from "@/views/administrator/Company-settings.vue";
 
 const routes = [{
         path: "/",
@@ -150,7 +157,6 @@ const routes = [{
         name: "admin-profile",
         component: AdminProfile,
     },
-
     {
         path: "/admin-catalog-publish",
         name: "admin-catalog-publish",
@@ -161,7 +167,49 @@ const routes = [{
         name: "new-curs",
         component: NewCurs,
     },
- 
+    {
+        path: "/new-lesson",
+        name: "new-lesson",
+        component: NewLesson,
+    },
+
+    {
+        path: "/new-lesson-end",
+        name: "new-lesson-end",
+        component: NewLessonEnd,
+    },
+    {
+        path: "/new-test",
+        name: "new-test",
+        component: NewTest,
+    },
+    {
+        path: "/new-question",
+        name: "new-question",
+        component: NewQuestion,
+    },
+    {
+        path: "/import",
+        name: "import",
+        component: Import,
+    },
+    {
+        path: "/user-info",
+        name: "user-info",
+        component: UserInfo,
+    },
+    {
+        path: "/author-info",
+        name: "author-info",
+        component: AuthorInfo,
+    },
+    {
+        path: "/company-settings",
+        name: "company-settings",
+        component: CompanySettings,
+    },
+    
+    
     
     
 

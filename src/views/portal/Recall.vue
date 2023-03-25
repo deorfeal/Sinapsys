@@ -138,7 +138,9 @@ export default {
         color: #96A5B8;
         padding: 12px 16px;
         @include adaptiv-value('margin-bottom', 25, 15, 1);
-
+        &:focus::placeholder {
+            opacity: 0;
+        }
         &::placeholder {
             font-weight: 400;
             @include adaptiv-value('font-size', 16, 12, 1);

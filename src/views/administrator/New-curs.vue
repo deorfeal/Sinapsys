@@ -2,7 +2,7 @@
     <div class="big-wrapper">
         <Aside :activeLink="1" :sideMenuActive="this.sideMenuActive" :isAdmin="true" />
         <div class="wrapper">
-            <Header :searchIsActive="true" :title="'Каталог'" @openSideMenu="SideMenuToActive" :isAdmin="true" />
+            <Header :searchIsActive="false" :title="'Каталог'" @openSideMenu="SideMenuToActive" :isAdmin="true" />
             <main class="main main-new-curs">
                 <div class="main__new-curs-top new-curs-top">
                     <a class="new-curs-top__link" href="#">
@@ -89,9 +89,9 @@
                                     Сертификация
                                 </p>
                                 <label class="container">
-                                    <a href="#">
-                                        Выдать сертификат после завершения курса
-                                    </a>
+
+                                    Выдать сертификат после завершения курса
+
                                     <input type="checkbox" checked="checked">
                                     <span class="checkmark"></span>
                                 </label>
@@ -101,9 +101,9 @@
                                     Переназначение курса
                                 </p>
                                 <label class="container">
-                                    <a href="#">
-                                        Автоматически переназначать курс
-                                    </a>
+
+                                    Автоматически переназначать курс
+
                                     <input type="checkbox" checked="checked">
                                     <span class="checkmark"></span>
                                 </label>
@@ -113,21 +113,9 @@
                                     Геймификация
                                 </p>
                                 <label class="container">
-                                    <a href="#">
-                                        Начислить за прохождение курса:
-                                    </a>
-                                    <input type="checkbox" checked="checked">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </div>
-                            <div class="new-curs-content__item new-curs-content-item">
-                                <p class="new-curs-content-item__text">
-                                    Самостоятельная регистрация
-                                </p>
-                                <label class="container">
-                                    <a href="#">
-                                        Разрешить учащимся самостоятельно записываться на курс из Каталога
-                                    </a>
+
+                                    Начислить за прохождение курса:
+
                                     <input type="checkbox" checked="checked">
                                     <span class="checkmark"></span>
                                 </label>
@@ -136,12 +124,25 @@
                             </div>
                             <div class="new-curs-content__item new-curs-content-item">
                                 <p class="new-curs-content-item__text">
+                                    Самостоятельная регистрация
+                                </p>
+                                <label class="container">
+
+                                    Разрешить учащимся самостоятельно записываться на курс из Каталога
+
+                                    <input type="checkbox" checked="checked">
+                                    <span class="checkmark"></span>
+                                </label>
+
+                            </div>
+                            <div class="new-curs-content__item new-curs-content-item">
+                                <p class="new-curs-content-item__text">
                                     Досрочная сдача
                                 </p>
                                 <label class="container">
-                                    <a href="#">
-                                        Досрочная сдача тестов разрешена
-                                    </a>
+
+                                    Досрочная сдача тестов разрешена
+
                                     <input type="checkbox" checked="checked">
                                     <span class="checkmark"></span>
                                 </label>
@@ -158,7 +159,7 @@
                                 Когда учащийся добавлен в группу
 
                             </p>
-                            <!--  -->
+                            <NewCursSelect :options="['Фин кафедра', 'Фин кафедра 1', 'Фин кафедра 2']" :default="'Фин кафедра'" class="select" />
                         </div>
                         <div class="new-curs-content__wrap">
                             <a class="new-curs-content__link" href="#">
@@ -188,12 +189,14 @@ import Aside from '../../components/portal-components/Aside.vue';
 import Header from '../../components/portal-components/Header.vue';
 import Footer from '../../components/portal-components/Footer.vue';
 import SettingsOfProfileVue from '../../components/portal-components/Settings-of-profile.vue';
+import NewCursSelect from '../../components/admin-components/New-curs-select.vue';
 export default {
     components: {
         Aside,
         Header,
         Footer,
         SettingsOfProfileVue,
+        NewCursSelect
     },
     methods: {
         changedInfo() {
@@ -399,14 +402,23 @@ export default {
         min-height: 200px;
         background: #FFFFFF;
         display: flex;
+        cursor: pointer;
         justify-content: center;
         align-items: center;
         border: 1px solid #96A5B8;
         border-radius: 4px;
 
+        &:hover {
+            .new-curs-body-download__box-text {
+                opacity: 1;
+            }
+        }
+
     }
 
     &__box-text {
+        opacity: 0;
+        transition: opacity 0.3s;
         gap: 10px;
         display: flex;
         align-items: center;
@@ -431,11 +443,13 @@ export default {
 
 .new-curs-content {
     margin-top: 25px;
+
     &__wrap {
         max-width: 715px;
         display: flex;
         justify-content: flex-end;
     }
+
     &__title {
         font-weight: 600;
         font-size: 24px;
@@ -453,6 +467,78 @@ export default {
         display: flex;
         flex-direction: column;
         gap: 25px;
+
+        /* Customize the label (the container) */
+        .container {
+            display: block;
+            position: relative;
+            @include adaptiv-value("padding-left", 36, 30, 1);
+            cursor: pointer;
+            font-weight: 400;
+            @include adaptiv-value("font-size", 16, 12, 1);
+            @include adaptiv-value("line-height", 24, 15, 1);
+            color: #1B2559;
+
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            padding-right: unset;
+            margin: unset;
+        }
+
+        /* Hide the browser's default checkbox */
+        .container input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+
+        /* Create a custom checkbox */
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            @include adaptiv-value("height", 24, 20, 1);
+            @include adaptiv-value("width", 24, 20, 1);
+            border: 2px solid #1294F2;
+            border-radius: 6px;
+        }
+
+        /* On mouse-over, add a grey background color */
+        .container:hover input~.checkmark {}
+
+        /* When the checkbox is checked, add a blue background */
+        .container input:checked~.checkmark {}
+
+        /* Create the checkmark/indicator (hidden when not checked) */
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        /* Show the checkmark when checked */
+        .container input:checked~.checkmark:after {
+            display: block;
+        }
+
+        /* Style the checkmark/indicator */
+        .container .checkmark:after {
+            width: 11px;
+            height: 8px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            background-image: url(../../public/images/new-curs-tick-icon-blue.svg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        // // // 
     }
 
     &__text {
@@ -493,9 +579,11 @@ export default {
         padding: 12px;
         max-width: 235px;
         color: #1294F2;
+
         span:first-child {
             width: 16px;
             height: 16px;
+
             svg {
                 width: 16px;
                 height: 16px;
@@ -518,8 +606,33 @@ export default {
         max-width: 240px;
     }
 
-    &__input {}
+    &__input {
+        margin-left: 20px;
+        margin-right: 10px;
 
-    &__subtext {}
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        color: #96A5B8;
+        background: #FFFFFF;
+        border: 1px solid #96A5B8;
+        border-radius: 6px;
+        padding: 5px 10px;
+        max-width: 52px;
+        width: 52px;
+
+        &::placeholder {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+            color: #96A5B8;
+        }
+    }
+
+    &__subtext {
+        font-size: 16px;
+        line-height: 24px;
+        color: #1B2559;
+    }
 }
 </style>
