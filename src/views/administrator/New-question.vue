@@ -398,7 +398,7 @@ export default {
             top: 50%;
             left: 50%;
             transform: translateX(-50%) translateY(-50%);
-            background-image: url(../../public/images/reg-two-tick-icon.svg);
+            background-image: url(../../../public/images/reg-two-tick-icon.svg);
             background-repeat: no-repeat;
             background-size: cover;
         }
