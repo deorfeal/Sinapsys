@@ -298,14 +298,14 @@ export default {
 }
 
 @media (max-width: 1850px) {
-    .main-aside {
-        max-width: 280px;
-        min-width: 280px;
-    }
+   .main-aside {
+       max-width: 280px;
+       min-width: 280px;
+   }
 
-    .main-aside__logo {
+   .main-aside__logo {
         margin-left: 25px;
-    }
+   }
 
     .main-aside__list-item {
         padding-left: 45px;

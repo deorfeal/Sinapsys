@@ -305,7 +305,8 @@ export default {
         padding: 12px 12px 12px 16px;
         width: 390px;
         max-width: 390px;
-
+        border: 1px solid #96A5B8;
+border-radius: 4px;
         &::placeholder {
             font-size: 16px;
             line-height: 24px;
@@ -321,7 +322,8 @@ export default {
         padding: 12px 12px 12px 16px;
         height: 290px;
         width: 610px;
-
+        border: 1px solid #96A5B8;
+        border-radius: 4px;
         &::placeholder {
             font-size: 16px;
             line-height: 24px;

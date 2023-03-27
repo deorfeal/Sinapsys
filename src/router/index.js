@@ -36,6 +36,7 @@ import Import from "@/views/administrator/Import.vue";
 import UserInfo from "@/views/administrator/User-info.vue";
 import AuthorInfo from "@/views/administrator/Author-info.vue";
 import CompanySettings from "@/views/administrator/Company-settings.vue";
+import Reports from "@/views/administrator/Reports.vue";
 
 const routes = [{
         path: "/",
@@ -208,11 +209,12 @@ const routes = [{
         name: "company-settings",
         component: CompanySettings,
     },
+    {
+        path: "/reports",
+        name: "reports",
+        component: Reports,
+    },
     
-    
-    
-    
-
 ];
 
 const router = createRouter({

@@ -81,3 +81,38 @@ body {
 	min-height: 100vh;
 	padding: unset !important;
 }
+
+@media (max-width: 1919px) {
+	html, body {		
+		zoom: 95%;
+	}
+}
+
+@media (max-width: 1850px) {
+	html, body {		
+		zoom: 90%;
+	}
+}
+@media (max-width: 1750px) {
+	html, body {		
+		zoom: 85%;
+	}
+}
+
+@media (max-width: 1650px) {
+	html, body {		
+		zoom: 85%;
+	}
+}
+
+@media (max-width: 1550px) {
+	html, body {		
+		zoom: 80%;
+	}
+}
+
+@media (max-width: 1500px) {
+	html, body {		
+		zoom: 75%;
+	}
+}
