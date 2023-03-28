@@ -37,6 +37,11 @@ import UserInfo from "@/views/administrator/User-info.vue";
 import AuthorInfo from "@/views/administrator/Author-info.vue";
 import CompanySettings from "@/views/administrator/Company-settings.vue";
 import Reports from "@/views/administrator/Reports.vue";
+import PlaningBriefing from "@/views/administrator/Planing-briefing.vue";
+import ImportHistory from "@/views/administrator/Import-history.vue";
+import AdminUsersInfo from "@/views/administrator/Admin-users-info.vue";
+import AdminsInfo from "@/views/administrator/Admins-info.vue";
+import Planing from "@/views/administrator/Planing.vue";
 
 const routes = [{
         path: "/",
@@ -214,6 +219,37 @@ const routes = [{
         name: "reports",
         component: Reports,
     },
+    {
+        path: "/planing-briefing",
+        name: "planing-briefing",
+        component:  PlaningBriefing,
+    },
+    {
+        path: "/import-history",
+        name: "import-history",
+        component:  ImportHistory,
+    },
+    {
+        path: "/admin-users-info",
+        name: "admin-users-info",
+        component:  AdminUsersInfo,
+    },
+
+    {
+        path: "/admins-info",
+        name: "admins-info",
+        component:  AdminsInfo,
+    },
+
+    {
+        path: "/planing",
+        name: "planing",
+        component: Planing,
+    },
+   
+    
+    
+    
     
 ];
 
