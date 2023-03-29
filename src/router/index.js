@@ -42,6 +42,8 @@ import ImportHistory from "@/views/administrator/Import-history.vue";
 import AdminUsersInfo from "@/views/administrator/Admin-users-info.vue";
 import AdminsInfo from "@/views/administrator/Admins-info.vue";
 import Planing from "@/views/administrator/Planing.vue";
+import FishingAttacks from "@/views/administrator/Fishing-attacks.vue";
+import AdminCatalog from "@/views/administrator/Admin-catalog.vue";
 
 const routes = [{
         path: "/",
@@ -178,7 +180,6 @@ const routes = [{
         name: "new-lesson",
         component: NewLesson,
     },
-
     {
         path: "/new-lesson-end",
         name: "new-lesson-end",
@@ -234,23 +235,27 @@ const routes = [{
         name: "admin-users-info",
         component:  AdminUsersInfo,
     },
-
     {
         path: "/admins-info",
         name: "admins-info",
         component:  AdminsInfo,
     },
-
     {
         path: "/planing",
         name: "planing",
         component: Planing,
     },
+    {
+        path: "/fishing-attacks",
+        name: "fishing-attacks",
+        component: FishingAttacks,
+    },    
+    {
+        path: "/admin-catalog",
+        name: "admin-catalog",
+        component:  AdminCatalog,
+    },    
    
-    
-    
-    
-    
 ];
 
 const router = createRouter({

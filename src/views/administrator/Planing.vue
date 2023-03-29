@@ -1,8 +1,8 @@
 <template>
     <div class="big-wrapper">
-        <Aside :activeLink="2" :sideMenuActive="this.sideMenuActive" :isAdmin="true" />
+        <Aside :activeLink="3" :sideMenuActive="this.sideMenuActive" :isAdmin="true" />
         <div class="wrapper">
-            <Header :searchIsActive="false" :title="'Пользователи'" @openSideMenu="SideMenuToActive" :isAdmin="true" />
+            <Header :searchIsActive="false" :title="'Планирование'" @openSideMenu="SideMenuToActive" :isAdmin="true" />
             <main class="main main-planing">
                 <section class="main__planing planing">
                     <swiper class="planing__swiper planing-swiper swiper" :modules="modules" :slides-per-view="1" :speed="1"
