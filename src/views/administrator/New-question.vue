@@ -151,7 +151,26 @@ export default {
 
 
 .main-new-question {
-    padding: 30px 55px 30px 55px;
+    @include adaptiv-value("padding-top", 30, 30, 1);
+    @include adaptiv-value("padding-right", 55, 30, 1);
+    @include adaptiv-value("padding-bottom", 50, 30, 1);
+    @include adaptiv-value("padding-left", 55, 30, 1);
+    .custom-select-new-curs {
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 16, 1);
+        .selected {
+            @include adaptiv-value("font-size", 16, 14, 1);
+            @include adaptiv-value("line-height", 24, 16, 1);
+            @include adaptiv-value("padding-top", 12, 8, 1);
+            @include adaptiv-value("padding-right", 12, 8, 1);
+            @include adaptiv-value("padding-bottom", 12, 8, 1);
+            @include adaptiv-value("padding-left", 16, 12, 1);
+        }
+    }
+    .custom-select-new-curs .items div {
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 16, 1);
+    }
 }
 
 .new-question-top {
@@ -167,26 +186,27 @@ export default {
         margin-bottom: 35px;
 
         font-weight: 500;
-        font-size: 24px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 24, 16, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
         color: #1B2559;
     }
 
     &__btn {
         font-weight: 500;
-        font-size: 20px;
-        line-height: 24px;
+    
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
-        padding: 16px;
+        @include adaptiv-value("font-size", 20, 16, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
+        @include adaptiv-value("padding", 16, 12, 1);
+        @include adaptiv-value("width", 160, 130, 1);
+        @include adaptiv-value("max-width", 160, 130, 1);
         color: #FFFFFF;
         margin-left: 15px;
         background: #1294F2;
         border-radius: 6px;
-        width: 160px;
-        max-width: 160px;
     }
 }
 
@@ -194,7 +214,7 @@ export default {
     &__inner {
         display: flex;
         flex-direction: column;
-        gap: 30px;
+        @include adaptiv-value("gap", 30, 15, 1);
         margin-bottom: 30px;
     }
 }
@@ -202,7 +222,7 @@ export default {
 .new-question-item {
     display: flex;
     align-items: flex-start;
-    gap: 65px;
+    @include adaptiv-value("gap", 65, 10, 1);
 
     &:nth-child(1) {
         align-items: center;
@@ -214,20 +234,24 @@ export default {
     }
 
     &__text {
-        width: 150px;
+        @include adaptiv-value("width", 150, 120, 1);
+        @include adaptiv-value("min-width", 150, 120, 1);
         font-weight: 400;
-        font-size: 16px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 16, 1);
         color: #1B2559;
     }
 
     &__input {
         font-weight: 500;
-        font-size: 16px;
-        line-height: 24px;
+        @include adaptiv-value("padding-top", 12, 8, 1);
+        @include adaptiv-value("padding-right", 12, 8, 1);
+        @include adaptiv-value("padding-bottom", 12, 8, 1);
+        @include adaptiv-value("padding-left", 16, 12, 1);
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 16, 1);
         color: #96A5B8;
 
-        padding: 12px 12px 12px 16px;
 
         background: #FFFFFF;
         border: 1px solid #96A5B8;
@@ -237,8 +261,8 @@ export default {
 
         &::placeholder {
             font-weight: 500;
-            font-size: 16px;
-            line-height: 24px;
+            @include adaptiv-value("font-size", 16, 14, 1);
+            @include adaptiv-value("line-height", 24, 16, 1);
             color: #96A5B8;
         }
     }
@@ -248,26 +272,27 @@ export default {
         border-radius: 4px;
         width: 955px;
         max-width: 955px;
-        padding: 12px 12px 12px 16px;
+        @include adaptiv-value("padding-top", 12, 8, 1);
+        @include adaptiv-value("padding-right", 12, 8, 1);
+        @include adaptiv-value("padding-bottom", 12, 8, 1);
+        @include adaptiv-value("padding-left", 16, 12, 1);
         resize: unset;
         font-weight: 500;
         max-height: 125px;
-        font-size: 16px;
-        line-height: 24px;
         color: #96A5B8;
 
         &::placeholder {
             font-weight: 500;
-            font-size: 16px;
-            line-height: 24px;
+            @include adaptiv-value("font-size", 16, 14, 1);
+            @include adaptiv-value("line-height", 24, 16, 1);
             color: #96A5B8;
         }
     }
 
     &__btn {
         font-weight: 400;
-        font-size: 16px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 16, 12, 1);
+        @include adaptiv-value("line-height", 24, 15, 1);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -295,11 +320,11 @@ export default {
     max-width: 1300px;
     &__text {
         display: flex;
-        gap: 30px;
+        @include adaptiv-value("gap", 30, 15, 1);
         align-items: center;
         font-weight: 500;
-        font-size: 16px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 16, 1);
         color: #1B2559;
         padding-bottom: 15px;
         border-bottom: 0.5px solid #96A5B8;
@@ -327,7 +352,7 @@ export default {
         /* Customize the label (the container) */
         .container {
             display: block;
-            padding-left: 85px;
+            @include adaptiv-value("padding-left", 85, 35, 1);
             position: relative;
             cursor: pointer;
             font-weight: 400;
@@ -406,4 +431,61 @@ export default {
         // // // 
     }
 }
+
+@media (max-width: 1600px) {
+    .new-question-bottom {
+        max-width: 100%;
+    }
+    .new-question-item__textarea {
+        width: 100%;
+    }
+    .new-question-item__input {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1350px) {
+    .new-question-bottom__item .container input:nth-child(1) {
+        width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .new-question-item__btn {
+        width: 100%;
+    }
+    .main-new-question {
+        .custom-select-new-curs {
+            width: 250px; 
+        }
+        .selected {
+            width: 250px;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .main-new-question {
+        .custom-select-new-curs {
+            width: 100%; 
+        }
+        .selected {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .new-question-item {
+        align-items: flex-start !important;        
+        flex-direction: column;
+    }
+    .main-new-question .custom-select-new-curs {
+        max-width: unset;
+    }
+    .new-question-top__link {
+        margin-bottom: 0;
+    }
+}
+
 </style>

@@ -887,7 +887,7 @@ export default {
     }
 
     &__row-text {
-        margin-left: 30px;
+        margin-left: 22px;
         &:nth-child(2) {
             margin-left: 15px;
             width: 230px;
@@ -1079,4 +1079,129 @@ export default {
         color: #1B2559;
     }
 }
+
+// 
+
+@media (max-width: 1440px) {
+    .planing-swiper-slide-top__buttons-btn {
+        @include adaptiv-value("padding-top", 12, 8, 1);
+        @include adaptiv-value("padding-bottom", 12, 8, 1);
+        @include adaptiv-value("padding-right", 25, 12, 1);
+        @include adaptiv-value("padding-left", 25, 12, 1);
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
+        @include adaptiv-value("gap", 8, 4, 1);
+    }
+    .planing-swiper-slide-top {
+        @include adaptiv-value("margin-bottom", 30, 20, 1);
+    }
+    .planing-swiper .swiper-button-prev {
+        @include adaptiv-value("width", 48, 30, 1);
+        @include adaptiv-value("height", 48, 30, 1);
+        &:before {
+            @include adaptiv-value("width", 32, 20, 1);
+            @include adaptiv-value("height", 32, 20, 1);
+            background-size: cover;
+        }
+    }
+    .planing-swiper .swiper-button-next {
+        @include adaptiv-value("width", 48, 30, 1);
+        @include adaptiv-value("height", 48, 30, 1);
+        &:before {
+            @include adaptiv-value("width", 32, 20, 1);
+            @include adaptiv-value("height", 32, 20, 1);
+            background-size: cover;
+        }
+    }
+    .planing-swiper .swiper-pagination-bullet {
+        background: #FFFFFF;
+        @include adaptiv-value("width", 48, 30, 1);
+        @include adaptiv-value("height", 48, 30, 1);
+    }
+    .main-planing {
+        @include adaptiv-value("padding-top", 30, 30, 1);
+        @include adaptiv-value("padding-right", 55, 30, 1);
+        @include adaptiv-value("padding-bottom", 35, 30, 1);
+        @include adaptiv-value("padding-left", 55, 30, 1);
+    }
+    .planing-swiper {
+        @include adaptiv-value("max-width", 1450, 100, 1);
+    }
+    .planing-swiper-slide {
+        @include adaptiv-value("padding-bottom", 605, 100, 1);
+    }
+
+    .planing-swiper-slide__row-text {
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
+    }
+    .planing-swiper .swiper-pagination {
+        max-width: 500px;
+        position: absolute;
+        margin-left: auto;
+        right: 0;
+        bottom: 0;
+        top: unset !important;
+        display: flex;
+        justify-content: flex-end;
+        @include adaptiv-value("padding-right", 60, 23, 1);
+    }
+    .planing-swiper-slide-top {
+        flex-wrap: wrap;
+    }
+    .planing-swiper-slide-top__select:nth-child(2) {
+        margin-right: auto;
+        display: block;
+        width: 100%;
+    }
+    .planing-swiper-slide__row {
+        gap: 20px;
+    }
+    .planing-swiper-slide__row {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .planing-swiper-slide__row-text {
+        margin-left: unset !important;
+        text-align: left !important;
+        align-items: flex-start;
+        justify-content: flex-start !important;
+    }
+    .planing-swiper-slide__row .container {
+        margin-top: 10px;
+    }
+}
+@media (max-width: 1300px) {
+    .big-wrapper {
+        max-width: 100%;
+    }
+    .planing-swiper {
+        max-width: 100%;
+    }
+}
+@media (max-width: 750px) {
+    .planing-swiper-slide-count {
+        bottom: 50px;
+    }
+    .planing-swiper .swiper-pagination {
+        justify-content: flex-start;
+        margin-left: unset;
+        margin-right: auto;
+        padding-left: 58px;
+        padding-right: unset;
+    }
+    .planing-swiper .swiper-button-prev {
+        left: 0;
+        transform: unset;
+    }
+    .planing-swiper .swiper-button-next {
+        right: unset;
+        @include adaptiv-value("left", 300, 250, 1);
+    }
+    .planing-swiper-slide-top__buttons {
+        flex-wrap: wrap;
+    }
+}
+
 </style>

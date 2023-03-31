@@ -2918,4 +2918,191 @@ export default {
         }
     }
 }
+
+//
+
+@media (max-width: 1440px) {
+    .fishing-attacks__add {
+        @include adaptiv-value("padding", 12, 8, 1);
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
+        @include adaptiv-value("gap", 5, 5, 1);
+        @include adaptiv-value("width", 140, 130, 1);
+        @include adaptiv-value("max-width", 140, 130, 1);
+    }
+    .fishing-attacks__buttons {
+        @include adaptiv-value("margin-bottom", 25, 20, 1);
+    }
+    .fishing-attacks-swiper .swiper-button-prev {
+        @include adaptiv-value("width", 48, 30, 1);
+        @include adaptiv-value("height", 48, 30, 1);
+        &:before {
+            @include adaptiv-value("width", 32, 20, 1);
+            @include adaptiv-value("height", 32, 20, 1);
+            background-size: cover;
+        }
+    }
+    .fishing-attacks-swiper .swiper-button-next {
+        @include adaptiv-value("width", 48, 30, 1);
+        @include adaptiv-value("height", 48, 30, 1);
+        &:before {
+            @include adaptiv-value("width", 32, 20, 1);
+            @include adaptiv-value("height", 32, 20, 1);
+            background-size: cover;
+        }
+    }
+    .fishing-attacks-swiper .swiper-pagination-bullet {
+        background: #FFFFFF;
+        @include adaptiv-value("width", 48, 30, 1);
+        @include adaptiv-value("height", 48, 30, 1);
+    }
+    .main-fishing-attacks {
+        @include adaptiv-value("padding-top", 30, 30, 1);
+        @include adaptiv-value("padding-right", 55, 30, 1);
+        @include adaptiv-value("padding-bottom", 35, 30, 1);
+        @include adaptiv-value("padding-left", 55, 30, 1);
+    }
+    .fishing-attacks-swiper {
+        @include adaptiv-value("max-width", 1450, 100, 1);
+    }
+    .fishing-attacks-swiper-slide {
+        @include adaptiv-value("padding-bottom", 380, 100, 1);
+    }
+
+    .fishing-attacks-swiper-slide-row__text {
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
+    }
+    .fishing-attacks-swiper .swiper-pagination {
+        max-width: 500px;
+        position: absolute;
+        margin-left: auto;
+        right: 0;
+        bottom: 0;
+        top: unset !important;
+        display: flex;
+        justify-content: flex-end;
+        @include adaptiv-value("padding-right", 60, 23, 1);
+    }
+
+
+    .fishing-attacks-message-box__row {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .fishing-attacks-message-box__title {
+        margin-bottom: 20px
+    }
+    .fishing-attacks-message {
+        @include adaptiv-value("width", 692, 350, 1);
+    }
+    .fishing-attacks-new-letter {
+        @include adaptiv-value("width", 1305, 350, 1);
+    }
+    .fishing-attacks-new-letter__inner {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .fishing-attacks-new-letter-content__inner {
+        gap: 75px;
+    }
+}
+@media (max-width: 1300px) {
+    .big-wrapper {
+        max-width: 100%;
+    }
+    .fishing-attacks-swiper {
+        max-width: 100%;
+    }
+}
+@media (max-width: 1200px) {
+    .import-history-swiper-slide-row {
+        gap: 20px;
+    }
+}
+@media (max-width: 950px) {
+    .fishing-attacks-new-letter-body__row {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+    }
+    .fishing-attacks-new-letter-content__inner {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+    }
+    .fishing-attacks-new-letter-body__row-input {
+        width: 100%;
+        min-width: unset;
+    }
+    .fishing-attacks-new-letter-content-box {
+        width: 100%;
+    }
+    .fishing-attacks-new-letter__inner {
+        padding: 30px;
+    }
+}
+@media (max-width: 850px) {
+    .fishing-attacks-swiper-slide-row {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 10px;
+    }
+    .fishing-attacks-swiper-slide-row:nth-child(1) {
+        border-bottom: 0.5px solid #96A5B8;
+    }
+    .fishing-attacks-swiper-slide-row__text {
+        text-align: left !important;
+        justify-content: flex-start !important;
+    }
+    .fishing-attacks-swiper:nth-child(2) {
+        .fishing-attacks-swiper-slide-row {
+            gap: 10px;
+        }
+    }
+}
+
+@media (max-width: 750px) {
+    .fishing-attacks-swiper-slide-count {
+        bottom: 50px;
+    }
+    .fishing-attacks-swiper .swiper-pagination {
+        justify-content: flex-start;
+        margin-left: unset;
+        margin-right: auto;
+        padding-left: 58px;
+        padding-right: unset;
+    }
+    .fishing-attacks-swiper .swiper-button-prev {
+        left: 0;
+        transform: unset;
+    }
+    .fishing-attacks-swiper .swiper-button-next {
+        right: unset;
+        @include adaptiv-value("left", 300, 250, 1);
+    }
+}
+
+@media (max-width: 550px) {
+    .fishing-attacks__buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .fishing-attacks__add {
+        margin-left: unset;
+        margin-top: 10px;
+    }
+    .fishing-attacks__buttons-btn::before {
+        left: 0;
+        transform: unset;
+    }
+    .fishing-attacks-new-letter-content-box__top {
+        flex-wrap: wrap;
+    }
+}
+
+
 </style>

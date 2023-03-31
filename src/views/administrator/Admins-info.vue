@@ -1185,4 +1185,140 @@ export default {
         }
     }
 }
+
+// 
+
+@media (max-width: 1440px) {
+    .main-admins-info .users-info-swiper-slide-top__link {
+        @include adaptiv-value("font-size", 22, 16, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
+    }
+    .main-admins-info .users-info-swiper-slide-top__btn {
+        @include adaptiv-value("padding", 12, 8, 1);
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
+        @include adaptiv-value("gap", 10, 5, 1);
+        @include adaptiv-value("width", 135, 130, 1);
+        @include adaptiv-value("max-width", 135, 130, 1);
+    }
+    .main-admins-info .users-info-swiper-slide-top {
+        @include adaptiv-value("margin-bottom", 30, 20, 1);
+    }
+    .main-admins-info .users-info-swiper .swiper-button-prev {
+        @include adaptiv-value("width", 48, 30, 1);
+        @include adaptiv-value("height", 48, 30, 1);
+        &:before {
+            @include adaptiv-value("width", 32, 20, 1);
+            @include adaptiv-value("height", 32, 20, 1);
+            background-size: cover;
+        }
+    }
+    .main-admins-info .users-info-swiper .swiper-button-next {
+        @include adaptiv-value("width", 48, 30, 1);
+        @include adaptiv-value("height", 48, 30, 1);
+        &:before {
+            @include adaptiv-value("width", 32, 20, 1);
+            @include adaptiv-value("height", 32, 20, 1);
+            background-size: cover;
+        }
+    }
+    .main-admins-info .users-info-swiper .swiper-pagination-bullet  {
+        background: #FFFFFF;
+        @include adaptiv-value("width", 48, 30, 1);
+        @include adaptiv-value("height", 48, 30, 1);
+    }
+    .main-admins-info {
+        @include adaptiv-value("padding-top", 30, 30, 1);
+        @include adaptiv-value("padding-right", 55, 30, 1);
+        @include adaptiv-value("padding-bottom", 35, 30, 1);
+        @include adaptiv-value("padding-left", 55, 30, 1);
+    }
+    .main-admins-info .users-info-swiper {
+        @include adaptiv-value("max-width", 1450, 100, 1);
+    }
+    .main-admins-info .users-info-swiper-slide {
+        @include adaptiv-value("padding-bottom", 385, 100, 1);
+    }
+
+    .main-admins-info .users-info-swiper-slide-row__box-text {
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
+    }
+    .main-admins-info .users-info-swiper-slide-row__text {
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
+    }
+    .main-admins-info .users-info-swiper .swiper-pagination  {
+        max-width: 500px;
+        position: absolute;
+        margin-left: auto;
+        right: 0;
+        bottom: 0;
+        top: unset !important;
+        display: flex;
+        justify-content: flex-end;
+        @include adaptiv-value("padding-right", 60, 23, 1);
+    }
+}
+@media (max-width: 1300px) {
+    .big-wrapper {
+        max-width: 100%;
+    }
+    .main-admins-info .users-info-swiper {
+        max-width: 100%;
+    }
+}
+@media (max-width: 850px) {
+    .main-admins-info .users-info-swiper-slide-row  {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .main-admins-info .users-info-swiper-slide-row__text{
+        text-align: left !important;
+        margin-left: unset !important;
+        justify-content: flex-start !important;
+    }
+    .main-admins-info .users-info-swiper-slide-row .container {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    .main-admins-info .users-info-swiper-slide-row {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 750px) {
+    .main-admins-info .users-info-swiper-slide-count {
+        bottom: 50px;
+    }
+    .main-admins-info .users-info-swiper .swiper-pagination {
+        justify-content: flex-start;
+        margin-left: unset;
+        margin-right: auto;
+        padding-left: 58px;
+        padding-right: unset;
+    }
+    .main-admins-info .users-info-swiper .swiper-button-prev  {
+        left: 0;
+        transform: unset;
+    }
+    .main-admins-info .users-info-swiper .swiper-button-next {
+        right: unset;
+        @include adaptiv-value("left", 300, 250, 1);
+    }
+}
+
+@media (max-width: 450px) {
+    .import-history-swiper-slide__top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    .main-admins-info .users-info-swiper-slide-top {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
 </style>

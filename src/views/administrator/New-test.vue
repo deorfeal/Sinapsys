@@ -48,86 +48,88 @@
                         </div>
                     </div>
                     <div class="main__new-tes-questions new-tes-questions mix item-second">
-                        <ul class="new-tes-questions__list new-tes-questions-list">
-                            <li class="new-tes-questions-list__item">
-                                <p class="new-tes-questions-list__text">
-                                    <span>
-                                        №
-                                    </span>
-                                    <span>
-                                        Вопрос
-                                    </span>
-                                    <span>
-                                        Тип
-                                    </span>
-                                </p>
-                            </li>
-                            <li class="new-tes-questions-list__item">
-                                <p class="new-tes-questions-list__text">
-                                    <span>
-                                        2
-                                    </span>
-                                    <span>
-                                        Что делать, если мою электронную почту взломали?
-                                    </span>
-                                    <span>
-                                        Выбор одного ответа
-                                    </span>
-                                </p>
-                            </li>
-                            <li class="new-tes-questions-list__item">
-                                <p class="new-tes-questions-list__text">
-                                    <span>
-                                        3
-                                    </span>
-                                    <span>
-                                        Что делать, если мою электронную почту взломали?
-                                    </span>
-                                    <span>
-                                        Выбор одного ответа
-                                    </span>
-                                </p>
-                            </li>
-                            <li class="new-tes-questions-list__item">
-                                <p class="new-tes-questions-list__text">
-                                    <span>
-                                        4
-                                    </span>
-                                    <span>
-                                        Что делать, если мою электронную почту взломали?
-                                    </span>
-                                    <span>
-                                        Выбор одного ответа
-                                    </span>
-                                </p>
-                            </li>
-                            <li class="new-tes-questions-list__item">
-                                <p class="new-tes-questions-list__text">
-                                    <span>
-                                        5
-                                    </span>
-                                    <span>
-                                        Что делать, если мою электронную почту взломали?
-                                    </span>
-                                    <span>
-                                        Выбор одного ответа
-                                    </span>
-                                </p>
-                            </li>
-                            <li class="new-tes-questions-list__item">
-                                <p class="new-tes-questions-list__text">
-                                    <span>
-                                        6
-                                    </span>
-                                    <span>
-                                        Что делать, если мою электронную почту взломали?
-                                    </span>
-                                    <span>
-                                        Выбор одного ответа
-                                    </span>
-                                </p>
-                            </li>
-                        </ul>
+                        <div class="new-tes-questions__wrap">
+                            <ul class="new-tes-questions__list new-tes-questions-list">
+                                <li class="new-tes-questions-list__item">
+                                    <p class="new-tes-questions-list__text">
+                                        <span>
+                                            №
+                                        </span>
+                                        <span>
+                                            Вопрос
+                                        </span>
+                                        <span>
+                                            Тип
+                                        </span>
+                                    </p>
+                                </li>
+                                <li class="new-tes-questions-list__item">
+                                    <p class="new-tes-questions-list__text">
+                                        <span>
+                                            2
+                                        </span>
+                                        <span>
+                                            Что делать, если мою электронную почту взломали?
+                                        </span>
+                                        <span>
+                                            Выбор одного ответа
+                                        </span>
+                                    </p>
+                                </li>
+                                <li class="new-tes-questions-list__item">
+                                    <p class="new-tes-questions-list__text">
+                                        <span>
+                                            3
+                                        </span>
+                                        <span>
+                                            Что делать, если мою электронную почту взломали?
+                                        </span>
+                                        <span>
+                                            Выбор одного ответа
+                                        </span>
+                                    </p>
+                                </li>
+                                <li class="new-tes-questions-list__item">
+                                    <p class="new-tes-questions-list__text">
+                                        <span>
+                                            4
+                                        </span>
+                                        <span>
+                                            Что делать, если мою электронную почту взломали?
+                                        </span>
+                                        <span>
+                                            Выбор одного ответа
+                                        </span>
+                                    </p>
+                                </li>
+                                <li class="new-tes-questions-list__item">
+                                    <p class="new-tes-questions-list__text">
+                                        <span>
+                                            5
+                                        </span>
+                                        <span>
+                                            Что делать, если мою электронную почту взломали?
+                                        </span>
+                                        <span>
+                                            Выбор одного ответа
+                                        </span>
+                                    </p>
+                                </li>
+                                <li class="new-tes-questions-list__item">
+                                    <p class="new-tes-questions-list__text">
+                                        <span>
+                                            6
+                                        </span>
+                                        <span>
+                                            Что делать, если мою электронную почту взломали?
+                                        </span>
+                                        <span>
+                                            Выбор одного ответа
+                                        </span>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
                         <a class="new-tes-questions__btn" href="#">
                             <span>
                                 <svg width="33" height="32" viewBox="0 0 33 32" fill="none"
@@ -197,21 +199,24 @@ export default {
 //
 
 .main-new-test {
-    padding: 30px 55px 30px 55px;
+    @include adaptiv-value("padding-top", 30, 30, 1);
+    @include adaptiv-value("padding-right", 55, 30, 1);
+    @include adaptiv-value("padding-bottom", 50, 30, 1);
+    @include adaptiv-value("padding-left", 55, 30, 1);
 }
 
 .new-test {
-    padding-bottom: 300px;
+    @include adaptiv-value("padding-bottom", 300, 0, 1);
 
     &__link {
         display: flex;
         gap: 10px;
         align-items: center;
-        margin-bottom: 35px;
+        @include adaptiv-value("margin-bottom", 35, 30, 1);
 
         font-weight: 500;
-        font-size: 24px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 24, 16, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
         color: #1B2559;
     }
 
@@ -224,19 +229,21 @@ export default {
 
     &__btn {
         font-weight: 500;
-        font-size: 20px;
-        line-height: 24px;
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
-        padding: 16px;
         color: #FFFFFF;
         margin-left: 15px;
         background: #1294F2;
         border-radius: 6px;
-        width: 160px;
-        max-width: 160px;
+
+
+        @include adaptiv-value("font-size", 20, 16, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
+        @include adaptiv-value("padding", 16, 12, 1);
+        @include adaptiv-value("width", 160, 130, 1);
+        @include adaptiv-value("max-width", 160, 130, 1);
     }
 }
 
@@ -257,8 +264,8 @@ export default {
 
     &__button-btn {
         font-weight: 500;
-        font-size: 20px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 20, 16, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
         color: #1B2559;
         position: relative;
 
@@ -268,7 +275,7 @@ export default {
             bottom: -10px;
             width: 35px;
             left: 50%;
-            height: 6px;
+            @include adaptiv-value("height", 6, 4, 1);
             transform: translateX(-50%);
             background: transparent;
             transition: background 0.3s;
@@ -281,52 +288,60 @@ export default {
     padding-top: 45px;
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    @include adaptiv-value("gap", 25, 20, 1);
 
     &__item {
         display: flex;
         align-items: flex-start;
-        gap: 65px;
+        @include adaptiv-value("gap", 65, 15, 1);
     }
 
     &__item-text {
         width: 150px;
         font-weight: 400;
-        font-size: 16px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 16, 1);
         color: #1B2559;
     }
 
     &__item-input {
         font-weight: 500;
-        font-size: 16px;
-        line-height: 24px;
         color: #96A5B8;
-        padding: 12px 12px 12px 16px;
+        @include adaptiv-value("padding-top", 12, 8, 1);
+        @include adaptiv-value("padding-right", 12, 8, 1);
+        @include adaptiv-value("padding-bottom", 12, 8, 1);
+        @include adaptiv-value("padding-left", 16, 12, 1);
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 16, 1);
         width: 390px;
         max-width: 390px;
         border: 1px solid #96A5B8;
-border-radius: 4px;
+        border-radius: 4px;
+
         &::placeholder {
-            font-size: 16px;
-            line-height: 24px;
+            @include adaptiv-value("font-size", 16, 14, 1);
+            @include adaptiv-value("line-height", 24, 16, 1);
             color: #96A5B8;
         }
     }
 
     &__item-textarea {
         resize: none;
-        font-size: 16px;
-        line-height: 24px;
         color: #96A5B8;
-        padding: 12px 12px 12px 16px;
-        height: 290px;
+        @include adaptiv-value("padding-top", 12, 8, 1);
+        @include adaptiv-value("padding-right", 12, 8, 1);
+        @include adaptiv-value("padding-bottom", 12, 8, 1);
+        @include adaptiv-value("padding-left", 16, 12, 1);
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 16, 1);
+        @include adaptiv-value("min-height", 290, 150, 1);
         width: 610px;
         border: 1px solid #96A5B8;
         border-radius: 4px;
+
         &::placeholder {
-            font-size: 16px;
-            line-height: 24px;
+            @include adaptiv-value("font-size", 16, 14, 1);
+            @include adaptiv-value("line-height", 24, 16, 1);
             color: #96A5B8;
         }
     }
@@ -337,25 +352,28 @@ border-radius: 4px;
 
 .new-tes-questions {
     padding-top: 25px;
-    padding-bottom: 150px;
+    @include adaptiv-value("padding-bottom", 150, 0, 1);
+
     &__btn {
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 10px;
         max-width: 1300px;
+
         span:first-child {
             width: 16px;
             height: 16px;
         }
+
         svg {
             width: 16px;
             height: 16px;
         }
 
         font-weight: 400;
-        font-size: 20px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 20, 14, 1);
+        @include adaptiv-value("line-height", 24, 16, 1);
         color: #1294F2;
 
         background: #FFFFFF;
@@ -369,10 +387,11 @@ border-radius: 4px;
 .new-tes-questions-list {
     margin-bottom: 20px;
     max-width: 1300px;
+
     &__item {
         border-bottom: 0.5px solid #96A5B8;
-        padding: 30px 0;
-
+        @include adaptiv-value("padding-top", 30, 15, 1);
+        @include adaptiv-value("padding-bottom", 50, 15, 1);
         &:nth-child(1) {
             span {
                 font-weight: 500;
@@ -384,26 +403,80 @@ border-radius: 4px;
     &__text {
         display: flex;
         align-items: center;
+
         span {
             font-weight: 400;
-            font-size: 16px;
-            line-height: 24px;
+            @include adaptiv-value("font-size", 16, 13, 1);
+            @include adaptiv-value("line-height", 24, 16, 1);
             color: #1B2559;
         }
 
         span:nth-child(1) {
             width: 50px;
+            min-width: 50px;
         }
 
         span:nth-child(2) {
             width: 450px;
+            min-width: 450px;
             margin-left: auto;
         }
 
         span:nth-child(3) {
             width: 330px;
+            min-width: 330px;
             margin-left: 100px;
         }
+    }
+}
+
+@media (max-width: 1050px) {
+    .new-tes-questions-list__item {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .new-tes-questions-list__text {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 10px;
+        span {
+            margin-left: unset !important;
+            width: unset !important;
+            min-width: unset !important;
+        }
+    }
+}
+
+@media (max-width: 950px) {
+    .new-test-bottom__item-input {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .new-test-bottom__item-textarea {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+@media (max-width: 650px) {
+    .new-test__inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .new-test__btn {
+        display: block;
+        margin-top: 30px;
+        margin-left: unset;
+    }
+}
+
+@media (max-width: 550px) {
+    .new-test-bottom__item {
+        flex-direction: column;
     }
 }
 </style>

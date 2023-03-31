@@ -261,7 +261,7 @@ export default {
 @import '../../assets/scss/vars';
 
 .main-new-lesson-end {
-    padding-bottom: 50px;
+    @include adaptiv-value("padding-top", 50, 30, 1);
     .new-lesson-item__img {
         border-radius: 6px;
         border: unset;
@@ -274,6 +274,12 @@ export default {
             }
         }
 
+    }
+
+    .new-lesson-item__img-image {
+        object-fit: cover;
+        height: 100%;
+        border-radius: 6px;
     }
 
     .new-lesson-item__textarea {
@@ -293,7 +299,7 @@ export default {
     }
 
     .new-lesson__inner {
-        gap: 30px;
+        @include adaptiv-value("gap", 30, 20, 1);
     }
 
     .new-lesson-item:nth-child(4) {
@@ -332,6 +338,30 @@ export default {
     justify-content: center;
     width: 200px;
     max-width: 200px;
+}
+
+@media (max-width: 1100px) {
+    .main-new-lesson-end {
+        .new-lesson__top {
+            margin-bottom: 30px;
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .main-new-lesson-end .new-lesson-item__input {
+        width: 100%;
+        max-width: 100%;
+    }
+    .new-lesson-item__img-image {
+        width: 100%;
+    }
+    .new-lesson-item__img {
+        overflow: hidden;
+    }
+    .new-lesson-item__img {
+        overflow: hidden;
+    }
 }
 
 // </style>

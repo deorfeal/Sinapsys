@@ -166,7 +166,10 @@ export default {
 @import '../../assets/scss/vars';
 
 .main-company-settings {
-    padding: 30px 55px 20px 55px;
+    @include adaptiv-value("padding-top", 30, 30, 1);
+    @include adaptiv-value("padding-right", 55, 30, 1);
+    @include adaptiv-value("padding-bottom", 20, 30, 1);
+    @include adaptiv-value("padding-left", 55, 30, 1);
 }
 
 // 
@@ -180,7 +183,12 @@ export default {
     align-items: center;
     margin-bottom: 25px;
 
-    &__img {}
+    &__img {
+        @include adaptiv-value("width", 185, 140, 1);
+        .company-settings-top__img-image {
+            width: 100%;
+        }
+    }
 
     &__box {
         margin-left: 40px;
@@ -189,28 +197,25 @@ export default {
 
     &__box-title {
         font-weight: 600;
-        font-size: 24px;
-        line-height: 24px;
-        margin-bottom: 30px;
+
+        @include adaptiv-value("font-size", 24, 18, 1);
+        @include adaptiv-value("line-height", 24, 20, 1);
+        @include adaptiv-value("margin-bottom", 30, 20, 1);
         color: #1B2559;
     }
 
     &__box-text {
         font-weight: 500;
-        font-size: 20px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 20, 16, 1);
+        @include adaptiv-value("line-height", 24, 20, 1);
         color: #1B2559;
         margin-bottom: 10px;
     }
 
     &__btn {
         font-weight: 500;
-        font-size: 20px;
-        line-height: 24px;
         background: #1294F2;
         border-radius: 6px;
-        width: 145px;
-        max-width: 145px;
         text-align: center;
         color: #FFFFFF;
         padding: 8px;
@@ -218,6 +223,12 @@ export default {
         justify-content: center;
         align-items: center;
         align-self: flex-start;
+        margin-left: 30px;
+
+        @include adaptiv-value("font-size", 20, 16, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
+        @include adaptiv-value("width", 145, 130, 1);
+        @include adaptiv-value("max-width", 145, 130, 1);
     }
 }
 
@@ -225,9 +236,13 @@ export default {
     align-items: center;
     justify-content: space-between;
     display: flex;
-    padding: 60px 45px 60px 35px;
+    @include adaptiv-value("padding-top", 60, 20, 1);
+    @include adaptiv-value("padding-right", 45, 20, 1);
+    @include adaptiv-value("padding-bottom", 60, 20, 1);
+    @include adaptiv-value("padding-left", 35, 20, 1);
     background: #FFFFFF;
     border-radius: 16px;
+    @include adaptiv-value("gap", 30, 20, 1);
 }
 
 .company-settings-bottom-item {
@@ -248,7 +263,7 @@ export default {
         user-select: none;
         padding-right: unset;
         margin: unset;
-        margin-left: 55px;
+        @include adaptiv-value("margin-left", 55, 20, 1);
     }
 
     /* Hide the browser's default checkbox */
@@ -308,25 +323,26 @@ export default {
 
     &__title {
         font-weight: 500;
-        font-size: 22px;
-        line-height: 24px;
-        margin-bottom: 25px;
+    
+        @include adaptiv-value("font-size", 20, 16, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
+        @include adaptiv-value("margin-bottom", 25, 15, 1);
         color: #1B2559;
     }
 
     &__row {
-        padding-left: 55px;
+        @include adaptiv-value("padding-left", 55, 20, 1);
         margin-bottom: 25px;
         display: flex;
-        gap: 55px;
-        align-items: center;
+        @include adaptiv-value("gap", 55, 10, 1);
+        align-items: flex-start;
     }
 
     &__row-text {
-        width: 270px;
         font-weight: 400;
-        font-size: 20px;
-        line-height: 24px;
+        @include adaptiv-value("width", 270, 140, 1);
+        @include adaptiv-value("font-size", 20, 14, 1);
+        @include adaptiv-value("line-height", 24, 16, 1);
         color: #96A5B8;
     }
 
@@ -334,30 +350,27 @@ export default {
 
     &__column-title {
         font-weight: 500;
-        font-size: 22px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 22, 18, 1);
+        @include adaptiv-value("line-height", 24, 20, 1);
         color: #1B2559;
-        margin-bottom: 35px;
+        @include adaptiv-value("margin-bottom", 35, 15, 1);
         max-width: 360px;
     }
 
     &__column-text {
         max-width: 580px;
         font-weight: 400;
-        font-size: 16px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
         color: #60678B;
         margin-bottom: 15px;
-        margin-left: 55px;
+        @include adaptiv-value("margin-left", 55, 20, 1);
     }
 
     &__column-link {
         margin-left: auto;
 
         font-weight: 500;
-        font-size: 16px;
-        line-height: 24px;
-        padding: 12px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -365,10 +378,14 @@ export default {
         color: #1294F2;
 
         background: #FFFFFF;
-        width: 150px;
-        max-width: 150px;
         border: 1px solid #1294F2;
         border-radius: 6px;
+
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 16, 1);
+        @include adaptiv-value("padding", 12, 10, 1);
+        @include adaptiv-value("width", 150, 130, 1);
+        @include adaptiv-value("max-width", 150, 130, 1);
     }
 }
 
@@ -458,6 +475,40 @@ export default {
             height: 100%;
             opacity: 0;
         }
+    }
+}
+
+@media (max-width: 1500px) {
+    .company-settings-bottom {
+        flex-direction: column;
+    }
+}
+@media (max-width: 900px) {
+    .company-settings-top {
+        flex-direction: column;
+    }
+    .company-settings-top__box {
+        margin-left: auto;
+    }
+    .company-settings-top__btn {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .company-settings-top__box {
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 850px) {
+    .company-settings-bottom-item__row {
+        flex-direction: column;
+    }
+    .company-settings-bottom {
+        align-items: flex-start;
+    }
+}
+@media (max-width: 500px) {
+    .company-settings-top__box {
+        text-align: center;
     }
 }
 </style>

@@ -202,7 +202,7 @@
                                     </span>
                                 </p>
                             </div>
-                        </div>
+                        </div>  
                     </div>
                 </section>
                 <section class="main__events-section events-section">
@@ -218,7 +218,7 @@
                             Вы можете добавлять новые столбцы (например, «Отдел», «Регион» и пр.), но уже присутствующие в
                             шаблоне поля обязательно должны остаться в файле в неизменном виде и быть заполнены
                         </p>
-                    </div>
+                    </div> 
                     <div class="events-section__events events">
                         <h2 class="events__title">
                             События
@@ -282,7 +282,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> 
                 </section>
             </main>
             <Footer />
@@ -323,15 +323,17 @@ export default {
 @import '../../assets/scss/vars';
 
 .main-admin {
-    padding: 40px 55px 55px 55px;
+    @include adaptiv-value("padding-top", 40, 30, 1);
+    @include adaptiv-value("padding-right", 50, 30, 1);
+    @include adaptiv-value("padding-bottom", 55, 30, 1);
+    @include adaptiv-value("padding-left", 55, 30, 1);
 }
 
 .statistics {
-    margin-bottom: 40px;
-
+    @include adaptiv-value("margin-bottom", 40, 30, 1);
     &__inner {
         display: flex;
-        gap: 45px;
+        @include adaptiv-value("gap", 45, 30, 1);
     }
 }
 
@@ -339,30 +341,36 @@ export default {
     background: #FFFFFF;
     border: 1px solid #FFFFFF;
     border-radius: 16px;
-    padding: 30px 60px 35px 45px;
+
+    @include adaptiv-value("padding-top", 30, 25, 1);
+    @include adaptiv-value("padding-right", 60, 25, 1);
+    @include adaptiv-value("padding-bottom", 35, 25, 1);
+    @include adaptiv-value("padding-left", 45, 25, 1);
     flex-grow: 1;
     width: 100%;
 
     &__title {
         font-weight: 600;
-        font-size: 24px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 24, 18, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
+        @include adaptiv-value("margin-bottom", 35, 20, 1);
         color: #1B2559;
-        margin-bottom: 35px;
     }
 }
 
 .user-statistics-list {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-
+    @include adaptiv-value("gap", 20, 15, 1);
     &__item {
-        padding: 15px 30px;
+        @include adaptiv-value("padding-top", 15, 15, 1);
+        @include adaptiv-value("padding-right", 30, 20, 1);
+        @include adaptiv-value("padding-bottom", 15, 15, 1);
+        @include adaptiv-value("padding-left", 30, 20, 1);
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 40px;
+        @include adaptiv-value("gap", 40, 15, 1);
         border: 1px solid #96A5B8;
         border-radius: 16px;
     }
@@ -376,22 +384,22 @@ export default {
 
     &__box-text {
         font-weight: 500;
-        font-size: 20px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 20, 14, 1);
+        @include adaptiv-value("line-height", 24, 16, 1);
         color: #1B2559;
     }
 
     &__box-subtext {
         font-weight: 400;
-        font-size: 16px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 16, 12, 1);
+        @include adaptiv-value("line-height", 24, 14, 1);
         color: #96A5B8;
     }
 
     &__text {
         font-weight: 600;
-        font-size: 32px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 32, 20, 1);
+        @include adaptiv-value("line-height", 24, 22, 1);
         text-align: right;
         color: #1294F2;
         width: 45px;
@@ -400,7 +408,10 @@ export default {
 
 .statistics-graph {
     width: 100%;
-    padding: 35px 30px 25px 30px;
+    @include adaptiv-value("padding-top", 35, 20, 1);
+    @include adaptiv-value("padding-right", 30, 20, 1);
+    @include adaptiv-value("padding-bottom", 25, 10, 1);
+    @include adaptiv-value("padding-left", 30, 20, 1);
     background: #FFFFFF;
     border-radius: 16px;
     flex-grow: 1;
@@ -408,17 +419,17 @@ export default {
 
     &__title {
         font-weight: 600;
-        font-size: 24px;
-        line-height: 24px;
-        margin-bottom: 50px;
+        @include adaptiv-value("font-size", 24, 18, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
+        @include adaptiv-value("margin-bottom", 50, 20, 1);
         color: #1B2559;
     }
 
     &__inner {
         display: flex;
         flex-direction: column;
-        gap: 30px;
-        margin-bottom: 30px;
+        @include adaptiv-value("gap", 30, 15, 1);
+        @include adaptiv-value("margin-bottom", 30, 10, 1);
     }
 
     &__item {
@@ -484,79 +495,71 @@ export default {
 .statistics-graph-bottom {
     display: flex;
     justify-content: center;
-    margin-bottom: 40px;
-
+    @include adaptiv-value("margin-bottom", 40, 20, 1);
     &__item {
-        width: 93px;
+        @include adaptiv-value("width", 93, 65, 1);
         text-align: center;
         position: relative;
 
         &:nth-child(1) {
             .statistics-graph-bottom__item-column {
-                height: 250px;
-
+                @include adaptiv-value("height", 250, 200, 1);
                 span {
-                    height: 137px;
+                    @include adaptiv-value("height", 137, 100, 1);
                 }
             }
         }
 
         &:nth-child(2) {
             .statistics-graph-bottom__item-column {
-                height: 162px;
-
+                @include adaptiv-value("height", 162, 130, 1);
                 span {
-                    height: 76px;
+                    @include adaptiv-value("height", 76, 50, 1);
                 }
             }
         }
 
         &:nth-child(3) {
             .statistics-graph-bottom__item-column {
-                height: 241px;
-
+                @include adaptiv-value("height", 241, 190, 1);
                 span {
-                    height: 41px;
+                    @include adaptiv-value("height", 137, 100, 1);
                 }
             }
         }
 
         &:nth-child(4) {
             .statistics-graph-bottom__item-column {
-                height: 218px;
-
+                @include adaptiv-value("height", 218, 180, 1);
                 span {
-                    height: 76px;
+                    @include adaptiv-value("height", 76, 50, 1);
                 }
             }
         }
 
         &:nth-child(5) {
             .statistics-graph-bottom__item-column {
-                height: 183px;
-
+                @include adaptiv-value("height", 183, 140, 1);
                 span {
-                    height: 59px;
+                    @include adaptiv-value("height", 59, 40, 1);
                 }
             }
         }
 
         &:nth-child(6) {
             .statistics-graph-bottom__item-column {
-                height: 228px;
-
+                @include adaptiv-value("height", 228, 170, 1);
                 span {
-                    height: 120px;
+                    @include adaptiv-value("height", 120, 100, 1);
                 }
             }
         }
 
         &:nth-child(7) {
             .statistics-graph-bottom__item-column {
-                height: 204px;
-
+                @include adaptiv-value("height", 204, 160, 1);
                 span {
-                    height: 61px;
+                    @include adaptiv-value("height", 61, 40, 1);
                 }
             }
         }
@@ -571,10 +574,10 @@ export default {
     }
 
     &__item-column {
-        width: 46px;
         position: absolute;
         left: 50%;
-        bottom: 61px;
+        @include adaptiv-value("bottom", 61, 42, 1);
+        @include adaptiv-value("width", 46, 30, 1);
         transform: translateX(-50%);
         background: #F9E8E8;
         border-radius: 2px;
@@ -598,29 +601,32 @@ export default {
 
 .events-section {
     display: flex;
-    gap: 45px;
+    @include adaptiv-value("gap", 45, 30, 1);
 }
 
 .news {
     background: #FFFFFF;
     border: 1px solid #FFFFFF;
     border-radius: 16px;
-    padding: 45px 30px 35px 30px;
+    @include adaptiv-value("padding-top", 45, 20, 1);
+    @include adaptiv-value("padding-right", 30, 20, 1);
+    @include adaptiv-value("padding-bottom", 35, 20, 1);
+    @include adaptiv-value("padding-left", 30, 20, 1);
     max-width: 735px;
     width: 100%;
     flex-grow: 1;
 
     &__title {
-        margin-bottom: 25px;
         font-weight: 600;
-        font-size: 24px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 24, 18, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
+        @include adaptiv-value("margin-bottom", 25, 20, 1);
         color: #1B2559;
     }
 
     &__img {
-        margin-bottom: 15px;
-        height: 207px;
+        @include adaptiv-value("margin-bottom", 15, 15, 1);
+        @include adaptiv-value("height", 207, 130, 1);
         width: 100%;
         border-radius: 6px;
         object-fit: cover;
@@ -628,17 +634,16 @@ export default {
 
     &__date {
         font-weight: 400;
-        font-size: 20px;
-        line-height: 24px;
-        margin-bottom: 25px;
+        @include adaptiv-value("font-size", 20, 16, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
+        @include adaptiv-value("margin-bottom", 25, 10, 1);
         color: #96A5B8;
-
     }
 
     &__text {
         font-weight: 400;
-        font-size: 16px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 16, 1);
         color: #60678B;
     }
 }
@@ -647,14 +652,17 @@ export default {
     background: #FFFFFF;
     border: 1px solid #FFFFFF;
     border-radius: 16px;
-    padding: 45px 30px 35px 30px;
+    @include adaptiv-value("padding-top", 45, 20, 1);
+    @include adaptiv-value("padding-right", 30, 20, 1);
+    @include adaptiv-value("padding-bottom", 35, 20, 1);
+    @include adaptiv-value("padding-left", 30, 20, 1);
     max-width: 690px;
 
     &__title {
         font-weight: 600;
-        font-size: 24px;
-        line-height: 24px;
-        margin-bottom: 25px;
+        @include adaptiv-value("font-size", 24, 18, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
+        @include adaptiv-value("margin-bottom", 25, 20, 1);
         color: #1B2559;
 
     }
@@ -668,8 +676,7 @@ export default {
 
 .events-item {
     display: flex;
-    gap: 20px;
-
+    @include adaptiv-value("gap", 20, 10, 1);
     &:nth-child(2) {
         .events-item__icon {
             background: #DCFCE7;
@@ -677,43 +684,129 @@ export default {
     }
 
     &__icon {
-        min-width: 64px;
-        min-height: 64px;
-        max-height: 64px;
-        max-width: 64px;
+        @include adaptiv-value("max-width", 64, 40, 1);
+        @include adaptiv-value("min-width", 64, 40, 1);
+        @include adaptiv-value("min-height", 64, 40, 1);
+        @include adaptiv-value("max-height", 64, 40, 1);
         background: #F4F7FE;
         display: flex;
         border-radius: 100%;
         justify-content: center;
         align-items: center;
+        svg {
+            @include adaptiv-value("width", 33, 22, 1);
+            @include adaptiv-value("height", 33, 22, 1);
+        }
     }
 
     &__box {}
 
     &__box-title {
         font-weight: 500;
-        font-size: 20px;
-        line-height: 24px;
-        margin-bottom: 8px;
+        @include adaptiv-value("font-size", 10, 16, 1);
+        @include adaptiv-value("line-height", 24, 20, 1);
+        @include adaptiv-value("margin-bottom", 8, 12, 1);
         color: #1294F2;
-
     }
 
     &__box-subtitle {
         font-weight: 400;
-        font-size: 20px;
-        line-height: 24px;
-        margin-bottom: 12px;
+        @include adaptiv-value("font-size", 20, 14, 1);
+        @include adaptiv-value("line-height", 24, 16, 1);
+        @include adaptiv-value("margin-bottom", 12, 10, 1);
         color: #96A5B8;
     }
 
     &__box-text {
         font-weight: 400;
-        font-size: 16px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 16, 13, 1);
+        @include adaptiv-value("line-height", 24, 16, 1);
         color: #60678B;
     }
 }
 
+@media (max-width: 1700px) {
+    .statistics-graph {
+        min-width: unset;
+    }
+    .statistics-graph-bottom__item-column {
+        width: 35px;
+    }
+    .statistics-graph-bottom__item {
+        width: 60px;
+    }
+    .statistics-graph-bottom {
+        margin-left: 20px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .statistics__inner {
+        flex-direction: column;
+    }
+    .statistics-graph-bottom__item {
+        flex-grow: 1;
+    }
+    .statistics-graph-bottom {
+        margin-left: unset;
+    }
+    .news {
+        flex-grow: 1;
+        width: 100%;
+    }
+    .events {
+        width: 100%;
+        flex-grow: 1;
+    }
+    .events-section {
+        flex-direction: column;
+    }
+    .news {
+        max-width: unset;
+    }
+    .events {
+        max-width: unset;
+    }
+    .statistics-graph-bottom__item {
+        @include adaptiv-value("width", 93, 65, 1);
+    }
+    .statistics-graph-bottom {
+        margin-left: 20px;
+    }
+    .statistics-graph-bottom__item-column {
+        @include adaptiv-value("width", 70, 30, 1);
+    }
+}
+
+@media (max-width: 650px) {
+    .statistics-graph-bottom__item-column {
+        width: 30px;
+    }
+    .statistics-graph-bottom__item {
+        flex-grow: unset;
+        width: 50px;
+    }
+}
+
+@media (max-width: 550px) {
+    .statistics-graph-bottom__item-column {
+        width: 20px;
+    }
+    .statistics-graph-bottom__item {
+        flex-grow: unset;
+        width: 35px;
+    }
+}
+
+@media (max-width: 500px) {
+    .statistics-graph__row {
+        gap: 20px;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .events-item {
+        flex-direction: column;
+    }
+}
 
 // // </style>

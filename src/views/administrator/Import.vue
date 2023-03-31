@@ -234,7 +234,7 @@ export default {
     }
 
     .import__inner {
-        padding-bottom: 38px;
+        @include adaptiv-value("padding-bottom", 38, 10, 1);
     }
 
     .import__top-btn {
@@ -246,8 +246,10 @@ export default {
 }
 
 .main-import {
-    padding: 30px 55px 50px 55px;
-
+    @include adaptiv-value("padding-top", 30, 30, 1);
+    @include adaptiv-value("padding-right", 55, 30, 1);
+    @include adaptiv-value("padding-bottom", 50, 30, 1);
+    @include adaptiv-value("padding-left", 55, 30, 1);
     .container {
         display: block;
         position: relative;
@@ -318,6 +320,9 @@ export default {
     }
 
     // // // 
+    .custom-select-new-curs {
+        @include adaptiv-value("width", 390, 300, 1);
+    }
 }
 
 .import {
@@ -329,8 +334,8 @@ export default {
 
     &__top-link {
         font-weight: 500;
-        font-size: 24px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 24, 16, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
         display: flex;
         align-items: center;
         gap: 10px;
@@ -340,72 +345,78 @@ export default {
     &__top-btn {
         display: none;
         font-weight: 500;
-        font-size: 16px;
-        line-height: 24px;
-        /* identical to box height, or 150% */
-
         text-align: center;
         justify-content: center;
         align-items: center;
-        padding: 12px;
-
         color: #FFFFFF;
-
         background: #1294F2;
-        /* blue */
-
         border: 1px solid #1294F2;
         border-radius: 6px;
+
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 16, 1);
+        @include adaptiv-value("padding", 12, 10, 1);
+        @include adaptiv-value("width", 185, 150, 1);
+        @include adaptiv-value("max-width", 185, 150, 1);
     }
 
     &__inner {
         display: flex;
         padding-bottom: 20px;
         border-bottom: 0.5px solid #96A5B8;
+        flex-wrap: wrap;
     }
 
     &__btn {
         margin-left: auto;
         margin-right: 25px;
-
         font-weight: 500;
-        font-size: 16px;
-        line-height: 24px;
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
         color: #1294F2;
-        padding: 12px;
 
         background: #FFFFFF;
         border: 1px solid #1294F2;
         border-radius: 6px;
+
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 16, 1);
+        @include adaptiv-value("padding", 12, 10, 1);
+        @include adaptiv-value("width", 185, 130, 1);
+        @include adaptiv-value("max-width", 185, 130, 1);
     }
 
     &__button {
         background: #1294F2;
         border: 1px solid #1294F2;
         border-radius: 6px;
-        width: 185px;
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
 
         font-weight: 500;
-        font-size: 16px;
-        line-height: 24px;
         color: #fff;
+
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 16, 1);
+        @include adaptiv-value("padding", 12, 10, 1);
+        @include adaptiv-value("width", 185, 150, 1);
+        @include adaptiv-value("max-width", 185, 150, 1);
     }
 }
 
 .import-content {
     &__buttons {
         display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
         align-items: center;
         gap: 20px;
-
+        margin-right: 30px;
+        text-align: left;
         .mixitup-control-active {
             color: #000;
 
@@ -417,11 +428,11 @@ export default {
 
     &__button-btn {
         font-weight: 500;
-        font-size: 20px;
-        line-height: 24px;
         color: #1B2559;
-        position: relative;
-
+        position: relative; 
+        text-align: left;
+        @include adaptiv-value("font-size", 20, 16, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
         &::before {
             content: '';
             position: absolute;
@@ -438,34 +449,32 @@ export default {
 }
 
 .import-body {
-    padding-top: 20px;
-    padding-bottom: 280px;
-
+    @include adaptiv-value("padding-top", 20, 10, 1);
+    @include adaptiv-value("padding-bottom", 280, 0, 1);
     &__subtitle {
-        margin-top: 35px;
+        @include adaptiv-value("font-size", 24, 18, 1);
+        @include adaptiv-value("line-height", 24, 20, 1);
+        @include adaptiv-value("margin-bottom", 35, 10, 1);
+        @include adaptiv-value("margin-top", 35, 20, 1);
         font-weight: 600;
-        font-size: 24px;
-        line-height: 24px;
         color: #1B2559;
-        margin-bottom: 35px;
-
     }
 
     &__text {
         font-weight: 500;
-        font-size: 20px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 20, 16, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
         color: #1B2559;
-        margin-bottom: 25px;
+        @include adaptiv-value("margin-bottom", 25, 15, 1);
     }
 
     &__link {
         font-weight: 400;
-        font-size: 20px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 20, 16, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
         text-decoration-line: underline;
         color: #1294F2;
-        margin-bottom: 30px;
+        @include adaptiv-value("margin-bottom", 30, 20, 1);
         display: block;
         max-width: 430px;
     }
@@ -473,10 +482,10 @@ export default {
     &__input {
         width: 220px;
         font-weight: 500;
-        font-size: 20px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 20, 16, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
         color: #1294F2;
-        padding: 16px;
+        @include adaptiv-value("padding", 16, 12, 1);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -502,75 +511,78 @@ export default {
 .import-box {
     &__title {
         font-weight: 600;
-        font-size: 24px;
-        line-height: 24px;
-        margin-bottom: 20px;
+        @include adaptiv-value("font-size", 24, 18, 1);
+        @include adaptiv-value("line-height", 24, 20, 1);
+        @include adaptiv-value("margin-bottom", 20, 15, 1);
         color: #1B2559;
     }
 
     &__text {
         font-weight: 400;
-        font-size: 20px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 20, 16, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
         color: #60678B;
     }
 }
 
 .import-info {
-    padding-top: 35px;
-
+    @include adaptiv-value("padding-top", 35, 20, 1);
     &__title {
-        padding-top: 30px;
         font-weight: 600;
-        font-size: 24px;
-        line-height: 24px;
-        margin-bottom: 30px;
         color: #1B2559;
+
+        @include adaptiv-value("font-size", 24, 18, 1);
+        @include adaptiv-value("line-height", 24, 20, 1);
+        @include adaptiv-value("margin-bottom", 30, 10, 1);
+        @include adaptiv-value("padding-top", 30, 20, 1);
     }
 
     &__check {
-        margin-bottom: 30px;
+        @include adaptiv-value("margin-bottom", 30, 15, 1);
     }
 
     &__row {
         display: flex;
         align-items: center;
-        gap: 25px;
-        margin-bottom: 30px;
+        @include adaptiv-value("gap", 25, 10, 1);
+        @include adaptiv-value("margin-bottom", 30, 20, 1);
     }
 
     &__row-btn {
-        padding: 12px;
         font-weight: 500;
-        font-size: 16px;
-        line-height: 24px;
         text-align: center;
         display: flex;
         justify-content: center;
         align-items: center;
-        max-width: 235px;
         background: #1294F2;
-        width: 235px;
         border: 1px solid #1294F2;
         border-radius: 6px;
         color: #FFFFFF;
+
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 16, 1);
+        @include adaptiv-value("padding", 12, 10, 1);
+        @include adaptiv-value("width", 235, 200, 1);
+        @include adaptiv-value("max-width", 235, 200, 1);
     }
 
     &__row-button {
-        padding: 12px;
         font-weight: 500;
-        font-size: 16px;
-        line-height: 24px;
         text-align: center;
         display: flex;
         justify-content: center;
         align-items: center;
-        max-width: 180px;
         background: #fff;
-        width: 180px;
+
         border: 1px solid #1294F2;
         border-radius: 6px;
         color: #1294F2;
+
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 16, 1);
+        @include adaptiv-value("padding", 12, 10, 1);
+        @include adaptiv-value("width", 180, 140, 1);
+        @include adaptiv-value("max-width", 180, 140, 1);
     }
 
     &__inner {
@@ -587,44 +599,48 @@ export default {
 
     &__column-title {
         font-weight: 600;
-        font-size: 24px;
-        line-height: 24px;
-        margin-bottom: 20px;
+        @include adaptiv-value("font-size", 24, 18, 1);
+        @include adaptiv-value("line-height", 24, 20, 1);
+        @include adaptiv-value("margin-bottom", 20, 10, 1);
         color: #1B2559;
     }
 
     &__column-text {
         font-weight: 400;
-        font-size: 16px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
         color: #60678B;
-        margin-bottom: 25px;
+        @include adaptiv-value("margin-bottom", 25, 20, 1);
     }
 }
 
 .import-info-item {
     &__title {
         font-weight: 600;
-        font-size: 24px;
-        line-height: 24px;
-        margin-bottom: 20px;
         color: #1B2559;
+
+        @include adaptiv-value("font-size", 24, 18, 1);
+        @include adaptiv-value("line-height", 24, 20, 1);
+        @include adaptiv-value("margin-bottom", 20, 10, 1);
 
     }
 
     &__row {
-        margin-bottom: 25px;
-        gap: 35px;
         display: flex;
         align-items: center;
+        @include adaptiv-value("margin-bottom", 25, 20, 1);
+        @include adaptiv-value("gap", 35, 5, 1);
+        &:last-child {
+            @include adaptiv-value("margin-bottom", 25, 25, 1);
+        }
     }
 
     &__row-text {
         width: 195px;
 
         font-weight: 400;
-        font-size: 16px;
-        line-height: 24px;
+         @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
         color: #1B2559;
     }
 }
@@ -632,15 +648,17 @@ export default {
 .import-info-users {
     &__title {
         font-weight: 600;
-        font-size: 24px;
-        line-height: 24px;
-        margin-bottom: 20px;
         color: #1B2559;
+
+        @include adaptiv-value("font-size", 24, 18, 1);
+        @include adaptiv-value("line-height", 24, 20, 1);
+        @include adaptiv-value("margin-bottom", 20, 10, 1);
     }
 
     &__row {
         display: flex;
         gap: 90px;
+
         display: flex;
         align-items: flex-start;
     }
@@ -649,9 +667,64 @@ export default {
         width: 140px;
 
         font-weight: 400;
-        font-size: 16px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
         color: #1B2559;
     }
 }
+
+@media (max-width: 950px) {
+    .import__inner {
+        flex-direction: column;
+    }
+    .import__btn {
+        margin-left: unset;
+        margin-right: auto;
+        margin-bottom: 15px;
+    }
+    .import-content__buttons {
+        margin-bottom: 30px;
+    }
+    .import-info__inner {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 650px) {
+    .import-info-item__row {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .import-info-users__row {
+        @include adaptiv-value("gap", 20, 10, 1);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 550px) {
+    .import-info__row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 500px) {
+    .import-content__buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .import__top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    .import-content__button-btn::before {
+        left: 0;
+        transform: unset;
+    }
+}
+
 </style>

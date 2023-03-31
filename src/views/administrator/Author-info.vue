@@ -336,7 +336,10 @@ export default {
 @import '../../assets/scss/vars';
 
 .main-author-info {
-    padding: 30px 55px 20px 55px;
+    @include adaptiv-value("padding-top", 30, 20, 1);
+    @include adaptiv-value("padding-right", 55, 20, 1);
+    @include adaptiv-value("padding-bottom", 20, 20, 1);
+    @include adaptiv-value("padding-left", 55, 20, 1);
 }
 
 // 
@@ -347,8 +350,8 @@ export default {
 
     &__top-link {
         font-weight: 500;
-        font-size: 24px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 24, 16, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
         color: #1B2559;
         gap: 10px;
         display: flex;
@@ -359,37 +362,42 @@ export default {
 
 .author-info-person {
     display: flex;
-    gap: 45px;
     align-items: center;
-    padding: 15px 65px 30px 35px;
+    @include adaptiv-value("gap", 45, 20, 1);
+    @include adaptiv-value("padding-top", 15, 20, 1);
+    @include adaptiv-value("padding-right", 65, 20, 1);
+    @include adaptiv-value("padding-bottom", 30, 20, 1);
+    @include adaptiv-value("padding-left", 35, 20, 1);
     background: #FFFFFF;
     border-radius: 16px;
-    margin-bottom: 30px;
-
-    &__img {}
+    @include adaptiv-value("margin-bottom", 30, 20, 1);
+    &__img {
+        @include adaptiv-value("width", 183, 90, 1);
+        @include adaptiv-value("height", 183, 90, 1);
+    }
 
     &__box {}
 
     &__box-title {
         font-weight: 600;
-        font-size: 24px;
-        line-height: 24px;
-        margin-bottom: 25px;
+        @include adaptiv-value("font-size", 24, 16, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
+        @include adaptiv-value("margin-bottom", 25, 15, 1);
         color: #1B2559;
     }
 
     &__subtitle {
         font-weight: 500;
-        font-size: 20px;
-        line-height: 24px;
-        margin-bottom: 10px;
+        @include adaptiv-value("font-size", 20, 16, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
+        @include adaptiv-value("margin-bottom", 10, 5, 1);
         color: #1B2559;
     }
 
     &__text {
         font-weight: 500;
-        font-size: 16px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 16, 1);
         color: #60678B;
     }
 }
@@ -407,8 +415,8 @@ export default {
 
     &__top-text {
         font-weight: 500;
-        font-size: 16px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 16, 1);
         color: #1B2559;
         text-align: center;
 
@@ -454,18 +462,20 @@ export default {
     border-bottom: 0.5px solid #CECECE;
 
     font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
+    @include adaptiv-value("font-size", 16, 14, 1);
+    @include adaptiv-value("line-height", 24, 16, 1);
     color: #1B2559;
     align-items: center;
     width: 100%;
     padding-right: 30px;
+    @include adaptiv-value("row-gap", 20, 10, 1);
     &__text {
         &:first-child {
             width: 30px;
             max-width: 30px;
             font-weight: 500;
-            font-size: 20px;
+            @include adaptiv-value("font-size", 20, 16, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
         }
     }
 
@@ -505,6 +515,73 @@ export default {
     &__arrow {
         transition: transform 0.3s;
         transform: rotate(180deg);
+    }
+}
+
+@media (max-width: 1600px) {
+    .author-info-content__top {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .author-info-content__top-text {
+        width: unset !important;
+        margin-left: unset !important;
+    }
+    .author-info-content-item {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 800px) {
+    .author-info-content-item {
+        flex-direction: column;
+        padding-right: unset;
+    }
+    .author-info-content-item__subsc {
+        width: unset;
+    }
+    .author-info-content-item__subsc {
+        margin-left: unset !important;
+        margin-right: unset;
+    }
+    .author-info-content-item__box-rait {
+        justify-content: center;
+
+    }
+    .author-info-content-item__text {
+        text-align: center;
+    }
+    .author-info-content-item__img {
+        width: 300px;
+        margin-left: unset;
+        margin-right: unset;
+    }
+    .author-info-content__top {
+        justify-content: center;
+        align-items: center;
+        padding-right: unset;
+    }
+    .author-info-content-item:hover .author-info-content-item__arrow {
+        transform: rotate(180deg) translateX(0%);
+    }
+}
+@media (max-width: 450px) {
+    .author-info-content-item__img {
+        width: 100%;
+    }
+    .author-info-person {
+        flex-direction: column;
+    }
+}
+@media (max-width: 400px) {
+    .author-info-content__top {
+        align-items: flex-start;
+    }
+    .author-info-content-item {
+        align-items: flex-start;
+    }
+    .author-info-content-item__box-rait {
+        justify-content: flex-start;
     }
 }
 </style>

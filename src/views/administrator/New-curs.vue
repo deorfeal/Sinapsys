@@ -232,7 +232,10 @@ export default {
 @import '../../assets/scss/vars';
 
 .main-new-curs {
-    padding: 30px 55px 40px 55px;
+    @include adaptiv-value("padding-top", 30, 30, 1);
+    @include adaptiv-value("padding-right", 55, 30, 1);
+    @include adaptiv-value("padding-bottom", 40, 30, 1);
+    @include adaptiv-value("padding-left", 55, 30, 1);
 }
 
 .new-curs-top {
@@ -247,17 +250,17 @@ export default {
         display: flex;
         align-items: center;
         font-weight: 500;
-        font-size: 24px;
-        line-height: 24px;
         gap: 10px;
         color: #1B2559;
-        margin-bottom: 45px;
+        @include adaptiv-value("font-size", 24, 16, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
+        @include adaptiv-value("margin-bottom", 45, 30, 1);
     }
 
     &__text {
         font-weight: 400;
-        font-size: 16px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 16, 1);
         margin-top: auto;
         margin-bottom: auto;
         text-align: right;
@@ -267,19 +270,19 @@ export default {
 
     &__btn {
         font-weight: 500;
-        font-size: 20px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 20, 16, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
+        @include adaptiv-value("padding", 16, 12, 1);
+        @include adaptiv-value("width", 160, 130, 1);
+        @include adaptiv-value("max-width", 160, 130, 1);
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
-        padding: 16px;
         color: #FFFFFF;
         margin-left: 15px;
         background: #1294F2;
         border-radius: 6px;
-        width: 160px;
-        max-width: 160px;
     }
 }
 
@@ -300,8 +303,8 @@ export default {
 
     &__button-btn {
         font-weight: 500;
-        font-size: 20px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 20, 16, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
         color: #1B2559;
         position: relative;
 
@@ -311,7 +314,7 @@ export default {
             bottom: -10px;
             width: 35px;
             left: 50%;
-            height: 6px;
+            @include adaptiv-value("height", 6, 4, 1);
             transform: translateX(-50%);
             background: transparent;
             transition: background 0.3s;
@@ -321,7 +324,7 @@ export default {
 }
 
 .new-curs__inner {
-    margin-top: 45px;
+    @include adaptiv-value("margin-top", 45, 20, 1);
 }
 
 .new-curs-body {
@@ -331,43 +334,49 @@ export default {
 
     &__item {
         display: flex;
-        gap: 75px;
+        @include adaptiv-value("gap", 75, 20, 1);
         align-items: flex-start;
     }
 
     &__item-text {
-        width: 140px;
-        max-width: 140px;
+        @include adaptiv-value("width", 140, 90, 1);
+        @include adaptiv-value("max-width", 140, 90, 1);
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 16, 1);
         font-weight: 400;
-        font-size: 16px;
-        line-height: 24px;
         color: #1B2559;
     }
 
     &__item-input {
-        padding: 12px 12px 12px 16px;
+        @include adaptiv-value("padding-top", 12, 8, 1);
+        @include adaptiv-value("padding-right", 12, 8, 1);
+        @include adaptiv-value("padding-bottom", 12, 8, 1);
+        @include adaptiv-value("padding-left", 16, 12, 1);
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 16, 1);
         font-weight: 500;
-        font-size: 16px;
-        line-height: 24px;
         color: #96A5B8;
         min-width: 390px;
         border: 1px solid #96A5B8;
         border-radius: 4px;
 
         &::placeholder {
-            font-size: 16px;
-            line-height: 24px;
+            @include adaptiv-value("font-size", 16, 14, 1);
+            @include adaptiv-value("line-height", 24, 16, 1);
             color: #96A5B8;
         }
     }
 
     &__item-textarea {
         font-weight: 500;
-        font-size: 16px;
-        line-height: 24px;
         min-width: 610px;
-        min-height: 290px;
-        padding: 12px 12px 12px 16px;
+        @include adaptiv-value("min-height", 290, 150, 1);
+        @include adaptiv-value("padding-top", 12, 8, 1);
+        @include adaptiv-value("padding-right", 12, 8, 1);
+        @include adaptiv-value("padding-bottom", 12, 8, 1);
+        @include adaptiv-value("padding-left", 16, 12, 1);
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 16, 1);
         color: #96A5B8;
         resize: unset;
         border: 1px solid #96A5B8;
@@ -375,8 +384,8 @@ export default {
 
         &::placeholder {
             font-weight: 500;
-            font-size: 16px;
-            line-height: 24px;
+            @include adaptiv-value("font-size", 16, 14, 1);
+            @include adaptiv-value("line-height", 24, 16, 1);
             color: #96A5B8;
         }
     }
@@ -385,14 +394,14 @@ export default {
 .new-curs-body-download {
     display: flex;
     align-items: flex-start;
-    gap: 75px;
+    @include adaptiv-value("gap", 75, 20, 1);
 
     &__text {
         font-weight: 400;
-        font-size: 16px;
-        line-height: 24px;
-        width: 140px;
-        max-width: 140px;
+        @include adaptiv-value("width", 140, 90, 1);
+        @include adaptiv-value("max-width", 140, 90, 1);
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 16, 1);
         color: #1B2559;
 
     }
@@ -419,15 +428,15 @@ export default {
     &__box-text {
         opacity: 0;
         transition: opacity 0.3s;
-        gap: 10px;
+        @include adaptiv-value("gap", 10, 5, 1);
         display: flex;
         align-items: center;
         justify-content: center;
         font-weight: 500;
-        font-size: 20px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 20, 16, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
         width: 220px;
-        padding: 12px;
+        @include adaptiv-value("padding", 12, 8, 1);
         max-width: 220px;
 
         border: 1px solid #1294F2;
@@ -435,8 +444,12 @@ export default {
         color: #1294F2;
 
         span:first-child {
-            width: 25px;
-            height: 22px;
+            @include adaptiv-value("width", 25, 16, 1);
+            @include adaptiv-value("height", 22, 14, 1);
+            svg {
+                @include adaptiv-value("width", 25, 16, 1);
+                @include adaptiv-value("height", 22, 14, 1);
+            }
         }
     }
 }
@@ -448,25 +461,27 @@ export default {
         max-width: 715px;
         display: flex;
         justify-content: flex-end;
+        @include adaptiv-value("min-width", 715, 300, 1);
     }
 
     &__title {
         font-weight: 600;
-        font-size: 24px;
-        line-height: 24px;
-        margin-bottom: 25px;
+        @include adaptiv-value("font-size", 24, 16, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
+        @include adaptiv-value("margin-bottom", 25, 15, 1);
         color: #1B2559;
 
         &:nth-child(3) {
-            margin-bottom: 15px;
+            @include adaptiv-value("margin-bottom", 15, 10, 1);
         }
     }
 
     &__inner {
-        margin-bottom: 50px;
+        @include adaptiv-value("margin-bottom", 50, 30, 1);
         display: flex;
         flex-direction: column;
         gap: 25px;
+      
 
         /* Customize the label (the container) */
         .container {
@@ -499,7 +514,7 @@ export default {
         /* Create a custom checkbox */
         .checkmark {
             position: absolute;
-            top: 0;
+            @include adaptiv-value("top", 0, -3, 1);
             left: 0;
             @include adaptiv-value("height", 24, 20, 1);
             @include adaptiv-value("width", 24, 20, 1);
@@ -543,18 +558,22 @@ export default {
 
     &__text {
         font-weight: 400;
-        font-size: 16px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 16, 1);
         color: #60678B;
-        margin-bottom: 25px;
+        @include adaptiv-value("margin-bottom", 25, 15, 1);
     }
 
     &__row {
-        gap: 25px;
+        @include adaptiv-value("gap", 25, 15, 1);
         display: flex;
         align-items: center;
         max-width: 715px;
-        margin-bottom: 25px;
+        @include adaptiv-value("min-width", 715, 300, 1);
+        @include adaptiv-value("margin-bottom", 25, 20, 1);
+        .custom-select-new-curs {
+            margin-left: auto;
+        }
     }
 
     &__row-text {
@@ -570,16 +589,17 @@ export default {
         align-items: center;
         gap: 8px;
         font-weight: 500;
-        font-size: 16px;
-        line-height: 24px;
+    
         background: #FFFFFF;
         border: 1px solid #1294F2;
         border-radius: 6px;
-        width: 235px;
-        padding: 12px;
-        max-width: 235px;
+        @include adaptiv-value("padding", 12, 10, 1);
+        @include adaptiv-value("width", 235, 200, 1);
+        @include adaptiv-value("max-width", 235, 200, 1);
         color: #1294F2;
 
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 16, 1);
         span:first-child {
             width: 16px;
             height: 16px;
@@ -596,14 +616,15 @@ export default {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-
+    @include adaptiv-value("gap", 20, 15, 1);
     &__text {
         font-weight: 400;
-        font-size: 16px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 16, 13, 1);
+        @include adaptiv-value("line-height", 24, 15, 1);
         color: #1B2559;
-        width: 240px;
-        max-width: 240px;
+        @include adaptiv-value("width", 220, 150, 1);
+        @include adaptiv-value("max-width", 220, 150, 1);
+        @include adaptiv-value("min-width", 220, 150, 1);
     }
 
     &__input {
@@ -611,28 +632,113 @@ export default {
         margin-right: 10px;
 
         font-weight: 500;
-        font-size: 16px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 16, 13, 1);
+        @include adaptiv-value("line-height", 24, 15, 1);
         color: #96A5B8;
         background: #FFFFFF;
         border: 1px solid #96A5B8;
         border-radius: 6px;
-        padding: 5px 10px;
-        max-width: 52px;
-        width: 52px;
+        @include adaptiv-value("padding-top", 5, 5, 1);
+        @include adaptiv-value("padding-right", 10, 5, 1);
+        @include adaptiv-value("padding-bottom", 5, 5, 1);
+        @include adaptiv-value("padding-left", 10, 5, 1);
+        @include adaptiv-value("width", 52, 40, 1);
+        @include adaptiv-value("max-width", 52, 45, 1);
 
         &::placeholder {
             font-weight: 500;
-            font-size: 16px;
-            line-height: 24px;
+            @include adaptiv-value("font-size", 16, 13, 1);
+            @include adaptiv-value("line-height", 24, 15, 1);
             color: #96A5B8;
         }
     }
 
     &__subtext {
-        font-size: 16px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 16, 13, 1);
+        @include adaptiv-value("line-height", 24, 15, 1);
         color: #1B2559;
+    }
+}
+@media (max-width: 1000px) {
+    .new-curs-body__item-textarea {
+        min-width: unset;
+        width: 100%;
+    }
+    .new-curs-body-download__box{
+        min-width: unset;
+        width: 100%;
+    }
+    .new-curs-body__item-text {
+        @include adaptiv-value("min-width", 140, 90, 1);
+    }
+    .new-curs-body-download__text {
+        @include adaptiv-value("min-width", 140, 90, 1);
+    }
+}
+@media (max-width: 800px) {
+    .new-curs-top__inner {
+        flex-direction: column;
+        align-items: flex-start;
+        @include adaptiv-value("gap", 20, 10, 1);
+    }
+    .new-curs-top__text {
+        margin-left: unset;
+        margin-right: auto;
+        @include adaptiv-value("margin-top", 30, 20, 1);
+    }
+    .new-curs-top__btn {
+        margin-left: 0;
+    }
+}
+@media (max-width: 750px) {
+    .new-curs-body__item-input {
+        min-width: unset;
+        width: 100%;
+    }
+}
+@media (max-width: 550px) {
+    .new-curs-content__row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .new-curs-content__wrap {
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .new-curs-content-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .new-curs-content-item__input {
+        margin-left: 0;
+    }
+    .new-curs-content-item__subtext {
+        margin-top: -10px;
+    }
+    .new-curs-content__row .custom-select-new-curs {
+        margin-left: unset;
+    }
+}
+@media (max-width: 450px) {
+    .new-curs-body__item {
+        flex-direction: column;
+    }
+    .new-curs-body-download {
+        flex-direction: column;
+    }
+    .new-curs-body-download__text {
+        width: unset;
+        max-width: unset;
+    }
+    .new-curs-body-download {
+        gap: 10px;
+    }
+    .new-curs-body__item-text {
+        width: unset;
+        max-width: unset;
+    }
+    .new-curs-body__item {
+        gap: 10px;
     }
 }
 </style>

@@ -120,6 +120,7 @@ export default {
 
 <style lang="scss">
 @import '../assets/scss/vars';
+
 .reg .entrance-form__box {
     margin-bottom: 15px;
     &:nth-child(5) .entrance-form__box-input {

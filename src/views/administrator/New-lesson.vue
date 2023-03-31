@@ -238,7 +238,10 @@ export default {
 @import '../../assets/scss/vars';
 
 .main-new-lesson {
-    padding: 30px 55px 130px 55px;
+    @include adaptiv-value("padding-top", 30, 30, 1);
+    @include adaptiv-value("padding-right", 55, 30, 1);
+    @include adaptiv-value("padding-bottom", 130, 30, 1);
+    @include adaptiv-value("padding-left", 55, 30, 1);
 }
 
 // 
@@ -249,12 +252,13 @@ export default {
         display: flex;
         justify-content: space-between;
         margin-bottom: 5px;
+        gap: 20px;
     }
 
     &__top-link {
         font-weight: 500;
-        font-size: 24px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 24, 16, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
         color: #1B2559;
         display: flex;
         align-items: center;
@@ -263,30 +267,31 @@ export default {
 
     &__top-btn {
         font-weight: 500;
-        font-size: 20px;
-        line-height: 24px;
         text-align: center;
         color: #FFFFFF;
-        padding: 16px;
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 160px;
-        max-width: 160px;
 
         background: #1294F2;
         border-radius: 6px;
+
+        @include adaptiv-value("font-size", 20, 16, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
+        @include adaptiv-value("padding", 16, 12, 1);
+        @include adaptiv-value("width", 160, 130, 1);
+        @include adaptiv-value("max-width", 160, 130, 1);
     }
 
     &__inner {
         display: flex;
         flex-direction: column;
-        gap: 25px;
+        @include adaptiv-value("gap", 25, 20, 1);
     }
 }
 
 .new-lesson-item {
-    gap: 25px;
+    @include adaptiv-value("gap", 25, 15, 1);
     display: flex;
     align-items: center;
 
@@ -304,49 +309,56 @@ export default {
 
     &__text {
         font-weight: 400;
-        font-size: 16px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 16, 1);
         color: #1B2559;
         width: 190px;
     }
 
     &__input {
         font-weight: 500;
-        font-size: 16px;
-        line-height: 24px;
         color: #96A5B8;
-        padding: 12px 12px 12px 16px;
         background: #FFFFFF;
         border: 1px solid #96A5B8;
         border-radius: 4px;
         width: 390px;
         max-width: 390px;
+        @include adaptiv-value("padding-top", 12, 8, 1);
+        @include adaptiv-value("padding-right", 12, 8, 1);
+        @include adaptiv-value("padding-bottom", 12, 8, 1);
+        @include adaptiv-value("padding-left", 16, 12, 1);
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 16, 1);
 
         &::placeholder {
             font-weight: 500;
-            font-size: 16px;
-            line-height: 24px;
+            @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 16, 1);
             color: #96A5B8;
         }
     }
 
     &__textarea {
         background: #FFFFFF;
-        padding: 12px 12px 12px 16px;
+        @include adaptiv-value("padding-top", 12, 8, 1);
+        @include adaptiv-value("padding-right", 12, 8, 1);
+        @include adaptiv-value("padding-bottom", 12, 8, 1);
+        @include adaptiv-value("padding-left", 16, 12, 1);
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 16, 1);
         border: 1px solid #96A5B8;
         border-radius: 4px;
         width: 610px;
         max-height: 102px;
         resize: unset;
         font-weight: 500;
-        font-size: 16px;
-        line-height: 24px;
+     
         color: #96A5B8;
 
         &::placeholder {
             font-weight: 500;
-            font-size: 16px;
-            line-height: 24px;
+            @include adaptiv-value("font-size", 16, 14, 1);
+            @include adaptiv-value("line-height", 24, 16, 1);
             color: #96A5B8;
         }
     }
@@ -371,13 +383,19 @@ export default {
         border-radius: 6px;
 
         font-weight: 400;
-        font-size: 20px;
-        line-height: 24px;
+      
         color: #1294F2;
 
-        svg {
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 16, 1);
+        span:first-child {
             width: 16px;
             height: 16px;
+
+            svg {
+                width: 16px;
+                height: 16px;
+            }
         }
     }
 }
@@ -406,20 +424,79 @@ export default {
         border-radius: 4px;
 
         font-weight: 400;
-        font-size: 16px;
-        line-height: 24px;
         color: #96A5B8;
 
-        padding: 12px 12px 12px 16px;
+        @include adaptiv-value("padding-top", 12, 8, 1);
+        @include adaptiv-value("padding-right", 12, 8, 1);
+        @include adaptiv-value("padding-bottom", 12, 8, 1);
+        @include adaptiv-value("padding-left", 16, 12, 1);
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 16, 1);
 
         &::placeholder {
             font-weight: 400;
-            font-size: 16px;
-            line-height: 24px;
+            @include adaptiv-value("font-size", 16, 14, 1);
+            @include adaptiv-value("line-height", 24, 16, 1);
             color: #96A5B8;
         }
     }
 }
 
+@media (max-width: 1100px) {
+    .new-lesson__top {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .new-lesson-item__textarea {
+        width: 100%;
+        min-width: unset;
+    }
+    .new-lesson-item__img {
+        width: 100%;
+        min-width: unset;
+    }
+    .new-lesson-item-box {
+        width: 100%;
+        min-width: unset;
+    }
+    .new-lesson-item-box__textarea {
+        width: 100%;
+    }
+    .new-lesson-item__btn {
+        width: 100%;
+    }
+    .new-lesson-item__input {
+        width: 100%;
+        max-width: unset;
+    }
+    .new-lesson__top {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 750px) {
+    .new-lesson-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media(max-width: 550px) {
+    .new-lesson-item-box__top {
+        flex-wrap: wrap;
+        padding-left: 15px;
+        padding-right: 15px;
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 500px) {
+    .new-lesson__top {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
 
 </style>

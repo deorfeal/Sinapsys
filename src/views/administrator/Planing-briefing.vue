@@ -280,21 +280,24 @@ export default {
 @import '../../assets/scss/vars';
 
 .main-planing-briefing {
-    padding: 25px 55px 15px 55px;
+    @include adaptiv-value("padding-top", 25, 30, 1);
+    @include adaptiv-value("padding-right", 55, 30, 1);
+    @include adaptiv-value("padding-bottom", 15, 30, 1);
+    @include adaptiv-value("padding-left", 55, 30, 1);
 }
 
 .planing-briefing {}
 
 .planing-briefing-top {
-    margin-bottom: 35px;
+    @include adaptiv-value("margin-bottom", 35, 20, 1);
     display: flex;
     align-items: center;
     justify-content: space-between;
 
     &__link {
         font-weight: 500;
-        font-size: 24px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 24, 16, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
         gap: 10px;
         display: flex;
         align-items: center;
@@ -308,49 +311,58 @@ export default {
     }
 
     &__buttons-btn {
-        padding: 12px;
-        width: 135px;
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 10px;
         font-weight: 400;
-        font-size: 16px;
-        line-height: 24px;
         color: #1294F2;
         background: #FFFFFF;
         border: 1px solid #1294F2;
         border-radius: 6px;
 
-        &:last-child {
-            width: 145px;
+        @include adaptiv-value("padding", 12, 8, 1);
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("gap", 10, 5, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
+        @include adaptiv-value("width", 135, 130, 1);
+        @include adaptiv-value("max-width", 135, 130, 1);
 
+        &:last-child {
+            @include adaptiv-value("width", 145, 140, 1);
+            @include adaptiv-value("max-width", 145, 140, 1);
             span:first-child {
-                width: 16px;
                 display: block;
-                height: 16px;
+                @include adaptiv-value("width", 16, 12, 1);
+                @include adaptiv-value("height", 16, 12, 1);
+                svg {
+                    width: 100%;
+                    height: 100%;
+                }
             }
         }
     }
 }
 
 .briefing-info {
-    padding: 30px 20px 30px 15px;
-    margin-bottom: 30px;
+    @include adaptiv-value("padding-top", 30, 20, 1);
+    @include adaptiv-value("padding-right", 20, 20, 1);
+    @include adaptiv-value("padding-bottom", 30, 20, 1);
+    @include adaptiv-value("padding-left", 15, 20, 1);
+    @include adaptiv-value("margin-bottom", 30, 20, 1);
     background: #FFFFFF;
     border-radius: 16px;
 
     &__title {
         font-weight: 600;
-        font-size: 24px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 24, 18, 1);
+        @include adaptiv-value("line-height", 24, 20, 1);
+        @include adaptiv-value("margin-bottom", 45, 15, 1);
         color: #1B2559;
-        margin-bottom: 45px;
     }
 
     &__inner {
         display: flex;
-        gap: 8px;
+        gap: 20px;
         align-items: flex-start;
         justify-content: space-between;
     }
@@ -367,16 +379,16 @@ export default {
 
     &__box-text {
         font-weight: 500;
-        font-size: 20px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 20, 16, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
         color: #1B2559;
-        margin-bottom: 30px;
+        @include adaptiv-value("margin-bottom", 30, 20, 1);
     }
 
     &__box-subtext {
         font-weight: 400;
-        font-size: 20px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 20, 16, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
         color: #1B2559;
     }
 
@@ -390,14 +402,17 @@ export default {
     margin-bottom: 15px;
     background: #FFFFFF;
     border-radius: 16px;
-    padding: 15px 65px 35px 15px;
+    @include adaptiv-value("padding-top", 15, 20, 1);
+    @include adaptiv-value("padding-right", 65, 20, 1);
+    @include adaptiv-value("padding-bottom", 35, 20, 1);
+    @include adaptiv-value("padding-left", 15, 20, 1);
     &:last-child {
         margin-bottom: 0;
     }
     &__title {
         font-weight: 600;
-        font-size: 24px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 24, 18, 1);
+        @include adaptiv-value("line-height", 24, 20, 1);
         margin-bottom: 25px;
         color: #1B2559;
     }
@@ -407,7 +422,7 @@ export default {
     }
 
     &__box {
-        padding-bottom: 45px;
+        @include adaptiv-value("padding-bottom", 45, 20, 1);
         display: flex;
         flex-direction: column;
         padding-right: 50px;
@@ -433,17 +448,17 @@ export default {
     &__box-text {
         flex-grow: 1;
         font-weight: 500;
-        font-size: 20px;
-        line-height: 24px;
-        margin-bottom: 30px;
+        @include adaptiv-value("font-size", 20, 16, 1);
+        @include adaptiv-value("line-height", 24, 20, 1);
+        @include adaptiv-value("margin-bottom", 30, 15, 1);
         color: #96A5B8;
         max-width: 150px;
     }
 
     &__box-subtext {
         font-weight: 500;
-        font-size: 36px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 36, 20, 1);
+        @include adaptiv-value("line-height", 24, 24, 1);
         max-width: 150px;
         color: #1B2559;
     }
@@ -454,7 +469,7 @@ export default {
     padding-right: 50px;
     display: flex;
     align-items: flex-start;
-    gap: 65px;
+    @include adaptiv-value("gap", 65, 20, 1);
     position: relative;
     padding-left: 50px;
     &::after {
@@ -467,13 +482,17 @@ export default {
         position: absolute;
     }
     &__icon {
-        width: 147px;
-        height: 147px;
+        @include adaptiv-value("width", 147, 100, 1);
+        @include adaptiv-value("height", 147, 100, 1);
         border: 15px solid #E9EDF7;
         display: flex;
         justify-content: center;
         align-items: center;
         border-radius: 100%;
+        svg {
+            @include adaptiv-value("width", 64, 40, 1);
+            @include adaptiv-value("height", 64, 40, 1);
+        }
     }
 
     &__info {
@@ -486,8 +505,8 @@ export default {
     &__info-text {
         flex-grow: 1;
         font-weight: 500;
-        font-size: 20px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 20, 18, 1);
+        @include adaptiv-value("line-height", 24, 22, 1);
         margin-bottom: 30px;
         color: #96A5B8;
         max-width: 150px;
@@ -495,10 +514,88 @@ export default {
 
     &__info-subtext {
         font-weight: 500;
-        font-size: 36px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 36, 20, 1);
+        @include adaptiv-value("line-height", 24, 24, 1);
         max-width: 150px;
         color: #1B2559;
     }
+}
+
+.briefing-content__box {
+    padding-right: 20px;
+    padding-left: 20px;
+    width: 185px;
+}
+@media (max-width: 1700px) {
+    .briefing-info__inner {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: flex-start
+    }
+    .briefing-info__box {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .briefing-content__inner {
+        flex-wrap: wrap;
+        row-gap: 20px;
+    }
+    .briefing-content-column {
+        width: 100%;
+        &::after {
+            content: unset;
+        }
+    }
+    .briefing-content__box:nth-child(2) {
+        margin-left: auto;
+    }
+    .briefing-content__box:last-child {
+        margin-right: auto;
+    }
+}
+@media (max-width: 900px) {
+    .briefing-content__box {
+        flex-grow: 1;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        &::after {
+            content: unset;
+        }
+    }
+    .briefing-content-column {
+        justify-content: center;
+        align-items: center;
+        @include adaptiv-value("margin-bottom", 30, 20, 1);
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .briefing-content-column__info {
+        padding-bottom: 0;
+        justify-content: center;
+    }
+    .briefing-content-column__info-text {
+        margin-bottom: 20px;
+        flex-grow: 0;
+    }
+    .briefing-content__box-text {
+        text-align: center;
+    }
+    .briefing-content__title {
+        text-align: center;
+    }
+}
+@media (max-width: 600px) {
+    .planing-briefing-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    .planing-briefing-top__buttons {
+        margin-left: auto;
+        margin-right: auto;
+    }
+  
 }
 </style>

@@ -168,10 +168,31 @@ export default {
 @import '../../assets/scss/vars';
 
 .main-user-info {
-    padding: 30px 55px 40px 55px;
-
+    @include adaptiv-value("padding-top", 30, 30, 1);
+    @include adaptiv-value("padding-right", 55, 30, 1);
+    @include adaptiv-value("padding-bottom", 40, 30, 1);
+    @include adaptiv-value("padding-left", 55, 30, 1);
     .custom-select-new-curs {
         max-width: 330px;
+    }
+    .custom-select-new-curs {
+        width: 330px;
+    }
+    .custom-select-new-curs {
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 16, 1);
+        .selected {
+            @include adaptiv-value("font-size", 16, 14, 1);
+            @include adaptiv-value("line-height", 24, 16, 1);
+            @include adaptiv-value("padding-top", 12, 8, 1);
+            @include adaptiv-value("padding-right", 12, 8, 1);
+            @include adaptiv-value("padding-bottom", 12, 8, 1);
+            @include adaptiv-value("padding-left", 16, 12, 1);
+        }
+    }
+    .custom-select-new-curs .items div {
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 16, 1);
     }
 }
 
@@ -192,24 +213,24 @@ export default {
         gap: 10px;
 
         font-weight: 500;
-        font-size: 24px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 24, 16, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
         color: #1B2559;
     }
 
     &__top-btn {
-        padding: 12px;
-
+        @include adaptiv-value("font-size", 20, 16, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
+        @include adaptiv-value("padding", 16, 12, 1);
+        @include adaptiv-value("width", 140, 130, 1);
+        @include adaptiv-value("max-width", 140, 130, 1);
         font-weight: 500;
-        font-size: 16px;
-        line-height: 24px;
+   
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
         color: #FFFFFF;
-        width: 140px;
-        max-width: 140px;
         background: #1294F2;
         border: 1px solid #1294F2;
         border-radius: 6px;
@@ -219,59 +240,65 @@ export default {
 }
 
 .user-info-bottom {
-    margin-top: 25px;
+    @include adaptiv-value("margin-top", 25, 20, 1);
     background: #FFFFFF;
     border-radius: 16px;
-    padding: 55px 40px;
+    @include adaptiv-value("padding-top", 55, 20, 1);
+    @include adaptiv-value("padding-right", 40, 20, 1);
+    @include adaptiv-value("padding-bottom", 55, 20, 1);
+    @include adaptiv-value("padding-left", 40, 20, 1);
     display: flex;
-    gap: 90px;
+    @include adaptiv-value("gap", 90, 30, 1);
 }
 
 .user-info-bottom-box {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    @include adaptiv-value("gap", 25, 20, 1);
 
     &__title {
         font-weight: 500;
-        font-size: 22px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 22, 18, 1);
+        @include adaptiv-value("line-height", 24, 22, 1);
         color: #1B2559;
 
     }
 
     &__row {
-        padding-left: 55px;
         display: flex;
         align-items: center;
-        gap: 25px;
-
-    }
+        @include adaptiv-value("gap", 25, 10, 1);
+        @include adaptiv-value("padding-left", 55, 10, 1);
+    }   
 
     &__row-text {
-        width: 205px;
-
+        @include adaptiv-value("width", 205, 130, 1);
+        @include adaptiv-value("min-width", 205, 130, 1);
         font-weight: 400;
-        font-size: 20px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 20, 14, 1);
+        @include adaptiv-value("line-height", 24, 16, 1);
         color: #60678B;
     }
 
     &__row-input {
         font-weight: 400;
-        font-size: 16px;
-        line-height: 24px;
         background: #FFFFFF;
         color: #96A5B8;
         border: 1px solid #96A5B8;
         border-radius: 4px;
         width: 330px;
-        padding: 12px 16px;
+
+        @include adaptiv-value("padding-top", 12, 8, 1);
+        @include adaptiv-value("padding-right", 12, 8, 1);
+        @include adaptiv-value("padding-bottom", 12, 8, 1);
+        @include adaptiv-value("padding-left", 16, 12, 1);
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 16, 1);
 
         &::placeholder {
             font-weight: 400;
-            font-size: 16px;
-            line-height: 24px;
+            @include adaptiv-value("font-size", 16, 14, 1);
+            @include adaptiv-value("line-height", 24, 16, 1);
             background: #FFFFFF;
             color: #96A5B8;
         }
@@ -282,9 +309,9 @@ export default {
 
     &__title {
         font-weight: 500;
-        font-size: 22px;
-        line-height: 24px;
-        margin-bottom: 25px;
+        @include adaptiv-value("font-size", 22, 18, 1);
+        @include adaptiv-value("line-height", 24, 22, 1);
+        @include adaptiv-value("margin-bottom", 25, 20, 1);
         color: #1B2559;
     }
 
@@ -311,14 +338,15 @@ export default {
 
     &__row-text {
         font-weight: 400;
-        font-size: 20px;
-        line-height: 24px;
+        @include adaptiv-value("font-size", 20, 14, 1);
+        @include adaptiv-value("line-height", 24, 16, 1);
         color: #60678B;
         display: flex;
         align-items: center;
 
         span:nth-child(1) {
             width: 80px;
+            min-width: 80px;
         }
 
         span:nth-child(2) {
@@ -328,9 +356,9 @@ export default {
     }
 
     &__row-btn {
-        font-size: 16px;
-        line-height: 24px;
-        width: 135px;
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 16, 1);
+        @include adaptiv-value("width", 135, 115, 1);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -341,6 +369,53 @@ export default {
         border-radius: 12px;
         padding: 8px;
 
+    }
+}
+@media (max-width: 1650px) {
+    .user-info-bottom-item__row-text {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .user-info-bottom-item__row {
+        @include adaptiv-value("padding-left", 55, 10, 1);
+    }
+    .user-info-bottom-item__row-text span:nth-child(2) {
+        margin-left: 0;
+    }
+}
+@media (max-width: 1500px) {
+    .user-info-bottom {
+        flex-direction: column;
+    }
+
+    .user-info-bottom-item__row-text {
+        flex-direction: row;
+    }
+    .user-info-bottom-item__row-text span:nth-child(2) {
+        @include adaptiv-value("margin-left", 50, 10, 1);
+    }
+}
+@media (max-width: 850px) {
+    .main-user-info {
+        .custom-select-new-curs {
+            width: 100%;
+            max-width: unset;
+        }
+    }
+    .user-info-bottom-box__row-input {
+        width: 100%;
+    }
+}
+@media (max-width: 550px) {
+    .user-info-bottom-box__row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+@media (max-width: 500px) {
+    .user-info-bottom-item__row:nth-child(4) {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
 </style>
