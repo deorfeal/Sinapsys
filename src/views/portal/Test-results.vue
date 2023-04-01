@@ -68,16 +68,16 @@ export default {
     }
 
     &__btn {
-        font-size: 20px;
-        line-height: 24px;
+        @include adaptiv-value('font-size', 20, 16, 1);
+        @include adaptiv-value('line-height', 24, 24, 1);
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
         color: #FFFFFF;
-        padding: 12px;
-        width: 165px;
-        max-width: 165px;
+        @include adaptiv-value('padding', 12, 6, 1);
+        @include adaptiv-value('width', 165, 145, 1);
+        @include adaptiv-value('max-width', 165, 145, 1);
         background: #1294F2;
         border-radius: 6px;
         margin-left: auto;

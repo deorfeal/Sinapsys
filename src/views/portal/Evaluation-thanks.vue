@@ -72,12 +72,12 @@ export default {
         text-align: center;
         border: 1px solid transparent;
         transition: background 0.3s, color 0.3s, border 0.3s;
-
+        flex-wrap: wrap;
         @include adaptiv-value('font-size', 20, 16, 1);
         @include adaptiv-value('line-height', 24, 24, 1);
         @include adaptiv-value('padding', 12, 6, 1);
-        @include adaptiv-value('width', 285, 140, 1);
-        @include adaptiv-value('max-width', 285, 140, 1);
+        @include adaptiv-value('width', 285, 220, 1);
+        @include adaptiv-value('max-width', 285, 220, 1);
         &:hover {
             background: #fff;
             color: #1294F2;
@@ -86,10 +86,15 @@ export default {
     }
 }
 
+@media (max-width: 550px) {
+}
+
 @media (max-width: 500px) {
     .evaluation-thanks__link {
         span:last-child {
             display: none;
+            @include adaptiv-value('width', 285, 140, 1);
+            @include adaptiv-value('max-width', 285, 140, 1);
         }
     }
 }

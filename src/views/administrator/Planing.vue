@@ -1,4 +1,5 @@
 <template>
+    <div class="biggest-wrapper">
     <div class="big-wrapper">
         <Aside :activeLink="3" :sideMenuActive="this.sideMenuActive" :isAdmin="true" />
         <div class="wrapper">
@@ -294,6 +295,13 @@
                                     </a>
                                 </div>
                             </div>
+                            <div class="planing-swiper-slide__count planing-swiper-slide-count">
+                                <p class="planing-swiper-slide-count__text">
+                                    Запись на странице
+                                </p>
+                                <PageEntrySelect :options="['1', '2', ' 3', '4']" :default="'4'" class="select">
+                                </PageEntrySelect>
+                            </div>
                         </swiper-slide>
                         <swiper-slide class="planing-swiper__slide planing-swiper-slide">
                             <div class="planing-swiper-slide__top planing-swiper-slide-top">
@@ -433,6 +441,13 @@
                                         </svg>
                                     </a>
                                 </div>
+                            </div>
+                            <div class="planing-swiper-slide__count planing-swiper-slide-count">
+                                <p class="planing-swiper-slide-count__text">
+                                    Запись на странице
+                                </p>
+                                <PageEntrySelect :options="['1', '2', ' 3', '4']" :default="'4'" class="select">
+                                </PageEntrySelect>
                             </div>
                         </swiper-slide>
                         <swiper-slide class="planing-swiper__slide planing-swiper-slide">
@@ -574,12 +589,20 @@
                                     </a>
                                 </div>
                             </div>
+                            <div class="planing-swiper-slide__count planing-swiper-slide-count">
+                                <p class="planing-swiper-slide-count__text">
+                                    Запись на странице
+                                </p>
+                                <PageEntrySelect :options="['1', '2', ' 3', '4']" :default="'4'" class="select">
+                                </PageEntrySelect>
+                            </div>
                         </swiper-slide>
                     </swiper>
                 </section>
             </main>
             <Footer />
         </div>
+    </div>
     </div>
 </template>
 
@@ -731,7 +754,7 @@ export default {
     }
 
     .swiper-pagination-bullet-active {
-        background: #1294F2;
+        background: #1294F2 !important;
         color: #fff;
         border: 1px solid #1294F2;
 
@@ -1008,6 +1031,18 @@ export default {
         gap: 8px;
         padding: 12px 25px;
 
+        svg path {
+            transition: fill 0.3s;
+        }
+        transition: background 0.3s, border 0.3s, color 0.3s;
+        &:hover {
+            background: #1294F2;
+            color: #fff;
+            svg path {
+                fill: #fff;
+            }
+        }
+
         span:first-child {
             width: 24px;
             height: 24px;
@@ -1020,6 +1055,13 @@ export default {
         &:last-child {
             color: #EC4848;
             border: 1px solid #EC4848;
+            &:hover {
+                background: #EC4848;
+                color: #fff;
+                svg path {
+                    fill: #fff;
+                }
+            }
         }
 
         span:first-child {
@@ -1053,6 +1095,7 @@ export default {
         }
 
         &:nth-child(4) {
+
             span:first-child {
                 width: 16px;
                 height: 16px;

@@ -347,13 +347,10 @@ export default {
 }
 
 
-@media (max-width: 1600px) {
+@media (max-width: 1440px) {
     .header__form {
         width: 350px;
     }
-}
-
-@media (max-width: 1450px) {
     .header-user-nav-box-user__column {
         display: none;
     }

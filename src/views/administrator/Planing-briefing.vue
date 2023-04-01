@@ -1,4 +1,5 @@
 <template>
+     <div class="biggest-wrapper">
     <div class="big-wrapper">
         <Aside :activeLink="3" :sideMenuActive="this.sideMenuActive" :isAdmin="true" />
         <div class="wrapper">
@@ -240,6 +241,7 @@
             <Footer />
         </div>
     </div>
+</div>
 </template>
 
 <script>
@@ -339,6 +341,17 @@ export default {
                     height: 100%;
                 }
             }
+        }
+        transition: background 0.3s, border 0.3s, color 0.3s;
+        &:hover {
+            background: #1294F2;
+            color: #fff;
+            svg path {
+                fill: #fff;
+            }
+        }
+        svg path {
+            transition: fill 0.3s;
         }
     }
 }
@@ -526,7 +539,7 @@ export default {
     padding-left: 20px;
     width: 185px;
 }
-@media (max-width: 1700px) {
+@media (max-width: 1440px) {
     .briefing-info__inner {
         flex-wrap: wrap;
         justify-content: flex-start;

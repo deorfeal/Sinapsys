@@ -1,4 +1,5 @@
 <template>
+    <div class="biggest-wrapper">
     <div class="big-wrapper">
         <Aside :activeLink="2" :sideMenuActive="this.sideMenuActive" :isAdmin="true" />
         <div class="wrapper">
@@ -129,6 +130,7 @@
             <Footer />
         </div>
     </div>
+    </div>
 </template>
 
 <script>
@@ -234,6 +236,15 @@ export default {
         background: #1294F2;
         border: 1px solid #1294F2;
         border-radius: 6px;
+
+
+        transition: background 0.3s, border 0.3s, color 0.3s;
+        border: 1px solid transparent;
+        &:hover {
+            background: transparent;
+            border: 1px solid #1294F2;
+            color: #1294F2;
+        }
     }
 
     &__profile {}
@@ -368,10 +379,15 @@ export default {
         border: 1px solid #96A5B8;
         border-radius: 12px;
         padding: 8px;
-
+        transition: background 0.3s, border 0.3s, color 0.3s;
+        &:hover {
+            background: transparent;
+            border: 1px solid #1294F2;
+            color: #1294F2;
+        }
     }
 }
-@media (max-width: 1650px) {
+@media (max-width: 1440px) {
     .user-info-bottom-item__row-text {
         flex-direction: column;
         align-items: flex-start;
@@ -383,7 +399,7 @@ export default {
         margin-left: 0;
     }
 }
-@media (max-width: 1500px) {
+@media (max-width: 1440px) {
     .user-info-bottom {
         flex-direction: column;
     }

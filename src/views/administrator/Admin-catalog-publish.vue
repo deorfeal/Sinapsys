@@ -1,4 +1,5 @@
 <template>
+    <div class="biggest-wrapper">
     <div class="big-wrapper">
         <Aside :activeLink="1" :sideMenuActive="this.sideMenuActive" :isAdmin="true" />
         <div class="wrapper">
@@ -441,6 +442,7 @@
             <Footer />
         </div>
     </div>
+    </div>
 </template>
 
 <script>
@@ -551,6 +553,14 @@ export default {
         width: 200px;
         max-width: 200px;
         margin-left: auto;
+
+        transition: background 0.3s, border 0.3s, color 0.3s;
+        border: 1px solid transparent;
+        &:hover {
+            background: transparent;
+            border: 1px solid #1294F2;
+            color: #1294F2;
+        }
     }
 }
 
@@ -710,8 +720,22 @@ export default {
         border-radius: 6px;
 
         svg {
+            path {
+                transition: fill 0.3s;
+            }
             @include adaptiv-value("width", 32, 24, 1);
             @include adaptiv-value("height", 32, 24, 1);
+        }
+
+        transition: background 0.3s, border 0.3s, color 0.3s;
+        &:hover {
+            background: #1294F2;
+           color: #fff;
+           svg {
+            path {
+                fill: #fff;
+            }
+           }
         }
     }
 }

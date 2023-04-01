@@ -1,4 +1,5 @@
 <template>
+    <div class="biggest-wrapper">
     <div class="big-wrapper">
         <Aside :activeLink="6" :sideMenuActive="this.sideMenuActive" :isAdmin="true" />
         <div class="wrapper">
@@ -247,33 +248,12 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="reports-swiper-slide__body__bottom reports-all-info-item-bottom">
-                                        <div class="reports-all-info-item-bottom__box texts-count">
-                                            <p class="texts-count__text">
-                                                Запись на странице
-                                            </p>
-                                            <div class="texts-count__box texts-count-box">
-                                                <div class="texts-count-box__top">
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                                <div class="texts-count-box__bottom">
-                                                    <p class="texts-count-box__top-text">
-                                                        1
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        2
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        3
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="fishing-attacks-swiper-slide__count fishing-attacks-swiper-slide-count">
+                                        <p class="fishing-attacks-swiper-slide-count__text">
+                                            Запись на странице
+                                        </p>
+                                        <PageEntrySelect :options="['1', '2', ' 3', '4']" :default="'4'" class="select">
+                                        </PageEntrySelect>
                                     </div>
                                 </swiper-slide>
                                 <swiper-slide class="reports-swiper__slide reports-swiper-slide">
@@ -478,33 +458,12 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="reports-swiper-slide__body__bottom reports-all-info-item-bottom">
-                                        <div class="reports-all-info-item-bottom__box texts-count">
-                                            <p class="texts-count__text">
-                                                Запись на странице
-                                            </p>
-                                            <div class="texts-count__box texts-count-box">
-                                                <div class="texts-count-box__top">
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                                <div class="texts-count-box__bottom">
-                                                    <p class="texts-count-box__top-text">
-                                                        1
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        2
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        3
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="fishing-attacks-swiper-slide__count fishing-attacks-swiper-slide-count">
+                                        <p class="fishing-attacks-swiper-slide-count__text">
+                                            Запись на странице
+                                        </p>
+                                        <PageEntrySelect :options="['1', '2', ' 3', '4']" :default="'4'" class="select">
+                                        </PageEntrySelect>
                                     </div>
                                 </swiper-slide>
                                 <swiper-slide class="reports-swiper__slide reports-swiper-slide">
@@ -709,33 +668,12 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="reports-swiper-slide__body__bottom reports-all-info-item-bottom">
-                                        <div class="reports-all-info-item-bottom__box texts-count">
-                                            <p class="texts-count__text">
-                                                Запись на странице
-                                            </p>
-                                            <div class="texts-count__box texts-count-box">
-                                                <div class="texts-count-box__top">
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                                <div class="texts-count-box__bottom">
-                                                    <p class="texts-count-box__top-text">
-                                                        1
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        2
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        3
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="fishing-attacks-swiper-slide__count fishing-attacks-swiper-slide-count">
+                                        <p class="fishing-attacks-swiper-slide-count__text">
+                                            Запись на странице
+                                        </p>
+                                        <PageEntrySelect :options="['1', '2', ' 3', '4']" :default="'4'" class="select">
+                                        </PageEntrySelect>
                                     </div>
                                 </swiper-slide>
                                 <swiper-slide class="reports-swiper__slide reports-swiper-slide">
@@ -940,33 +878,12 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="reports-swiper-slide__body__bottom reports-all-info-item-bottom">
-                                        <div class="reports-all-info-item-bottom__box texts-count">
-                                            <p class="texts-count__text">
-                                                Запись на странице
-                                            </p>
-                                            <div class="texts-count__box texts-count-box">
-                                                <div class="texts-count-box__top">
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                                <div class="texts-count-box__bottom">
-                                                    <p class="texts-count-box__top-text">
-                                                        1
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        2
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        3
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="fishing-attacks-swiper-slide__count fishing-attacks-swiper-slide-count">
+                                        <p class="fishing-attacks-swiper-slide-count__text">
+                                            Запись на странице
+                                        </p>
+                                        <PageEntrySelect :options="['1', '2', ' 3', '4']" :default="'4'" class="select">
+                                        </PageEntrySelect>
                                     </div>
                                 </swiper-slide>
                             </swiper>
@@ -1151,33 +1068,12 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="reports-swiper-slide__body__bottom reports-all-info-item-bottom">
-                                        <div class="reports-all-info-item-bottom__box texts-count">
-                                            <p class="texts-count__text">
-                                                Запись на странице
-                                            </p>
-                                            <div class="texts-count__box texts-count-box">
-                                                <div class="texts-count-box__top">
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                                <div class="texts-count-box__bottom">
-                                                    <p class="texts-count-box__top-text">
-                                                        1
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        2
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        3
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="fishing-attacks-swiper-slide__count fishing-attacks-swiper-slide-count">
+                                        <p class="fishing-attacks-swiper-slide-count__text">
+                                            Запись на странице
+                                        </p>
+                                        <PageEntrySelect :options="['1', '2', ' 3', '4']" :default="'4'" class="select">
+                                        </PageEntrySelect>
                                     </div>
                                 </swiper-slide>
                                 <swiper-slide class="reports-swiper__slide reports-swiper-slide">
@@ -1356,33 +1252,12 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="reports-swiper-slide__body__bottom reports-all-info-item-bottom">
-                                        <div class="reports-all-info-item-bottom__box texts-count">
-                                            <p class="texts-count__text">
-                                                Запись на странице
-                                            </p>
-                                            <div class="texts-count__box texts-count-box">
-                                                <div class="texts-count-box__top">
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                                <div class="texts-count-box__bottom">
-                                                    <p class="texts-count-box__top-text">
-                                                        1
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        2
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        3
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="fishing-attacks-swiper-slide__count fishing-attacks-swiper-slide-count">
+                                        <p class="fishing-attacks-swiper-slide-count__text">
+                                            Запись на странице
+                                        </p>
+                                        <PageEntrySelect :options="['1', '2', ' 3', '4']" :default="'4'" class="select">
+                                        </PageEntrySelect>
                                     </div>
                                 </swiper-slide>
                                 <swiper-slide class="reports-swiper__slide reports-swiper-slide">
@@ -1561,33 +1436,12 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="reports-swiper-slide__body__bottom reports-all-info-item-bottom">
-                                        <div class="reports-all-info-item-bottom__box texts-count">
-                                            <p class="texts-count__text">
-                                                Запись на странице
-                                            </p>
-                                            <div class="texts-count__box texts-count-box">
-                                                <div class="texts-count-box__top">
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                                <div class="texts-count-box__bottom">
-                                                    <p class="texts-count-box__top-text">
-                                                        1
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        2
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        3
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="fishing-attacks-swiper-slide__count fishing-attacks-swiper-slide-count">
+                                        <p class="fishing-attacks-swiper-slide-count__text">
+                                            Запись на странице
+                                        </p>
+                                        <PageEntrySelect :options="['1', '2', ' 3', '4']" :default="'4'" class="select">
+                                        </PageEntrySelect>
                                     </div>
                                 </swiper-slide>
                                 <swiper-slide class="reports-swiper__slide reports-swiper-slide">
@@ -1766,33 +1620,12 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="reports-swiper-slide__body__bottom reports-all-info-item-bottom">
-                                        <div class="reports-all-info-item-bottom__box texts-count">
-                                            <p class="texts-count__text">
-                                                Запись на странице
-                                            </p>
-                                            <div class="texts-count__box texts-count-box">
-                                                <div class="texts-count-box__top">
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                                <div class="texts-count-box__bottom">
-                                                    <p class="texts-count-box__top-text">
-                                                        1
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        2
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        3
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="fishing-attacks-swiper-slide__count fishing-attacks-swiper-slide-count">
+                                        <p class="fishing-attacks-swiper-slide-count__text">
+                                            Запись на странице
+                                        </p>
+                                        <PageEntrySelect :options="['1', '2', ' 3', '4']" :default="'4'" class="select">
+                                        </PageEntrySelect>
                                     </div>
                                 </swiper-slide>
                             </swiper>
@@ -1984,33 +1817,12 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="reports-swiper-slide__body__bottom reports-all-info-item-bottom">
-                                        <div class="reports-all-info-item-bottom__box texts-count">
-                                            <p class="texts-count__text">
-                                                Запись на странице
-                                            </p>
-                                            <div class="texts-count__box texts-count-box">
-                                                <div class="texts-count-box__top">
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                                <div class="texts-count-box__bottom">
-                                                    <p class="texts-count-box__top-text">
-                                                        1
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        2
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        3
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="fishing-attacks-swiper-slide__count fishing-attacks-swiper-slide-count">
+                                        <p class="fishing-attacks-swiper-slide-count__text">
+                                            Запись на странице
+                                        </p>
+                                        <PageEntrySelect :options="['1', '2', ' 3', '4']" :default="'4'" class="select">
+                                        </PageEntrySelect>
                                     </div>
                                 </swiper-slide>
                                 <swiper-slide class="reports-swiper__slide reports-swiper-slide">
@@ -2196,33 +2008,12 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="reports-swiper-slide__body__bottom reports-all-info-item-bottom">
-                                        <div class="reports-all-info-item-bottom__box texts-count">
-                                            <p class="texts-count__text">
-                                                Запись на странице
-                                            </p>
-                                            <div class="texts-count__box texts-count-box">
-                                                <div class="texts-count-box__top">
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                                <div class="texts-count-box__bottom">
-                                                    <p class="texts-count-box__top-text">
-                                                        1
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        2
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        3
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="fishing-attacks-swiper-slide__count fishing-attacks-swiper-slide-count">
+                                        <p class="fishing-attacks-swiper-slide-count__text">
+                                            Запись на странице
+                                        </p>
+                                        <PageEntrySelect :options="['1', '2', ' 3', '4']" :default="'4'" class="select">
+                                        </PageEntrySelect>
                                     </div>
                                 </swiper-slide>
                                 <swiper-slide class="reports-swiper__slide reports-swiper-slide">
@@ -2408,33 +2199,12 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="reports-swiper-slide__body__bottom reports-all-info-item-bottom">
-                                        <div class="reports-all-info-item-bottom__box texts-count">
-                                            <p class="texts-count__text">
-                                                Запись на странице
-                                            </p>
-                                            <div class="texts-count__box texts-count-box">
-                                                <div class="texts-count-box__top">
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                                <div class="texts-count-box__bottom">
-                                                    <p class="texts-count-box__top-text">
-                                                        1
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        2
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        3
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="fishing-attacks-swiper-slide__count fishing-attacks-swiper-slide-count">
+                                        <p class="fishing-attacks-swiper-slide-count__text">
+                                            Запись на странице
+                                        </p>
+                                        <PageEntrySelect :options="['1', '2', ' 3', '4']" :default="'4'" class="select">
+                                        </PageEntrySelect>
                                     </div>
                                 </swiper-slide>
                                 <swiper-slide class="reports-swiper__slide reports-swiper-slide">
@@ -2620,33 +2390,12 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="reports-swiper-slide__body__bottom reports-all-info-item-bottom">
-                                        <div class="reports-all-info-item-bottom__box texts-count">
-                                            <p class="texts-count__text">
-                                                Запись на странице
-                                            </p>
-                                            <div class="texts-count__box texts-count-box">
-                                                <div class="texts-count-box__top">
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                                <div class="texts-count-box__bottom">
-                                                    <p class="texts-count-box__top-text">
-                                                        1
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        2
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        3
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="fishing-attacks-swiper-slide__count fishing-attacks-swiper-slide-count">
+                                        <p class="fishing-attacks-swiper-slide-count__text">
+                                            Запись на странице
+                                        </p>
+                                        <PageEntrySelect :options="['1', '2', ' 3', '4']" :default="'4'" class="select">
+                                        </PageEntrySelect>
                                     </div>
                                 </swiper-slide>
                             </swiper>
@@ -2823,33 +2572,12 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="reports-swiper-slide__body__bottom reports-all-info-item-bottom">
-                                        <div class="reports-all-info-item-bottom__box texts-count">
-                                            <p class="texts-count__text">
-                                                Запись на странице
-                                            </p>
-                                            <div class="texts-count__box texts-count-box">
-                                                <div class="texts-count-box__top">
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                                <div class="texts-count-box__bottom">
-                                                    <p class="texts-count-box__top-text">
-                                                        1
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        2
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        3
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="fishing-attacks-swiper-slide__count fishing-attacks-swiper-slide-count">
+                                        <p class="fishing-attacks-swiper-slide-count__text">
+                                            Запись на странице
+                                        </p>
+                                        <PageEntrySelect :options="['1', '2', ' 3', '4']" :default="'4'" class="select">
+                                        </PageEntrySelect>
                                     </div>
                                 </swiper-slide>
                                 <swiper-slide class="reports-swiper__slide reports-swiper-slide">
@@ -3020,33 +2748,12 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="reports-swiper-slide__body__bottom reports-all-info-item-bottom">
-                                        <div class="reports-all-info-item-bottom__box texts-count">
-                                            <p class="texts-count__text">
-                                                Запись на странице
-                                            </p>
-                                            <div class="texts-count__box texts-count-box">
-                                                <div class="texts-count-box__top">
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                                <div class="texts-count-box__bottom">
-                                                    <p class="texts-count-box__top-text">
-                                                        1
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        2
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        3
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="fishing-attacks-swiper-slide__count fishing-attacks-swiper-slide-count">
+                                        <p class="fishing-attacks-swiper-slide-count__text">
+                                            Запись на странице
+                                        </p>
+                                        <PageEntrySelect :options="['1', '2', ' 3', '4']" :default="'4'" class="select">
+                                        </PageEntrySelect>
                                     </div>
                                 </swiper-slide>
                                 <swiper-slide class="reports-swiper__slide reports-swiper-slide">
@@ -3217,33 +2924,12 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="reports-swiper-slide__body__bottom reports-all-info-item-bottom">
-                                        <div class="reports-all-info-item-bottom__box texts-count">
-                                            <p class="texts-count__text">
-                                                Запись на странице
-                                            </p>
-                                            <div class="texts-count__box texts-count-box">
-                                                <div class="texts-count-box__top">
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                                <div class="texts-count-box__bottom">
-                                                    <p class="texts-count-box__top-text">
-                                                        1
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        2
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        3
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="fishing-attacks-swiper-slide__count fishing-attacks-swiper-slide-count">
+                                        <p class="fishing-attacks-swiper-slide-count__text">
+                                            Запись на странице
+                                        </p>
+                                        <PageEntrySelect :options="['1', '2', ' 3', '4']" :default="'4'" class="select">
+                                        </PageEntrySelect>
                                     </div>
                                 </swiper-slide>
                                 <swiper-slide class="reports-swiper__slide reports-swiper-slide">
@@ -3414,33 +3100,12 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="reports-swiper-slide__body__bottom reports-all-info-item-bottom">
-                                        <div class="reports-all-info-item-bottom__box texts-count">
-                                            <p class="texts-count__text">
-                                                Запись на странице
-                                            </p>
-                                            <div class="texts-count__box texts-count-box">
-                                                <div class="texts-count-box__top">
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                                <div class="texts-count-box__bottom">
-                                                    <p class="texts-count-box__top-text">
-                                                        1
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        2
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        3
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="fishing-attacks-swiper-slide__count fishing-attacks-swiper-slide-count">
+                                        <p class="fishing-attacks-swiper-slide-count__text">
+                                            Запись на странице
+                                        </p>
+                                        <PageEntrySelect :options="['1', '2', ' 3', '4']" :default="'4'" class="select">
+                                        </PageEntrySelect>
                                     </div>
                                 </swiper-slide>
                             </swiper>
@@ -3617,33 +3282,12 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="reports-swiper-slide__body__bottom reports-all-info-item-bottom">
-                                        <div class="reports-all-info-item-bottom__box texts-count">
-                                            <p class="texts-count__text">
-                                                Запись на странице
-                                            </p>
-                                            <div class="texts-count__box texts-count-box">
-                                                <div class="texts-count-box__top">
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                                <div class="texts-count-box__bottom">
-                                                    <p class="texts-count-box__top-text">
-                                                        1
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        2
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        3
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="fishing-attacks-swiper-slide__count fishing-attacks-swiper-slide-count">
+                                        <p class="fishing-attacks-swiper-slide-count__text">
+                                            Запись на странице
+                                        </p>
+                                        <PageEntrySelect :options="['1', '2', ' 3', '4']" :default="'4'" class="select">
+                                        </PageEntrySelect>
                                     </div>
                                 </swiper-slide>
                                 <swiper-slide class="reports-swiper__slide reports-swiper-slide">
@@ -3814,33 +3458,12 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="reports-swiper-slide__body__bottom reports-all-info-item-bottom">
-                                        <div class="reports-all-info-item-bottom__box texts-count">
-                                            <p class="texts-count__text">
-                                                Запись на странице
-                                            </p>
-                                            <div class="texts-count__box texts-count-box">
-                                                <div class="texts-count-box__top">
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                                <div class="texts-count-box__bottom">
-                                                    <p class="texts-count-box__top-text">
-                                                        1
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        2
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        3
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="fishing-attacks-swiper-slide__count fishing-attacks-swiper-slide-count">
+                                        <p class="fishing-attacks-swiper-slide-count__text">
+                                            Запись на странице
+                                        </p>
+                                        <PageEntrySelect :options="['1', '2', ' 3', '4']" :default="'4'" class="select">
+                                        </PageEntrySelect>
                                     </div>
                                 </swiper-slide>
                                 <swiper-slide class="reports-swiper__slide reports-swiper-slide">
@@ -4011,33 +3634,12 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="reports-swiper-slide__body__bottom reports-all-info-item-bottom">
-                                        <div class="reports-all-info-item-bottom__box texts-count">
-                                            <p class="texts-count__text">
-                                                Запись на странице
-                                            </p>
-                                            <div class="texts-count__box texts-count-box">
-                                                <div class="texts-count-box__top">
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                                <div class="texts-count-box__bottom">
-                                                    <p class="texts-count-box__top-text">
-                                                        1
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        2
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        3
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="fishing-attacks-swiper-slide__count fishing-attacks-swiper-slide-count">
+                                        <p class="fishing-attacks-swiper-slide-count__text">
+                                            Запись на странице
+                                        </p>
+                                        <PageEntrySelect :options="['1', '2', ' 3', '4']" :default="'4'" class="select">
+                                        </PageEntrySelect>
                                     </div>
                                 </swiper-slide>
                                 <swiper-slide class="reports-swiper__slide reports-swiper-slide">
@@ -4208,33 +3810,12 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="reports-swiper-slide__body__bottom reports-all-info-item-bottom">
-                                        <div class="reports-all-info-item-bottom__box texts-count">
-                                            <p class="texts-count__text">
-                                                Запись на странице
-                                            </p>
-                                            <div class="texts-count__box texts-count-box">
-                                                <div class="texts-count-box__top">
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                                <div class="texts-count-box__bottom">
-                                                    <p class="texts-count-box__top-text">
-                                                        1
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        2
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        3
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="fishing-attacks-swiper-slide__count fishing-attacks-swiper-slide-count">
+                                        <p class="fishing-attacks-swiper-slide-count__text">
+                                            Запись на странице
+                                        </p>
+                                        <PageEntrySelect :options="['1', '2', ' 3', '4']" :default="'4'" class="select">
+                                        </PageEntrySelect>
                                     </div>
                                 </swiper-slide>
                             </swiper>
@@ -4381,33 +3962,12 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="reports-swiper-slide__body__bottom reports-all-info-item-bottom">
-                                        <div class="reports-all-info-item-bottom__box texts-count">
-                                            <p class="texts-count__text">
-                                                Запись на странице
-                                            </p>
-                                            <div class="texts-count__box texts-count-box">
-                                                <div class="texts-count-box__top">
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                                <div class="texts-count-box__bottom">
-                                                    <p class="texts-count-box__top-text">
-                                                        1
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        2
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        3
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="fishing-attacks-swiper-slide__count fishing-attacks-swiper-slide-count">
+                                        <p class="fishing-attacks-swiper-slide-count__text">
+                                            Запись на странице
+                                        </p>
+                                        <PageEntrySelect :options="['1', '2', ' 3', '4']" :default="'4'" class="select">
+                                        </PageEntrySelect>
                                     </div>
                                 </swiper-slide>
                                 <swiper-slide class="reports-swiper__slide reports-swiper-slide">
@@ -4548,33 +4108,12 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="reports-swiper-slide__body__bottom reports-all-info-item-bottom">
-                                        <div class="reports-all-info-item-bottom__box texts-count">
-                                            <p class="texts-count__text">
-                                                Запись на странице
-                                            </p>
-                                            <div class="texts-count__box texts-count-box">
-                                                <div class="texts-count-box__top">
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                                <div class="texts-count-box__bottom">
-                                                    <p class="texts-count-box__top-text">
-                                                        1
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        2
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        3
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="fishing-attacks-swiper-slide__count fishing-attacks-swiper-slide-count">
+                                        <p class="fishing-attacks-swiper-slide-count__text">
+                                            Запись на странице
+                                        </p>
+                                        <PageEntrySelect :options="['1', '2', ' 3', '4']" :default="'4'" class="select">
+                                        </PageEntrySelect>
                                     </div>
                                 </swiper-slide>
                                 <swiper-slide class="reports-swiper__slide reports-swiper-slide">
@@ -4715,33 +4254,12 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="reports-swiper-slide__body__bottom reports-all-info-item-bottom">
-                                        <div class="reports-all-info-item-bottom__box texts-count">
-                                            <p class="texts-count__text">
-                                                Запись на странице
-                                            </p>
-                                            <div class="texts-count__box texts-count-box">
-                                                <div class="texts-count-box__top">
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                                <div class="texts-count-box__bottom">
-                                                    <p class="texts-count-box__top-text">
-                                                        1
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        2
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        3
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="fishing-attacks-swiper-slide__count fishing-attacks-swiper-slide-count">
+                                        <p class="fishing-attacks-swiper-slide-count__text">
+                                            Запись на странице
+                                        </p>
+                                        <PageEntrySelect :options="['1', '2', ' 3', '4']" :default="'4'" class="select">
+                                        </PageEntrySelect>
                                     </div>
                                 </swiper-slide>
                                 <swiper-slide class="reports-swiper__slide reports-swiper-slide">
@@ -4882,33 +4400,12 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="reports-swiper-slide__body__bottom reports-all-info-item-bottom">
-                                        <div class="reports-all-info-item-bottom__box texts-count">
-                                            <p class="texts-count__text">
-                                                Запись на странице
-                                            </p>
-                                            <div class="texts-count__box texts-count-box">
-                                                <div class="texts-count-box__top">
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                                <div class="texts-count-box__bottom">
-                                                    <p class="texts-count-box__top-text">
-                                                        1
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        2
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        3
-                                                    </p>
-                                                    <p class="texts-count-box__top-text">
-                                                        4
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="fishing-attacks-swiper-slide__count fishing-attacks-swiper-slide-count">
+                                        <p class="fishing-attacks-swiper-slide-count__text">
+                                            Запись на странице
+                                        </p>
+                                        <PageEntrySelect :options="['1', '2', ' 3', '4']" :default="'4'" class="select">
+                                        </PageEntrySelect>
                                     </div>
                                 </swiper-slide>
                             </swiper>
@@ -4919,6 +4416,7 @@
             <Footer />
         </div>
     </div>
+</div>
 </template>
 
 <script>
@@ -4926,6 +4424,7 @@ import Aside from '../../components/portal-components/Aside.vue';
 import Header from '../../components/portal-components/Header.vue';
 import Footer from '../../components/portal-components/Footer.vue';
 import ReportsSelect from '../../components/admin-components/Reports-select.vue';
+import PageEntrySelect from '../../components/admin-components/Page-entry-select.vue';
 
 import { Pagination, Autoplay, Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/vue';
@@ -4939,7 +4438,8 @@ export default {
         Footer,
         Swiper,
         SwiperSlide,
-        ReportsSelect
+        ReportsSelect,
+        PageEntrySelect
     },
     data() {
         return {
@@ -5091,7 +4591,9 @@ export default {
     width: 100%;
 
     .swiper-pagination {
+        max-width: 500px;
         position: absolute;
+        margin-left: auto;
         right: 0;
         bottom: 0;
         top: unset !important;
@@ -5165,7 +4667,7 @@ export default {
     }
 
     .swiper-pagination-bullet-active {
-        background: #1294F2;
+        background: #1294F2 !important;
         color: #fff;
         border: 1px solid #1294F2;
 
@@ -5251,6 +4753,14 @@ export default {
         background: #1294F2;
         border: 1px solid #1294F2;
         border-radius: 6px;
+
+        transition: background 0.3s, border 0.3s, color 0.3s;
+        border: 1px solid transparent;
+        &:hover {
+            background: transparent;
+            border: 1px solid #1294F2;
+            color: #1294F2;
+        }
     }
 
     .container {
@@ -5359,6 +4869,12 @@ export default {
         border-radius: 6px;
         max-width: 130px;
         margin-left: auto;
+
+        transition: background 0.3s, border 0.3s, color 0.3s;
+        &:hover {
+            background: #1294F2;
+            color: #fff;
+        }
     }
 
     &__box {

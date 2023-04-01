@@ -1,4 +1,5 @@
 <template>
+    <div class="biggest-wrapper">
     <div class="big-wrapper">
         <Aside :activeLink="2" :sideMenuActive="this.sideMenuActive" :isAdmin="true" />
         <div class="wrapper">
@@ -168,6 +169,7 @@
             </main>
             <Footer />
         </div>
+    </div>
     </div>
 </template>
 
@@ -358,6 +360,14 @@ export default {
         @include adaptiv-value("padding", 12, 10, 1);
         @include adaptiv-value("width", 185, 150, 1);
         @include adaptiv-value("max-width", 185, 150, 1);
+
+        transition: background 0.3s, border 0.3s, color 0.3s;
+        border: 1px solid transparent;
+        &:hover {
+            background: transparent;
+            border: 1px solid #1294F2;
+            color: #1294F2;
+        }
     }
 
     &__inner {
@@ -386,6 +396,12 @@ export default {
         @include adaptiv-value("padding", 12, 10, 1);
         @include adaptiv-value("width", 185, 130, 1);
         @include adaptiv-value("max-width", 185, 130, 1);
+
+        transition: background 0.3s, border 0.3s, color 0.3s;
+        &:hover {
+            background: #1294F2;
+            color: #fff;
+        }
     }
 
     &__button {
@@ -405,6 +421,14 @@ export default {
         @include adaptiv-value("padding", 12, 10, 1);
         @include adaptiv-value("width", 185, 150, 1);
         @include adaptiv-value("max-width", 185, 150, 1);
+
+        transition: background 0.3s, border 0.3s, color 0.3s;
+        border: 1px solid transparent;
+        &:hover {
+            background: transparent;
+            border: 1px solid #1294F2;
+            color: #1294F2;
+        }
     }
 }
 
@@ -493,6 +517,12 @@ export default {
         border: 1px solid #1294F2;
         border-radius: 6px;
         position: relative;
+
+        transition: background 0.3s, border 0.3s, color 0.3s;
+        &:hover {
+            background: #1294F2;
+            color: #fff;
+        }
     }
 
     &__input-inp {
@@ -564,6 +594,14 @@ export default {
         @include adaptiv-value("padding", 12, 10, 1);
         @include adaptiv-value("width", 235, 200, 1);
         @include adaptiv-value("max-width", 235, 200, 1);
+
+        transition: background 0.3s, border 0.3s, color 0.3s;
+        border: 1px solid transparent;
+        &:hover {
+            background: transparent;
+            border: 1px solid #1294F2;
+            color: #1294F2;
+        }
     }
 
     &__row-button {
@@ -583,6 +621,12 @@ export default {
         @include adaptiv-value("padding", 12, 10, 1);
         @include adaptiv-value("width", 180, 140, 1);
         @include adaptiv-value("max-width", 180, 140, 1);
+
+        transition: background 0.3s, border 0.3s, color 0.3s;
+        &:hover {
+            background: #1294F2;
+            color: #fff;
+        }
     }
 
     &__inner {

@@ -1,4 +1,5 @@
 <template>
+    <div class="biggest-wrapper">
     <div class="big-wrapper">
         <Aside :activeLink="3" :sideMenuActive="this.sideMenuActive" :isAdmin="false"/>
         <div class="wrapper">
@@ -36,6 +37,7 @@
             </main>
             <Footer />
         </div>
+    </div>
     </div>
 </template>
 

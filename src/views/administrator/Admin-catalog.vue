@@ -1,4 +1,5 @@
 <template>
+    <div class="biggest-wrapper">
     <div class="big-wrapper">
         <Aside :activeLink="1" :sideMenuActive="this.sideMenuActive" :isAdmin="true" />
         <div class="wrapper">
@@ -3786,6 +3787,7 @@
             <Footer />
         </div>
     </div>
+    </div>
 </template>
 
 <script>
@@ -3897,6 +3899,22 @@ export default {
                 fill: #fff;
             }
         }
+
+        svg path {
+            transition: fill 0.3s;
+            fill: #fff;
+        }
+
+        transition: background 0.3s, border 0.3s, color 0.3s;
+        border: 1px solid transparent;
+        &:hover {
+            background: transparent;
+            border: 1px solid #1294F2;
+            color: #1294F2;
+            svg path {
+                fill: #1294F2;
+            }
+        }
     }
 
     &__form {
@@ -3931,6 +3949,11 @@ export default {
             line-height: 17px;
             font-weight: 500;
             color: #96A5B8;
+        }
+        &:focus {
+            &::placeholder {
+                opacity: 0;
+            }
         }
     }
 }
@@ -4072,7 +4095,7 @@ export default {
     }
 
     .swiper-pagination-bullet-active {
-        background: #1294F2;
+        background: #1294F2 !important;
         color: #fff;
         border: 1px solid #1294F2;
 

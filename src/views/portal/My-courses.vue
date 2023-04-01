@@ -1,4 +1,5 @@
 <template>
+    <div class="biggest-wrapper">
     <div class="big-wrapper">
         <Aside :activeLink="1" :sideMenuActive="this.sideMenuActive" :isAdmin="false"/>
         <div class="wrapper">
@@ -530,6 +531,7 @@
             <Footer />
         </div>
     </div>
+    </div>
 </template>
 
 <script>
@@ -839,6 +841,11 @@ export default {
             letter-spacing: 0.14px;
             color: #96A5B8;
         }
+        &:focus {
+            &::placeholder {
+                opacity: 0;
+            }
+        }
     }
 }
 
@@ -952,6 +959,9 @@ export default {
         .lessons__inner {
             gap: 25px;
         }
+        .lessons-item {
+            max-width: unset;
+        }
     }
 }
 @media (max-width: 1300px) {
@@ -986,6 +996,14 @@ export default {
         .lessons-item__inner {
             margin-right: auto;
         }
+        .lessons-item__inner {
+            justify-content: space-between;
+        }
+        .lessons-item__img {
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
     }
 }
 @media (max-width: 750px) {
@@ -1012,6 +1030,9 @@ export default {
     }
     .my-courses-top-select__body {
         width: 230px;
+    }
+    .main-my-courses .lessons-item:nth-child(2) .lessons-item-content__info {
+        border: 5px solid #E9EDF7;
     }
 }
 </style>

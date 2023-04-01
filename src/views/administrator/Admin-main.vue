@@ -1,4 +1,5 @@
 <template>
+    <div class="biggest-wrapper">
     <div class="big-wrapper">
         <Aside :activeLink="0" :sideMenuActive="this.sideMenuActive" :isAdmin="true" />
         <div class="wrapper">
@@ -287,6 +288,7 @@
             </main>
             <Footer />
         </div>
+    </div>
     </div>
 </template>
 
@@ -725,7 +727,7 @@ export default {
     }
 }
 
-@media (max-width: 1700px) {
+@media (max-width: 1440px) {
     .statistics-graph {
         min-width: unset;
     }
@@ -738,9 +740,6 @@ export default {
     .statistics-graph-bottom {
         margin-left: 20px;
     }
-}
-
-@media (max-width: 1440px) {
     .statistics__inner {
         flex-direction: column;
     }

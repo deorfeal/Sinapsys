@@ -1,4 +1,5 @@
 <template>
+    <div class="biggest-wrapper">
     <div class="big-wrapper">
         <Aside :activeLink="1" :sideMenuActive="this.sideMenuActive" :isAdmin="true" />
         <div class="wrapper">
@@ -297,6 +298,7 @@
             <Footer />
         </div>
     </div>
+    </div>
 </template>
 
 <script>
@@ -518,7 +520,7 @@ export default {
     }
 }
 
-@media (max-width: 1600px) {
+@media (max-width: 1440px) {
     .author-info-content__top {
         flex-direction: column;
         align-items: flex-start;

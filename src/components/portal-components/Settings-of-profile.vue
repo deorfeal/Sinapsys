@@ -209,9 +209,14 @@ export default {
             line-height: 24px;
             color: #60678B;
         }
+        &:focus {
+            &::placeholder {
+                opacity: 0;
+            }
+        }
     }
 }
-@media (max-width: 1850px) {
+@media (max-width: 1440px) {
     .profile-settings {
         flex-direction: column;
         justify-content: center;

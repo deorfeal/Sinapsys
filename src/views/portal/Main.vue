@@ -1,4 +1,5 @@
 <template>
+    <div class="biggest-wrapper">
     <div class="big-wrapper">
         <Aside :activeLink="0" :sideMenuActive="this.sideMenuActive" :isAdmin="false"/>
         <div class="wrapper">
@@ -420,6 +421,7 @@
             <Footer />
         </div>
     </div>
+</div>
 </template>
 
 <script>
@@ -1067,7 +1069,7 @@ export default {
 
 // // 
 
-@media (max-width: 1918px) {
+@media (max-width: 1440px) {
     .lessons__inner {
         gap: 10px;
     }
@@ -1077,7 +1079,7 @@ export default {
     }
 }
 
-@media (max-width: 1850px) {
+@media (max-width: 1440px) {
     .main-top {
         gap: 25px;
     }
@@ -1092,7 +1094,7 @@ export default {
     }
 }
 
-@media (max-width: 1800px) {
+@media (max-width: 1440px) {
     .main-top-rait__list {
         width: 100%;
     }
@@ -1106,7 +1108,7 @@ export default {
     }
 }
 
-@media (max-width: 1750px) {
+@media (max-width: 1440px) {
     .lessons-item {
         max-width: 400px;
     }
@@ -1145,7 +1147,7 @@ export default {
     }
 }
 
-@media (max-width: 1600px) {
+@media (max-width: 1440px) {
     .main-top-rait {
         max-width: 380px;
     }
@@ -1182,7 +1184,7 @@ export default {
     }
 }
 
-@media (max-width: 1550px) {
+@media (max-width: 1440px) {
     .main-top-rait {
         max-width: 350px;
     }

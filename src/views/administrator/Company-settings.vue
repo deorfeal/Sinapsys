@@ -1,4 +1,5 @@
 <template>
+    <div class="biggest-wrapper">
     <div class="big-wrapper">
         <Aside :activeLink="5" :sideMenuActive="this.sideMenuActive" :isAdmin="true" />
         <div class="wrapper">
@@ -129,6 +130,7 @@
             <Footer />
         </div>
     </div>
+    </div>
 </template>
 
 <script>
@@ -229,6 +231,14 @@ export default {
         @include adaptiv-value("line-height", 24, 18, 1);
         @include adaptiv-value("width", 145, 130, 1);
         @include adaptiv-value("max-width", 145, 130, 1);
+
+        transition: background 0.3s, border 0.3s, color 0.3s;
+        border: 1px solid transparent;
+        &:hover {
+            background: transparent;
+            border: 1px solid #1294F2;
+            color: #1294F2;
+        }
     }
 }
 
@@ -386,6 +396,12 @@ export default {
         @include adaptiv-value("padding", 12, 10, 1);
         @include adaptiv-value("width", 150, 130, 1);
         @include adaptiv-value("max-width", 150, 130, 1);
+
+        transition: background 0.3s, border 0.3s, color 0.3s;
+        &:hover {
+            background: #1294F2;
+            color: #fff;
+        }
     }
 }
 
@@ -478,7 +494,7 @@ export default {
     }
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1440px) {
     .company-settings-bottom {
         flex-direction: column;
     }

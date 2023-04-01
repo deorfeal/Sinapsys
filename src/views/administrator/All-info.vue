@@ -1,4 +1,5 @@
 <template>
+    <div class="biggest-wrapper">
     <div class="big-wrapper">
         <Aside :activeLink="2" :sideMenuActive="this.sideMenuActive" :isAdmin="true" />
         <div class="wrapper">
@@ -2183,6 +2184,7 @@
             <Footer />
         </div>
     </div>
+    </div>
 </template>
 
 <script>
@@ -2335,21 +2337,28 @@ export default {
 
     &__btn {
         font-weight: 500;
-        font-size: 16px;
-        line-height: 24px;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 11px;
         text-align: center;
         max-height: 50px;
         color: #1294F2;
-        width: 270px;
-        max-width: 270px;
         background: #FFFFFF;
         border: 1px solid #1294F2;
         border-radius: 6px;
         margin-right: 20px;
+
+        transition: background 0.3s, border 0.3s, color 0.3s;
+
+        @include adaptiv-value("padding", 11, 8, 1);
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
+        @include adaptiv-value("width", 270, 240, 1);
+        @include adaptiv-value("max-width", 270, 240, 1);
+        &:hover {
+            background: #1294F2;
+            color: #fff;
+        }
     }
 
     &__link {
@@ -2384,7 +2393,33 @@ export default {
             width: 145px;
             max-width: 145px;
             color: #EC4848;
+            &:hover {
+                background: #EC4848;
+                color: #fff;
+                svg path {
+                    fill: #fff;
+                }
+            }
         }
+
+        svg path {
+            transition: fill 0.3s;
+        }
+        transition: background 0.3s, border 0.3s, color 0.3s;
+        &:hover {
+            background: #1294F2;
+            color: #fff;
+            svg path {
+                fill: #fff;
+            }
+        }
+
+        @include adaptiv-value("padding", 12, 8, 1);
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
+        @include adaptiv-value("gap", 10, 5, 1);
+        @include adaptiv-value("width", 155, 130, 1);
+        @include adaptiv-value("max-width", 155, 130, 1);
     }
 
     &__form {
@@ -2406,7 +2441,6 @@ export default {
     }
 
     &__form-input {
-        padding: 17px 30px 17px 50px;
         border-radius: 16px;
         width: 100%;
         height: 100%;
@@ -2415,7 +2449,17 @@ export default {
         font-weight: 500;
         color: #96A5B8;
         letter-spacing: 0.14px;
-
+        @include adaptiv-value("padding-top", 17, 15, 1);
+        @include adaptiv-value("padding-right", 30, 15, 1);
+        @include adaptiv-value("padding-bottom", 17, 15, 1);
+        @include adaptiv-value("padding-left", 50, 45, 1);
+        @include adaptiv-value("font-size", 16, 14, 1);
+        @include adaptiv-value("line-height", 17, 16, 1);
+        &:focus {
+            &::placeholder {
+                opacity: 0;
+            }
+        }
         &::placeholder {
             font-size: 16px;
             line-height: 17px;
@@ -2503,7 +2547,7 @@ export default {
     }
 
     .swiper-pagination-bullet-active {
-        background: #1294F2;
+        background: #1294F2 !important;
         color: #fff;
         border: 1px solid #1294F2;
 
