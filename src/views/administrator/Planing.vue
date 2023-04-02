@@ -959,6 +959,10 @@ export default {
         svg path {
             fill: #96A5B8;
         }   
+        transition: transform 0.3s;
+        &:hover {
+            transform: rotate(180deg) translateX(-5px);
+        }
     }
 }
 

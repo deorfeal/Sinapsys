@@ -45,6 +45,8 @@ import Planing from "@/views/administrator/Planing.vue";
 import FishingAttacks from "@/views/administrator/Fishing-attacks.vue";
 import AdminCatalog from "@/views/administrator/Admin-catalog.vue";
 import AllInfo from "@/views/administrator/All-info.vue";
+import NewPlaning from "@/views/administrator/New-planing.vue";
+
 
 
 const routes = [{
@@ -262,6 +264,11 @@ const routes = [{
         name: "all-info",
         component:  AllInfo,
     },    
+    {
+        path: "/new-planing",
+        name: "new-planing",
+        component:  NewPlaning,
+    }
 ];
 
 const router = createRouter({

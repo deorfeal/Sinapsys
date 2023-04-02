@@ -1,5 +1,5 @@
 <template>
-    <div class="custom-select-reports" :tabindex="tabindex" @blur="open = false">
+    <div class="custom-select-reports" :tabindex="0" @blur="open = false">
         <div class="selected" :class="{ open: open }" @click="open = !open">
             {{ selected }}
         </div>
@@ -32,6 +32,8 @@ export default {
             required: false,
             default: 0,
         },
+        selectStatus: {
+        }
     },
     data() {
         return {
@@ -46,6 +48,19 @@ export default {
     mounted() {
         this.$emit("input", this.selected);
     },
+    watch: {
+        selectStatus: {
+            handler() {
+                console.log('smt')
+                if ( this.selectStatus == true ) {
+                    this.open = false
+                } else {
+                    this.open = true
+                }
+            },
+            deep: true
+        }
+    }
 };
 </script>
   

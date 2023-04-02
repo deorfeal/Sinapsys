@@ -70,15 +70,15 @@ export default {
     border-radius: 4px;
     font-weight: 500;
     @include adaptiv-value('font-size', 16, 14, 1);
+    @include adaptiv-value('padding-top', 12, 8, 1);
+    @include adaptiv-value('padding-right', 12, 13, 1);
+    @include adaptiv-value('padding-bottom', 12, 8, 1);
+    @include adaptiv-value('padding-left', 16, 16, 1);
     line-height: 24px;
     color: #96A5B8;
     cursor: pointer;
     user-select: none;
 
-    @include adaptiv-value('padding-top', 12, 8, 1);
-    @include adaptiv-value('padding-right', 12, 13, 1);
-    @include adaptiv-value('padding-bottom', 12, 8, 1);
-    @include adaptiv-value('padding-left', 16, 16, 1);
 }
 
 .custom-select-new-curs .selected.open {

@@ -814,6 +814,10 @@ export default {
                 @include adaptiv-value("height", 32, 24, 1);
             }
             transform: rotate(270deg);
+            transition: transform 0.3s;
+            &:hover {
+                transform: rotate(270deg) translateY(5px);
+            }
         }
     }
 }

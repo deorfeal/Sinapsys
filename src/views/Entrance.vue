@@ -249,6 +249,9 @@ export default {
 
         &:focus {
             border: 1px solid #1294F2;
+            &::placeholder {
+                opacity: 0;
+            }
         }
     }
 

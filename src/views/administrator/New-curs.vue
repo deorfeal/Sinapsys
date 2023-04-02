@@ -62,6 +62,7 @@
                             </p>
                             <div class="new-curs-body-download__box">
                                 <a class="new-curs-body-download__box-text" href="#">
+                                    <input type="file">
                                     <span>
                                         <svg width="25" height="22" viewBox="0 0 25 22" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
@@ -462,7 +463,8 @@ export default {
         border: 1px solid #1294F2;
         border-radius: 6px;
         color: #1294F2;
-
+        position: relative;
+        cursor: pointer;
         span:first-child {
             @include adaptiv-value("width", 25, 16, 1);
             @include adaptiv-value("height", 22, 14, 1);
@@ -470,6 +472,17 @@ export default {
                 @include adaptiv-value("width", 25, 16, 1);
                 @include adaptiv-value("height", 22, 14, 1);
             }
+        }
+        input {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
         }
     }
 }
@@ -568,7 +581,7 @@ export default {
             top: 50%;
             left: 50%;
             transform: translateX(-50%) translateY(-50%);
-            background-image: url(../../public/images/new-curs-tick-icon-blue.svg);
+            background-image: url(../../../public/images/new-curs-tick-icon-blue.svg);
             background-repeat: no-repeat;
             background-size: cover;
         }
@@ -684,6 +697,11 @@ export default {
             @include adaptiv-value("font-size", 16, 13, 1);
             @include adaptiv-value("line-height", 24, 15, 1);
             color: #96A5B8;
+        }
+        &:focus {
+            &::placeholder {
+                opacity: 0;
+            }
         }
     }
 

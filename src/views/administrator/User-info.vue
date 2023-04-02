@@ -313,6 +313,11 @@ export default {
             background: #FFFFFF;
             color: #96A5B8;
         }
+        &:focus {
+            &::placeholder {
+                opacity: 0;
+            }
+        }
     }
 }
 

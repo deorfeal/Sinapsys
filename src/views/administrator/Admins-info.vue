@@ -1174,11 +1174,15 @@ export default {
         }
 
         &__icon {
+            cursor: pointer;
             transform: translateY(-50%) rotate(180deg);
             position: absolute;
             right: 0;
             top: 50%;
-
+            transition: transform 0.3s;
+            &:hover {
+                transform: translateY(-50%) rotate(180deg) translateX(-5px);
+            }
             svg path {
                 fill: #96A5B8;
             }

@@ -2623,6 +2623,10 @@ export default {
     .all-info-swiper-slide-row__link {
         position: relative;
         transform: rotate(180deg);
+        transition: transform 0.3s;
+        &:hover {
+            transform: rotate(180deg) translateX(-5px);
+        }
     }
 
     .all-info-swiper-slide-row {
@@ -2828,8 +2832,11 @@ export default {
         height: 32px;
         position: absolute;
         top: 50%;
-        right: 0;
-
+        right: 0;   
+        transition: transform 0.3s;
+        &:hover {
+            transform: translateY(-50%) rotate(180deg) translateX(-5px);
+        }
         svg {
             width: 100%;
             height: 100%;
@@ -2964,6 +2971,11 @@ export default {
             font-weight: 500;
             font-size: 16px;
             line-height: 24px;
+        }
+        &:focus {
+            &::placeholder {
+                opacity: 0;
+            }
         }
     }
 }

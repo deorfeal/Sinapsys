@@ -114,6 +114,11 @@ export default {
         }
 
         margin-bottom: 60px;
+        &:focus {
+            &::placeholder {
+                opacity: 0;
+            }
+        }
     }
 
     &__buttons {

@@ -27,13 +27,13 @@
                                 Название
                             </p>
                             <input class="new-lesson-item__input" type="text"
-                                value="Что делать, если мою электронную почту взломали?" disabled>
+                                value="Что делать, если мою электронную почту взломали?">
                         </div>
                         <div class="new-lesson__item new-lesson-item">
                             <p class="new-lesson-item__text">
                                 Описание
                             </p>
-                            <textarea class="new-lesson-item__textarea" name="textAreaLesson" id="" cols="30" disabled rows="10">Как правило, электронная почта — ваш основной идентификатор в сети. С электронной почтой сопряжены практически все важные аккаунты — социальные сети, интернет-банкинг, личные кабинеты на других сайтах и сервисах.</textarea>
+                            <textarea class="new-lesson-item__textarea" name="textAreaLesson" id="" cols="30" rows="10">Как правило, электронная почта — ваш основной идентификатор в сети. С электронной почтой сопряжены практически все важные аккаунты — социальные сети, интернет-банкинг, личные кабинеты на других сайтах и сервисах.</textarea>
                         </div>
                         <div class="new-lesson__item new-lesson-item">
                             <p class="new-lesson-item__text">

@@ -93,9 +93,9 @@
                                 <img class="curs-preview-bottom-item__img"
                                     src="../../../public/images/curs-preview-img-2.png" alt="img">
                                 <div class="curs-preview-bottom-item__box">
-                                    <h3 class="curs-preview-bottom-item__box-title">
+                                    <a class="curs-preview-bottom-item__box-title" href="#">
                                         1. Что может угрожать моей электронной почте?
-                                    </h3>
+                                    </a>
                                     <p class="curs-preview-bottom-item__box-info">
                                         <span>Пройдено</span>
                                         <span>В процессе</span>
@@ -109,9 +109,9 @@
                                 <img class="curs-preview-bottom-item__img"
                                     src="../../../public/images/curs-preview-img-2.png" alt="img">
                                 <div class="curs-preview-bottom-item__box">
-                                    <h3 class="curs-preview-bottom-item__box-title">
+                                    <a class="curs-preview-bottom-item__box-title" href="#">
                                         2. Что может угрожать моей электронной почте?
-                                    </h3>
+                                    </a>
                                     <p class="curs-preview-bottom-item__box-info">
                                         <span>Пройдено</span>
                                         <span>В процессе</span>
@@ -125,9 +125,9 @@
                                 <img class="curs-preview-bottom-item__img"
                                     src="../../../public/images/curs-preview-img-2.png" alt="img">
                                 <div class="curs-preview-bottom-item__box">
-                                    <h3 class="curs-preview-bottom-item__box-title">
+                                    <a class="curs-preview-bottom-item__box-title" href="#">
                                         3. Что может угрожать моей электронной почте?
-                                    </h3>
+                                    </a>
                                     <p class="curs-preview-bottom-item__box-info">
                                         <span>Пройдено</span>
                                         <span>В процессе</span>
@@ -141,9 +141,9 @@
                                 <img class="curs-preview-bottom-item__img"
                                     src="../../../public/images/curs-preview-img-2.png" alt="img">
                                 <div class="curs-preview-bottom-item__box">
-                                    <h3 class="curs-preview-bottom-item__box-title">
+                                    <a class="curs-preview-bottom-item__box-title" href="#">
                                         4. Что может угрожать моей электронной почте?
-                                    </h3>
+                                    </a>
                                     <p class="curs-preview-bottom-item__box-info">
                                         <span>Пройдено</span>
                                         <span>В процессе</span>
@@ -157,9 +157,9 @@
                                 <img class="curs-preview-bottom-item__img"
                                     src="../../../public/images/curs-preview-img-2.png" alt="img">
                                 <div class="curs-preview-bottom-item__box">
-                                    <h3 class="curs-preview-bottom-item__box-title">
+                                    <a class="curs-preview-bottom-item__box-title" href="#">
                                         5. Что может угрожать моей электронной почте?
-                                    </h3>
+                                    </a>
                                     <p class="curs-preview-bottom-item__box-info">
                                         <span>Пройдено</span>
                                         <span>В процессе</span>
@@ -173,9 +173,9 @@
                                 <img class="curs-preview-bottom-item__img"
                                     src="../../../public/images/curs-preview-img-2.png" alt="img">
                                 <div class="curs-preview-bottom-item__box">
-                                    <h3 class="curs-preview-bottom-item__box-title">
+                                    <a class="curs-preview-bottom-item__box-title" href="#">
                                         6. Что может угрожать моей электронной почте?
-                                    </h3>
+                                    </a>
                                     <p class="curs-preview-bottom-item__box-info">
                                         <span>Пройдено</span>
                                         <span>В процессе</span>
@@ -463,6 +463,10 @@ export default {
         @include adaptiv-value('margin-bottom', 15, 2, 1);
 
         color: #1B2559;
+        transition: color 0.3s;
+        &:hover {
+            color: #1294F2;
+        }
     }
 
     &__box-info {

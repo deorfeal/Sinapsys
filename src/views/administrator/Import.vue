@@ -236,14 +236,14 @@ export default {
     }
 
     .import__inner {
-        @include adaptiv-value("padding-bottom", 38, 10, 1);
+        @include adaptiv-value("padding-bottom", 45, 10, 1);
     }
 
     .import__top-btn {
         display: flex;
     }
     .import__top {
-        margin-bottom: 25px;
+        margin-bottom: 35px;
     }
 }
 
@@ -316,7 +316,7 @@ export default {
         top: 50%;
         left: 50%;
         transform: translateX(-50%) translateY(-50%);
-        background-image: url(../../public/images/new-curs-tick-icon-blue.svg);
+        background-image: url(../../../public/images/new-curs-tick-icon-blue.svg);
         background-repeat: no-repeat;
         background-size: cover;
     }
@@ -329,6 +329,7 @@ export default {
 
 .import {
     &__top {
+        height: 50px;
         display: flex;
         justify-content: space-between;
         margin-bottom: 35px;
@@ -375,6 +376,7 @@ export default {
         padding-bottom: 20px;
         border-bottom: 0.5px solid #96A5B8;
         flex-wrap: wrap;
+        height: 75px;
     }
 
     &__btn {
@@ -556,7 +558,7 @@ export default {
 }
 
 .import-info {
-    @include adaptiv-value("padding-top", 35, 20, 1);
+    @include adaptiv-value("padding-top", 20, 10, 1);
     &__title {
         font-weight: 600;
         color: #1B2559;
@@ -717,7 +719,11 @@ export default {
     }
 }
 
+
 @media (max-width: 950px) {
+    .import__inner {
+        height: unset;
+    }
     .import__inner {
         flex-direction: column;
     }
@@ -749,6 +755,9 @@ export default {
 }
 
 @media (max-width: 550px) {
+    .import__top {
+        height: unset;
+    }
     .import-info__row {
         flex-direction: column;
         align-items: flex-start;

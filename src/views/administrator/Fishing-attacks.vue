@@ -2211,7 +2211,7 @@ export default {
             animation: {
                 enable: false
             },
-        })
+        });
     },
     methods: {
         changedInfo() {
@@ -2244,6 +2244,7 @@ export default {
 
 .fishing-attacks {
     &__buttons {
+        height: 80px;
         margin-bottom: 25px;
         display: flex;
         align-items: center;
@@ -2339,7 +2340,10 @@ export default {
     &:nth-child(1) {
         .fishing-attacks-swiper-slide__row-link {
             transform: rotate(180deg);
-
+            transition: transform 0.3s;
+            &:hover {
+                transform: rotate(180deg) translateX(-5px);
+            }
             svg {
                 path {
                     fill: #96A5B8;
@@ -2926,8 +2930,10 @@ export default {
     border-radius: 4px;
     max-width: 188px;
     width: 188px;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     &__btn {
+        width: 100%;
         font-weight: 500;
         font-size: 14px;
         line-height: 24px;
@@ -2938,11 +2944,11 @@ export default {
         padding-bottom: 8px;
         margin-bottom: 8px;
         border-bottom: 0.3px solid #96A5B8;
-        &:last-child {
+        &:nth-child(2) {
             border: unset;
             color: #EC4848;
-            padding-bottom: 0;
-            margin-bottom: 0;
+            padding-bottom: 0 !important;
+            margin-bottom: 0 !important;
         }
     }
 }
@@ -3129,6 +3135,9 @@ export default {
     }
     .fishing-attacks-new-letter-content-box__top {
         flex-wrap: wrap;
+    }
+    .fishing-attacks__buttons {
+        height: unset;
     }
 }
 

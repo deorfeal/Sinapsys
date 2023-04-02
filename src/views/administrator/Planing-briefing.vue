@@ -421,6 +421,9 @@ export default {
     @include adaptiv-value("padding-left", 15, 20, 1);
     &:last-child {
         margin-bottom: 0;
+        .briefing-content-column__icon {
+            border: 15px solid #5DC983;
+        }
     }
     &__title {
         font-weight: 600;
@@ -497,7 +500,7 @@ export default {
     &__icon {
         @include adaptiv-value("width", 147, 100, 1);
         @include adaptiv-value("height", 147, 100, 1);
-        border: 15px solid #E9EDF7;
+        border: 15px solid #FFC44C;
         display: flex;
         justify-content: center;
         align-items: center;
