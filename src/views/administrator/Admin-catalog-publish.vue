@@ -927,7 +927,8 @@ export default {
         border-radius: 6px;
         width: 150px;
 
-        &:nth-child(2) {
+        transition: color 0.3s, background 0.3s;
+        &:hover {
             background: #1294F2;
             color: #fff;
         }
@@ -991,8 +992,8 @@ export default {
         border: 1px solid #1294F2;
         border-radius: 6px;
         width: 150px;
-
-        &:nth-child(2) {
+        transition: color 0.3s, background 0.3s;
+        &:hover {
             background: #1294F2;
             color: #fff;
         }

@@ -375,6 +375,11 @@ export default {
                 &::placeholder {
                     color: #96A5B8;
                 }
+                &:focus {
+                    &::placeholder {
+                        opacity: 0;
+                    }
+                }
             }
         }
         border-bottom: 0.5px solid #96A5B8;

@@ -1,5 +1,5 @@
 <template>
-    <div class="entrance reg-two big-container" @click="closeSelect">
+    <div class="entrance reg-two big-container">
         <Aside />
         <div class="entrance__wrapper">
             <form class="entrance__form entrance-form" action="#">
@@ -39,9 +39,8 @@
                             Обязательное поле.
                         </p>
                     </div>
-
-                    <div class="entrance-form__select entrance-form-select entrance-form-select--first" id="1" tabindex="0"
-                        @blur="closeSelect">
+                    <div class="entrance-form__select entrance-form-select entrance-form-select--first" id="1" tabindex="0" @blur="closeSelect"
+                        >
                         <p class="entrance-form-select__text">
                             Отрасль
                         </p>
@@ -434,12 +433,10 @@ export default {
             }
         },
         closeSelect() {
-            console.log('smt')
-            // document.querySelector('.entrance-form-select--first').classList.remove('entrance-form-select--first--active')
-            // document.querySelector('.entrance-form-select--second').classList.remove('entrance-form-select--second--active')
-            // document.querySelector('.entrance-form-select--third').classList.remove('entrance-form-select--third--active')
+            document.querySelector('.entrance-form-select--first').classList.remove('entrance-form-select--first--active')
+            document.querySelector('.entrance-form-select--second').classList.remove('entrance-form-select--second--active')
+            document.querySelector('.entrance-form-select--third').classList.remove('entrance-form-select--third--active')
         },
-
     },
 }
 </script>

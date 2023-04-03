@@ -1,5 +1,5 @@
 <template>
-    <div class="biggest-wrapper" @click="closeSelect">
+    <div class="biggest-wrapper" >
         <div class="big-wrapper">
             <Aside :activeLink="6" :sideMenuActive="this.sideMenuActive" :isAdmin="true" />
             <div class="wrapper">
@@ -4606,8 +4606,9 @@ export default {
             }
         },
         closeSelect() {
-            console.log('msts')
-            // document.querySelector('.reports-swiper-slide-top-select').classList.remove('reports-swiper-slide-top-select--active')
+            for ( let item of document.querySelectorAll('.reports-swiper-slide-top-select') ) {
+                item.classList.remove('reports-swiper-slide-top-select--active')
+            }
         },
     }
 }
