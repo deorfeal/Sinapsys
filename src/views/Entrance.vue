@@ -83,6 +83,20 @@ export default {
             }
          
         }
+    },
+    mounted() {
+        document.querySelector('.entrance').parentNode.style.height = '100%'
+        function handleResize() {
+            if ( window.innerHeight < 900 ) {
+                document.querySelector('.entrance').parentNode.style.height = 'unset'
+            }
+            if ( window.innerWidth == 1920 || window.innerWidth < 1920 ) {
+                document.querySelector('.entrance').parentNode.parentNode.style.zoom = '100%' 
+                document.querySelector('.entrance').parentNode.parentNode.parentNode.style.zoom = '100%' 
+            }
+        }
+        window.addEventListener('resize', handleResize);
+        handleResize();
     }
 }
 </script>

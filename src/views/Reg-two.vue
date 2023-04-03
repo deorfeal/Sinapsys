@@ -40,7 +40,8 @@
                         </p>
                     </div>
 
-                    <div class="entrance-form__select entrance-form-select entrance-form-select--first" id="1" tabindex="0" @blur="closeSelect">
+                    <div class="entrance-form__select entrance-form-select entrance-form-select--first" id="1" tabindex="0"
+                        @blur="closeSelect">
                         <p class="entrance-form-select__text">
                             Отрасль
                         </p>
@@ -76,7 +77,8 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="entrance-form__select entrance-form-select entrance-form-select--second" id="2" tabindex="0" @blur="closeSelect">
+                    <div class="entrance-form__select entrance-form-select entrance-form-select--second" id="2" tabindex="0"
+                        @blur="closeSelect">
                         <p class="entrance-form-select__text">
                             Страна
                         </p>
@@ -112,7 +114,8 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="entrance-form__select entrance-form-select entrance-form-select--third" id="3" tabindex="0" @blur="closeSelect"> 
+                    <div class="entrance-form__select entrance-form-select entrance-form-select--third" id="3" tabindex="0"
+                        @blur="closeSelect">
                         <p class="entrance-form-select__text">
                             Город
                         </p>
@@ -272,6 +275,18 @@ export default {
     },
     mounted() {
         this.infoAboutSearh()
+        document.querySelector('.entrance').parentNode.style.height = '100%'
+        function handleResize() {
+            if ( window.innerHeight < 900 ) {
+                document.querySelector('.entrance').parentNode.style.height = 'unset'
+            }
+            if ( window.innerWidth == 1920 || window.innerWidth < 1920 ) {
+                document.querySelector('.entrance').parentNode.parentNode.style.zoom = '100%' 
+                document.querySelector('.entrance').parentNode.parentNode.parentNode.style.zoom = '100%' 
+            }
+        }
+        window.addEventListener('resize', handleResize);
+        handleResize();
     },
     methods: {
         sendData(event) {
@@ -424,6 +439,7 @@ export default {
             // document.querySelector('.entrance-form-select--second').classList.remove('entrance-form-select--second--active')
             // document.querySelector('.entrance-form-select--third').classList.remove('entrance-form-select--third--active')
         },
+
     },
 }
 </script>
@@ -618,6 +634,7 @@ export default {
         color: #1294F2;
         border: 1px solid #1294F2;
         transition: border 0.3s, background 0.3s, color 0.3s;
+
         &:hover {
             background: #1294F2;
             color: #fff;
@@ -743,4 +760,5 @@ export default {
         align-items: flex-start;
         align-self: flex-start;
     }
-}</style>
+}
+</style>

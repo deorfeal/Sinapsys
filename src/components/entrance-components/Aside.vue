@@ -23,7 +23,7 @@ export default {
     position: relative;
     width: 50%;
     max-width: 50%;
-    min-height: 1024px;
+    min-height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
