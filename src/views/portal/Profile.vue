@@ -199,20 +199,22 @@ export default {
         justify-content: center;
         align-items: center;
         text-align: center;
-        color: #FFFFFF;
+       
         padding: 8px;
         width: 145px;
         max-width: 145px;
-        background: #1294F2;
-        border-radius: 6px;
 
+        border-radius: 6px;
+        background: #fff;
         border: 1px solid transparent;
         transition: background 0.3s, color 0.3s, border 0.3s;
 
+        color: #1294F2;
+        border: 1px solid #1294F2;
+        transition: border 0.3s, background 0.3s, color 0.3s;
         &:hover {
-            background: #fff;
-            color: #1294F2;
-            border: 1px solid #1294F2;
+            background: #1294F2;
+            color: #fff;
         }
     }
 }

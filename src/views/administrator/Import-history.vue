@@ -6,7 +6,7 @@
             <Header :searchIsActive="false" :title="'История импорта'" @openSideMenu="SideMenuToActive" :isAdmin="true" />
             <main class="main main-import-hisoty">
                 <section class="main__import-histoty import-history">
-                    <swiper class="import-history__swiper import-history-swiper swiper" :allowTouchMove="false" :modules="modules"
+                    <swiper class="import-history__swiper import-history-swiper swiper"  :allowTouchMove="false" :modules="modules"
                         :slides-per-view="1" :speed="1" :space-between="100" navigation :pagination="{ clickable: true, }"
                         :loop="true" @swiper="onSwiper" @slideChange="onSlideChange">
                         <swiper-slide class="import-history-swiper__slide import-history-swiper-slide">
@@ -927,18 +927,17 @@ export default {
         justify-content: center;
         align-items: center;
         text-align: center;
-        color: #FFFFFF;
-        background: #1294F2;
-        border: 1px solid #1294F2;
         border-radius: 6px;
         max-width: 115px;
 
         transition: background 0.3s, border 0.3s, color 0.3s;
-        border: 1px solid transparent;
+        color: #1294F2;
+        background: #fff;
+        border: 1px solid #1294F2;
+        transition: border 0.3s, background 0.3s, color 0.3s;
         &:hover {
-            background: transparent;
-            border: 1px solid #1294F2;
-            color: #1294F2;
+            background: #1294F2;
+            color: #fff;
         }
     }
 

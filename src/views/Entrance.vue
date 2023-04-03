@@ -276,20 +276,18 @@ export default {
         @include adaptiv-value("padding", 18, 4, 1);
         @include adaptiv-value("width", 320, 150, 1);
         @include adaptiv-value("max-width", 320, 150, 1);
-        background: #1294F2;
         @include adaptiv-value("border-radius", 10, 6, 1);
-
+        
         @include adaptiv-value("font-size", 16, 14, 1);
         @include adaptiv-value("line-height", 20, 24, 1);
-        color: #FFFFFF;
         @include adaptiv-value("margin-bottom", 15, 10, 1);
-        border: 1px solid transparent;
-        transition: border 0.3s, background 0.3s, color 0.3s;
 
+        color: #1294F2;
+        border: 1px solid #1294F2;
+        transition: border 0.3s, background 0.3s, color 0.3s;
         &:hover {
-            border: 1px solid #1294F2;
-            background: transparent;
-            color: #1294F2;
+            background: #1294F2;
+            color: #fff;
         }
     }
 

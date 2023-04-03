@@ -1,5 +1,5 @@
 <template>
-    <div class="entrance reg-two big-container">
+    <div class="entrance reg-two big-container" @click="closeSelect">
         <Aside />
         <div class="entrance__wrapper">
             <form class="entrance__form entrance-form" action="#">
@@ -40,7 +40,7 @@
                         </p>
                     </div>
 
-                    <div class="entrance-form__select entrance-form-select entrance-form-select--first" id="1">
+                    <div class="entrance-form__select entrance-form-select entrance-form-select--first" id="1" tabindex="0" @blur="closeSelect">
                         <p class="entrance-form-select__text">
                             Отрасль
                         </p>
@@ -76,8 +76,7 @@
                             </ul>
                         </div>
                     </div>
-
-                    <div class="entrance-form__select entrance-form-select entrance-form-select--second" id="2">
+                    <div class="entrance-form__select entrance-form-select entrance-form-select--second" id="2" tabindex="0" @blur="closeSelect">
                         <p class="entrance-form-select__text">
                             Страна
                         </p>
@@ -113,8 +112,7 @@
                             </ul>
                         </div>
                     </div>
-
-                    <div class="entrance-form__select entrance-form-select entrance-form-select--third" id="3">
+                    <div class="entrance-form__select entrance-form-select entrance-form-select--third" id="3" tabindex="0" @blur="closeSelect"> 
                         <p class="entrance-form-select__text">
                             Город
                         </p>
@@ -171,7 +169,6 @@
                             </label>
                         </div>
                     </div>
-
                     <div class="entrance-form__buttons">
                         <a class="entrance-form__buttons-link" href="#">
                             Назад
@@ -246,7 +243,7 @@ export default {
                 'Алгерия',
                 'Андора',
                 'Андора',
-            ]
+            ],
         };
     },
     computed: {
@@ -279,8 +276,8 @@ export default {
     methods: {
         sendData(event) {
             let allInputs = document.querySelectorAll('.entrance-form__box-input')
-            for ( let item of allInputs ) {
-                if( item.value == '' ) {
+            for (let item of allInputs) {
+                if (item.value == '') {
                     event.preventDefault()
                     item.parentNode.classList.add('entrance-form__box--disabled')
                 } else {
@@ -420,13 +417,20 @@ export default {
 
                 document.querySelector('.entrance-form-select--third').classList.remove('entrance-form-select--third--active')
             }
-        }
-    }
+        },
+        closeSelect() {
+            console.log('smt')
+            // document.querySelector('.entrance-form-select--first').classList.remove('entrance-form-select--first--active')
+            // document.querySelector('.entrance-form-select--second').classList.remove('entrance-form-select--second--active')
+            // document.querySelector('.entrance-form-select--third').classList.remove('entrance-form-select--third--active')
+        },
+    },
 }
 </script>
 
 <style lang="scss">
 @import '../assets/scss/vars';
+
 .reg-two {
     .entrance-form__box {
         margin-bottom: 15px;
@@ -590,6 +594,7 @@ export default {
         @include adaptiv-value("width", 185, 160, 1);
         @include adaptiv-value("max-width", 185, 160, 1);
         transition: background 0.3s, color 0.3s;
+
         &:hover {
             background: #1294F2;
             color: #fff;
@@ -602,8 +607,6 @@ export default {
         justify-content: center;
         align-items: center;
         text-align: center;
-        color: #FFFFFF;
-        background: #1294F2;
         @include adaptiv-value("border-radius", 10, 6, 1);
         @include adaptiv-value("width", 275, 200, 1);
         @include adaptiv-value("max-width", 275, 200, 1);
@@ -611,10 +614,13 @@ export default {
         @include adaptiv-value("line-height", 20, 24, 1);
         border: 1px solid transparent;
         transition: background 0.3s, color 0.3s, border 0.3s;
+
+        color: #1294F2;
+        border: 1px solid #1294F2;
+        transition: border 0.3s, background 0.3s, color 0.3s;
         &:hover {
-            background: transparent;
-            color: #1294F2;
-            border: 1px solid #1294F2;
+            background: #1294F2;
+            color: #fff;
         }
     }
 }
@@ -730,11 +736,11 @@ export default {
 
     // // // 
 }
+
 @media (max-width: 1400px) {
     .entrance-form__buttons {
         flex-direction: column;
         align-items: flex-start;
         align-self: flex-start;
     }
-}
-</style>
+}</style>

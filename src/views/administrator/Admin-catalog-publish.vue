@@ -543,23 +543,25 @@ export default {
         @include adaptiv-value("font-size", 20, 16, 1);
         @include adaptiv-value("line-height", 24, 18, 1);
         text-align: center;
-        color: #FFFFFF;
+   
         @include adaptiv-value("padding", 16, 12, 1);
         display: flex;
         justify-content: center;
         align-items: center;
-        background: #1294F2;
+
         border-radius: 6px;
         width: 200px;
         max-width: 200px;
         margin-left: auto;
 
         transition: background 0.3s, border 0.3s, color 0.3s;
-        border: 1px solid transparent;
+        color: #1294F2;
+        border: 1px solid #1294F2;
+        transition: border 0.3s, background 0.3s, color 0.3s;
+        background: #fff;
         &:hover {
-            background: transparent;
-            border: 1px solid #1294F2;
-            color: #1294F2;
+            background: #1294F2;
+            color: #fff;
         }
     }
 }

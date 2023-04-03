@@ -43,8 +43,8 @@
                         </div>
                         <div class="reports__all-info reports-all-info">
                             <div class="reports-all-info__item reports-all-info-item mix item-first">
-                                <swiper class="reports-all-info-item__swiper reports-swiper swiper" :modules="modules"
-                                    :slides-per-view="1" :speed="1" :space-between="100" navigation
+                                <swiper class="reports-all-info-item__swiper reports-swiper swiper" :allowTouchMove="false"
+                                    :modules="modules" :slides-per-view="1" :speed="1" :space-between="100" navigation
                                     :pagination="{ clickable: true, }" :loop="true" @swiper="onSwiper"
                                     @slideChange="onSlideChange">
                                     <swiper-slide class="reports-swiper__slide reports-swiper-slide">
@@ -56,8 +56,9 @@
                                                 <ReportsSelect
                                                     :options="['Все', 'Назначено администратором', ' Добавлено из каталога']"
                                                     :default="'Тип назначения'" class="select" />
-                                                <div ref="CursSelect"
-                                                    class="reports-swiper-slide-top__select reports-swiper-slide-top-select">
+                                                <button ref="CursSelect"
+                                                    class="reports-swiper-slide-top__select reports-swiper-slide-top-select"
+                                                    tabindex="0" @blur="closeSelect" type="button">
                                                     <div class="reports-swiper-slide-top-select__box"
                                                         @click="addActiveToCursSelect">
                                                         <p class="reports-swiper-slide-top-select__box-text">
@@ -120,7 +121,7 @@
                                                             </button>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </button>
                                                 <a href="#reports-top-btn-popup" class="reports-swiper-slide-top__btn"
                                                     type="button" data-fancybox>
                                                     Экспорт
@@ -268,7 +269,7 @@
                                                 <ReportsSelect
                                                     :options="['Все', 'Назначено администратором', ' Добавлено из каталога']"
                                                     :default="'Тип назначения'" class="select" />
-                                                <div ref="CursSelect"
+                                                <button ref="CursSelect" tabindex="0" @blur="closeSelect" type="button"
                                                     class="reports-swiper-slide-top__select reports-swiper-slide-top-select">
                                                     <div class="reports-swiper-slide-top-select__box"
                                                         @click="addActiveToCursSelect">
@@ -332,7 +333,7 @@
                                                             </button>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </button>
                                                 <a href="#reports-top-btn-popup" class="reports-swiper-slide-top__btn"
                                                     type="button" data-fancybox>
                                                     Экспорт
@@ -480,7 +481,7 @@
                                                 <ReportsSelect
                                                     :options="['Все', 'Назначено администратором', ' Добавлено из каталога']"
                                                     :default="'Тип назначения'" class="select" />
-                                                <div ref="CursSelect"
+                                                <button ref="CursSelect" tabindex="0" @blur="closeSelect" type="button"
                                                     class="reports-swiper-slide-top__select reports-swiper-slide-top-select">
                                                     <div class="reports-swiper-slide-top-select__box"
                                                         @click="addActiveToCursSelect">
@@ -544,7 +545,7 @@
                                                             </button>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </button>
                                                 <a href="#reports-top-btn-popup" class="reports-swiper-slide-top__btn"
                                                     type="button" data-fancybox>
                                                     Экспорт
@@ -692,7 +693,7 @@
                                                 <ReportsSelect
                                                     :options="['Все', 'Назначено администратором', ' Добавлено из каталога']"
                                                     :default="'Тип назначения'" class="select" />
-                                                <div ref="CursSelect"
+                                                <button ref="CursSelect" tabindex="0" @blur="closeSelect" type="button"
                                                     class="reports-swiper-slide-top__select reports-swiper-slide-top-select">
                                                     <div class="reports-swiper-slide-top-select__box"
                                                         @click="addActiveToCursSelect">
@@ -756,7 +757,7 @@
                                                             </button>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </button>
                                                 <a href="#reports-top-btn-popup" class="reports-swiper-slide-top__btn"
                                                     type="button" data-fancybox>
                                                     Экспорт
@@ -899,8 +900,8 @@
                                 </swiper>
                             </div>
                             <div class="reports-all-info__item reports-all-info-item mix item-second">
-                                <swiper class="reports-all-info-item__swiper reports-swiper swiper" :modules="modules"
-                                    :slides-per-view="1" :speed="1" :space-between="100" navigation
+                                <swiper class="reports-all-info-item__swiper reports-swiper swiper" :allowTouchMove="false"
+                                    :modules="modules" :slides-per-view="1" :speed="1" :space-between="100" navigation
                                     :pagination="{ clickable: true, }" :loop="true" @swiper="onSwiper"
                                     @slideChange="onSlideChange">
                                     <swiper-slide class="reports-swiper__slide reports-swiper-slide">
@@ -911,10 +912,11 @@
                                                 <ReportsSelect
                                                     :options="['Все', 'Назначено администратором', ' Добавлено из каталога']"
                                                     :default="'Тип назначения'" class="select" />
-                                                <div ref="CursSelect"
-                                                    class="reports-swiper-slide-top__select reports-swiper-slide-top-select">
-                                                    <div class="reports-swiper-slide-top-select__box"
-                                                        @click="addActiveToCursSelect">
+                                                <button ref="CursSelect"
+                                                    class="reports-swiper-slide-top__select reports-swiper-slide-top-select"
+                                                    tabindex="0" @click="addActiveToCursSelect" @blur="closeSelect"
+                                                    type="button">
+                                                    <div class="reports-swiper-slide-top-select__box">
                                                         <p class="reports-swiper-slide-top-select__box-text">
                                                             Курс
                                                         </p>
@@ -975,7 +977,7 @@
                                                             </button>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </button>
                                                 <a href="#reports-top-btn-popup" class="reports-swiper-slide-top__btn"
                                                     type="button" data-fancybox>
                                                     Экспорт
@@ -1097,8 +1099,10 @@
                                                 <ReportsSelect
                                                     :options="['Все', 'Назначено администратором', ' Добавлено из каталога']"
                                                     :default="'Тип назначения'" class="select" />
-                                                <div ref="CursSelect"
-                                                    class="reports-swiper-slide-top__select reports-swiper-slide-top-select">
+                                                <button ref="CursSelect"
+                                                    class="reports-swiper-slide-top__select reports-swiper-slide-top-select"
+                                                    tabindex="0" @blur="closeSelect" type="button">
+
                                                     <div class="reports-swiper-slide-top-select__box"
                                                         @click="addActiveToCursSelect">
                                                         <p class="reports-swiper-slide-top-select__box-text">
@@ -1161,7 +1165,7 @@
                                                             </button>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </button>
                                                 <a href="#reports-top-btn-popup" class="reports-swiper-slide-top__btn"
                                                     type="button" data-fancybox>
                                                     Экспорт
@@ -1283,8 +1287,10 @@
                                                 <ReportsSelect
                                                     :options="['Все', 'Назначено администратором', ' Добавлено из каталога']"
                                                     :default="'Тип назначения'" class="select" />
-                                                <div ref="CursSelect"
-                                                    class="reports-swiper-slide-top__select reports-swiper-slide-top-select">
+                                                <button ref="CursSelect"
+                                                    class="reports-swiper-slide-top__select reports-swiper-slide-top-select"
+                                                    tabindex="0" @blur="closeSelect" type="button">
+
                                                     <div class="reports-swiper-slide-top-select__box"
                                                         @click="addActiveToCursSelect">
                                                         <p class="reports-swiper-slide-top-select__box-text">
@@ -1347,7 +1353,7 @@
                                                             </button>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </button>
                                                 <a href="#reports-top-btn-popup" class="reports-swiper-slide-top__btn"
                                                     type="button" data-fancybox>
                                                     Экспорт
@@ -1469,8 +1475,10 @@
                                                 <ReportsSelect
                                                     :options="['Все', 'Назначено администратором', ' Добавлено из каталога']"
                                                     :default="'Тип назначения'" class="select" />
-                                                <div ref="CursSelect"
-                                                    class="reports-swiper-slide-top__select reports-swiper-slide-top-select">
+                                                <button ref="CursSelect"
+                                                    class="reports-swiper-slide-top__select reports-swiper-slide-top-select"
+                                                    tabindex="0" @blur="closeSelect" type="button">
+
                                                     <div class="reports-swiper-slide-top-select__box"
                                                         @click="addActiveToCursSelect">
                                                         <p class="reports-swiper-slide-top-select__box-text">
@@ -1533,7 +1541,7 @@
                                                             </button>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </button>
                                                 <a href="#reports-top-btn-popup" class="reports-swiper-slide-top__btn"
                                                     type="button" data-fancybox>
                                                     Экспорт
@@ -1650,8 +1658,8 @@
                                 </swiper>
                             </div>
                             <div class="reports-all-info__item reports-all-info-item mix item-third">
-                                <swiper class="reports-all-info-item__swiper reports-swiper swiper" :modules="modules"
-                                    :slides-per-view="1" :speed="1" :space-between="100" navigation
+                                <swiper class="reports-all-info-item__swiper reports-swiper swiper" :allowTouchMove="false"
+                                    :modules="modules" :slides-per-view="1" :speed="1" :space-between="100" navigation
                                     :pagination="{ clickable: true, }" :loop="true" @swiper="onSwiper"
                                     @slideChange="onSlideChange">
                                     <swiper-slide class="reports-swiper__slide reports-swiper-slide">
@@ -1662,8 +1670,10 @@
                                                 <ReportsSelect
                                                     :options="['Все', 'Назначено администратором', ' Добавлено из каталога']"
                                                     :default="'Тип назначения'" class="select" />
-                                                <div ref="CursSelect"
-                                                    class="reports-swiper-slide-top__select reports-swiper-slide-top-select">
+                                                <button ref="CursSelect"
+                                                    class="reports-swiper-slide-top__select reports-swiper-slide-top-select"
+                                                    tabindex="0" @blur="closeSelect" type="button">
+
                                                     <div class="reports-swiper-slide-top-select__box"
                                                         @click="addActiveToCursSelect">
                                                         <p class="reports-swiper-slide-top-select__box-text">
@@ -1726,7 +1736,7 @@
                                                             </button>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </button>
                                                 <a href="#reports-top-btn-popup" class="reports-swiper-slide-top__btn"
                                                     type="button" data-fancybox>
                                                     Экспорт
@@ -1855,8 +1865,10 @@
                                                 <ReportsSelect
                                                     :options="['Все', 'Назначено администратором', ' Добавлено из каталога']"
                                                     :default="'Тип назначения'" class="select" />
-                                                <div ref="CursSelect"
-                                                    class="reports-swiper-slide-top__select reports-swiper-slide-top-select">
+                                                <button ref="CursSelect"
+                                                    class="reports-swiper-slide-top__select reports-swiper-slide-top-select"
+                                                    tabindex="0" @blur="closeSelect" type="button">
+
                                                     <div class="reports-swiper-slide-top-select__box"
                                                         @click="addActiveToCursSelect">
                                                         <p class="reports-swiper-slide-top-select__box-text">
@@ -1919,7 +1931,7 @@
                                                             </button>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </button>
                                                 <a href="#reports-top-btn-popup" class="reports-swiper-slide-top__btn"
                                                     type="button" data-fancybox>
                                                     Экспорт
@@ -2048,8 +2060,10 @@
                                                 <ReportsSelect
                                                     :options="['Все', 'Назначено администратором', ' Добавлено из каталога']"
                                                     :default="'Тип назначения'" class="select" />
-                                                <div ref="CursSelect"
-                                                    class="reports-swiper-slide-top__select reports-swiper-slide-top-select">
+                                                <button ref="CursSelect"
+                                                    class="reports-swiper-slide-top__select reports-swiper-slide-top-select"
+                                                    tabindex="0" @blur="closeSelect" type="button">
+
                                                     <div class="reports-swiper-slide-top-select__box"
                                                         @click="addActiveToCursSelect">
                                                         <p class="reports-swiper-slide-top-select__box-text">
@@ -2112,7 +2126,7 @@
                                                             </button>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </button>
                                                 <a href="#reports-top-btn-popup" class="reports-swiper-slide-top__btn"
                                                     type="button" data-fancybox>
                                                     Экспорт
@@ -2241,8 +2255,10 @@
                                                 <ReportsSelect
                                                     :options="['Все', 'Назначено администратором', ' Добавлено из каталога']"
                                                     :default="'Тип назначения'" class="select" />
-                                                <div ref="CursSelect"
-                                                    class="reports-swiper-slide-top__select reports-swiper-slide-top-select">
+                                                <button ref="CursSelect"
+                                                    class="reports-swiper-slide-top__select reports-swiper-slide-top-select"
+                                                    tabindex="0" @blur="closeSelect" type="button">
+
                                                     <div class="reports-swiper-slide-top-select__box"
                                                         @click="addActiveToCursSelect">
                                                         <p class="reports-swiper-slide-top-select__box-text">
@@ -2305,7 +2321,7 @@
                                                             </button>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </button>
                                                 <a href="#reports-top-btn-popup" class="reports-swiper-slide-top__btn"
                                                     type="button" data-fancybox>
                                                     Экспорт
@@ -2429,8 +2445,8 @@
                                 </swiper>
                             </div>
                             <div class="reports-all-info__item reports-all-info-item mix item-fourth">
-                                <swiper class="reports-all-info-item__swiper reports-swiper swiper" :modules="modules"
-                                    :slides-per-view="1" :speed="1" :space-between="100" navigation
+                                <swiper class="reports-all-info-item__swiper reports-swiper swiper" :allowTouchMove="false"
+                                    :modules="modules" :slides-per-view="1" :speed="1" :space-between="100" navigation
                                     :pagination="{ clickable: true, }" :loop="true" @swiper="onSwiper"
                                     @slideChange="onSlideChange">
                                     <swiper-slide class="reports-swiper__slide reports-swiper-slide">
@@ -2441,8 +2457,10 @@
                                                 <ReportsSelect
                                                     :options="['Все', 'Назначено администратором', ' Добавлено из каталога']"
                                                     :default="'Тип назначения'" class="select" />
-                                                <div ref="CursSelect"
-                                                    class="reports-swiper-slide-top__select reports-swiper-slide-top-select">
+                                                <button ref="CursSelect"
+                                                    class="reports-swiper-slide-top__select reports-swiper-slide-top-select"
+                                                    tabindex="0" @blur="closeSelect" type="button">
+
                                                     <div class="reports-swiper-slide-top-select__box"
                                                         @click="addActiveToCursSelect">
                                                         <p class="reports-swiper-slide-top-select__box-text">
@@ -2505,7 +2523,7 @@
                                                             </button>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </button>
                                                 <a href="#reports-top-btn-popup" class="reports-swiper-slide-top__btn"
                                                     type="button" data-fancybox>
                                                     Экспорт
@@ -2619,8 +2637,10 @@
                                                 <ReportsSelect
                                                     :options="['Все', 'Назначено администратором', ' Добавлено из каталога']"
                                                     :default="'Тип назначения'" class="select" />
-                                                <div ref="CursSelect"
-                                                    class="reports-swiper-slide-top__select reports-swiper-slide-top-select">
+                                                <button ref="CursSelect"
+                                                    class="reports-swiper-slide-top__select reports-swiper-slide-top-select"
+                                                    tabindex="0" @blur="closeSelect" type="button">
+
                                                     <div class="reports-swiper-slide-top-select__box"
                                                         @click="addActiveToCursSelect">
                                                         <p class="reports-swiper-slide-top-select__box-text">
@@ -2683,7 +2703,7 @@
                                                             </button>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </button>
                                                 <a href="#reports-top-btn-popup" class="reports-swiper-slide-top__btn"
                                                     type="button" data-fancybox>
                                                     Экспорт
@@ -2797,8 +2817,10 @@
                                                 <ReportsSelect
                                                     :options="['Все', 'Назначено администратором', ' Добавлено из каталога']"
                                                     :default="'Тип назначения'" class="select" />
-                                                <div ref="CursSelect"
-                                                    class="reports-swiper-slide-top__select reports-swiper-slide-top-select">
+                                                <button ref="CursSelect"
+                                                    class="reports-swiper-slide-top__select reports-swiper-slide-top-select"
+                                                    tabindex="0" @blur="closeSelect" type="button">
+
                                                     <div class="reports-swiper-slide-top-select__box"
                                                         @click="addActiveToCursSelect">
                                                         <p class="reports-swiper-slide-top-select__box-text">
@@ -2861,7 +2883,7 @@
                                                             </button>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </button>
                                                 <a href="#reports-top-btn-popup" class="reports-swiper-slide-top__btn"
                                                     type="button" data-fancybox>
                                                     Экспорт
@@ -2975,8 +2997,10 @@
                                                 <ReportsSelect
                                                     :options="['Все', 'Назначено администратором', ' Добавлено из каталога']"
                                                     :default="'Тип назначения'" class="select" />
-                                                <div ref="CursSelect"
-                                                    class="reports-swiper-slide-top__select reports-swiper-slide-top-select">
+                                                <button ref="CursSelect"
+                                                    class="reports-swiper-slide-top__select reports-swiper-slide-top-select"
+                                                    tabindex="0" @blur="closeSelect" type="button">
+
                                                     <div class="reports-swiper-slide-top-select__box"
                                                         @click="addActiveToCursSelect">
                                                         <p class="reports-swiper-slide-top-select__box-text">
@@ -3039,7 +3063,7 @@
                                                             </button>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </button>
                                                 <a href="#reports-top-btn-popup" class="reports-swiper-slide-top__btn"
                                                     type="button" data-fancybox>
                                                     Экспорт
@@ -3148,8 +3172,8 @@
                                 </swiper>
                             </div>
                             <div class="reports-all-info__item reports-all-info-item mix item-fifth">
-                                <swiper class="reports-all-info-item__swiper reports-swiper swiper" :modules="modules"
-                                    :slides-per-view="1" :speed="1" :space-between="100" navigation
+                                <swiper class="reports-all-info-item__swiper reports-swiper swiper" :allowTouchMove="false"
+                                    :modules="modules" :slides-per-view="1" :speed="1" :space-between="100" navigation
                                     :pagination="{ clickable: true, }" :loop="true" @swiper="onSwiper"
                                     @slideChange="onSlideChange">
                                     <swiper-slide class="reports-swiper__slide reports-swiper-slide">
@@ -3160,8 +3184,10 @@
                                                 <ReportsSelect
                                                     :options="['Все', 'Назначено администратором', ' Добавлено из каталога']"
                                                     :default="'Тип назначения'" class="select" />
-                                                <div ref="CursSelect"
-                                                    class="reports-swiper-slide-top__select reports-swiper-slide-top-select">
+                                                <button ref="CursSelect"
+                                                    class="reports-swiper-slide-top__select reports-swiper-slide-top-select"
+                                                    tabindex="0" @blur="closeSelect" type="button">
+
                                                     <div class="reports-swiper-slide-top-select__box"
                                                         @click="addActiveToCursSelect">
                                                         <p class="reports-swiper-slide-top-select__box-text">
@@ -3224,7 +3250,7 @@
                                                             </button>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </button>
                                                 <a href="#reports-top-btn-popup" class="reports-swiper-slide-top__btn"
                                                     type="button" data-fancybox>
                                                     Экспорт
@@ -3338,8 +3364,10 @@
                                                 <ReportsSelect
                                                     :options="['Все', 'Назначено администратором', ' Добавлено из каталога']"
                                                     :default="'Тип назначения'" class="select" />
-                                                <div ref="CursSelect"
-                                                    class="reports-swiper-slide-top__select reports-swiper-slide-top-select">
+                                                <button ref="CursSelect"
+                                                    class="reports-swiper-slide-top__select reports-swiper-slide-top-select"
+                                                    tabindex="0" @blur="closeSelect" type="button">
+
                                                     <div class="reports-swiper-slide-top-select__box"
                                                         @click="addActiveToCursSelect">
                                                         <p class="reports-swiper-slide-top-select__box-text">
@@ -3402,7 +3430,7 @@
                                                             </button>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </button>
                                                 <a href="#reports-top-btn-popup" class="reports-swiper-slide-top__btn"
                                                     type="button" data-fancybox>
                                                     Экспорт
@@ -3516,8 +3544,10 @@
                                                 <ReportsSelect
                                                     :options="['Все', 'Назначено администратором', ' Добавлено из каталога']"
                                                     :default="'Тип назначения'" class="select" />
-                                                <div ref="CursSelect"
-                                                    class="reports-swiper-slide-top__select reports-swiper-slide-top-select">
+                                                <button ref="CursSelect"
+                                                    class="reports-swiper-slide-top__select reports-swiper-slide-top-select"
+                                                    tabindex="0" @blur="closeSelect" type="button">
+
                                                     <div class="reports-swiper-slide-top-select__box"
                                                         @click="addActiveToCursSelect">
                                                         <p class="reports-swiper-slide-top-select__box-text">
@@ -3580,7 +3610,7 @@
                                                             </button>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </button>
                                                 <a href="#reports-top-btn-popup" class="reports-swiper-slide-top__btn"
                                                     type="button" data-fancybox>
                                                     Экспорт
@@ -3694,8 +3724,10 @@
                                                 <ReportsSelect
                                                     :options="['Все', 'Назначено администратором', ' Добавлено из каталога']"
                                                     :default="'Тип назначения'" class="select" />
-                                                <div ref="CursSelect"
-                                                    class="reports-swiper-slide-top__select reports-swiper-slide-top-select">
+                                                <button ref="CursSelect"
+                                                    class="reports-swiper-slide-top__select reports-swiper-slide-top-select"
+                                                    tabindex="0" @blur="closeSelect" type="button">
+
                                                     <div class="reports-swiper-slide-top-select__box"
                                                         @click="addActiveToCursSelect">
                                                         <p class="reports-swiper-slide-top-select__box-text">
@@ -3758,7 +3790,7 @@
                                                             </button>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </button>
                                                 <a href="#reports-top-btn-popup" class="reports-swiper-slide-top__btn"
                                                     type="button" data-fancybox>
                                                     Экспорт
@@ -3867,8 +3899,8 @@
                                 </swiper>
                             </div>
                             <div class="reports-all-info__item reports-all-info-item mix item-sixth">
-                                <swiper class="reports-all-info-item__swiper reports-swiper swiper" :modules="modules"
-                                    :slides-per-view="1" :speed="1" :space-between="100" navigation
+                                <swiper class="reports-all-info-item__swiper reports-swiper swiper" :allowTouchMove="false"
+                                    :modules="modules" :slides-per-view="1" :speed="1" :space-between="100" navigation
                                     :pagination="{ clickable: true, }" :loop="true" @swiper="onSwiper"
                                     @slideChange="onSlideChange">
                                     <swiper-slide class="reports-swiper__slide reports-swiper-slide">
@@ -3879,8 +3911,10 @@
                                                 <ReportsSelect
                                                     :options="['Все', 'Назначено администратором', ' Добавлено из каталога']"
                                                     :default="'Тип назначения'" class="select" />
-                                                <div ref="CursSelect"
-                                                    class="reports-swiper-slide-top__select reports-swiper-slide-top-select">
+                                                <button ref="CursSelect"
+                                                    class="reports-swiper-slide-top__select reports-swiper-slide-top-select"
+                                                    tabindex="0" @blur="closeSelect" type="button">
+
                                                     <div class="reports-swiper-slide-top-select__box"
                                                         @click="addActiveToCursSelect">
                                                         <p class="reports-swiper-slide-top-select__box-text">
@@ -3943,7 +3977,7 @@
                                                             </button>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </button>
                                                 <a href="#reports-top-btn-popup" class="reports-swiper-slide-top__btn"
                                                     type="button" data-fancybox>
                                                     Экспорт
@@ -4027,8 +4061,10 @@
                                                 <ReportsSelect
                                                     :options="['Все', 'Назначено администратором', ' Добавлено из каталога']"
                                                     :default="'Тип назначения'" class="select" />
-                                                <div ref="CursSelect"
-                                                    class="reports-swiper-slide-top__select reports-swiper-slide-top-select">
+                                                <button ref="CursSelect"
+                                                    class="reports-swiper-slide-top__select reports-swiper-slide-top-select"
+                                                    tabindex="0" @blur="closeSelect" type="button">
+
                                                     <div class="reports-swiper-slide-top-select__box"
                                                         @click="addActiveToCursSelect">
                                                         <p class="reports-swiper-slide-top-select__box-text">
@@ -4091,7 +4127,7 @@
                                                             </button>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </button>
                                                 <a href="#reports-top-btn-popup" class="reports-swiper-slide-top__btn"
                                                     type="button" data-fancybox>
                                                     Экспорт
@@ -4175,8 +4211,10 @@
                                                 <ReportsSelect
                                                     :options="['Все', 'Назначено администратором', ' Добавлено из каталога']"
                                                     :default="'Тип назначения'" class="select" />
-                                                <div ref="CursSelect"
-                                                    class="reports-swiper-slide-top__select reports-swiper-slide-top-select">
+                                                <button ref="CursSelect"
+                                                    class="reports-swiper-slide-top__select reports-swiper-slide-top-select"
+                                                    tabindex="0" @blur="closeSelect" type="button">
+
                                                     <div class="reports-swiper-slide-top-select__box"
                                                         @click="addActiveToCursSelect">
                                                         <p class="reports-swiper-slide-top-select__box-text">
@@ -4239,7 +4277,7 @@
                                                             </button>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </button>
                                                 <a href="#reports-top-btn-popup" class="reports-swiper-slide-top__btn"
                                                     type="button" data-fancybox>
                                                     Экспорт
@@ -4323,8 +4361,10 @@
                                                 <ReportsSelect
                                                     :options="['Все', 'Назначено администратором', ' Добавлено из каталога']"
                                                     :default="'Тип назначения'" class="select" />
-                                                <div ref="CursSelect"
-                                                    class="reports-swiper-slide-top__select reports-swiper-slide-top-select">
+                                                <button ref="CursSelect"
+                                                    class="reports-swiper-slide-top__select reports-swiper-slide-top-select"
+                                                    tabindex="0" @blur="closeSelect" type="button">
+
                                                     <div class="reports-swiper-slide-top-select__box"
                                                         @click="addActiveToCursSelect">
                                                         <p class="reports-swiper-slide-top-select__box-text">
@@ -4387,7 +4427,7 @@
                                                             </button>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </button>
                                                 <a href="#reports-top-btn-popup" class="reports-swiper-slide-top__btn"
                                                     type="button" data-fancybox>
                                                     Экспорт
@@ -4521,7 +4561,7 @@ export default {
         Swiper,
         SwiperSlide,
         ReportsSelect,
-        PageEntrySelect
+        PageEntrySelect,
     },
     data() {
         return {
@@ -4566,14 +4606,9 @@ export default {
             }
         },
         closeSelect() {
-            document.addEventListener('click', function (event) {
-                if (!event.target.matches('.selected')) {
-                    this.selectIsDisabled = true
-                } else {
-                    this.selectIsDisabled = false
-                }
-            });
-        }
+            console.log('msts')
+            // document.querySelector('.reports-swiper-slide-top-select').classList.remove('reports-swiper-slide-top-select--active')
+        },
     }
 }
 </script>
@@ -4837,25 +4872,28 @@ export default {
         font-weight: 500;
         font-size: 16px;
         line-height: 24px;
-        color: #FFFFFF;
+      
         width: 120px;
         max-width: 120px;
         margin-left: auto;
-        background: #1294F2;
-        border: 1px solid #1294F2;
+ 
         border-radius: 6px;
 
         transition: background 0.3s, border 0.3s, color 0.3s;
-        border: 1px solid transparent;
+        
 
+        color: #1294F2;
+        background: #fff;
+        border: 1px solid #1294F2;
+        transition: border 0.3s, background 0.3s, color 0.3s;
         &:hover {
-            background: transparent;
-            border: 1px solid #1294F2;
-            color: #1294F2;
+            background: #1294F2;
+            color: #fff;
         }
     }
 
     .container {
+        text-align: left;
         display: block;
         position: relative;
         @include adaptiv-value("padding-left", 36, 30, 1);
@@ -5505,5 +5543,4 @@ export default {
         align-items: flex-start;
         gap: 20px;
     }
-}
-</style>
+}</style>

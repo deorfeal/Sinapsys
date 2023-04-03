@@ -6,7 +6,7 @@
             <Header :searchIsActive="false" :title="'Каталог'" @openSideMenu="SideMenuToActive" :isAdmin="false"/>
             <main class="main main-my-courses main-big-catalog">
                 <section class="main__my-courses-top my-courses-top">
-                    <div class="my-courses-top__select my-courses-top-select">
+                    <button class="my-courses-top__select my-courses-top-select" tabindex="0" @blur="closeSelect" type="button">
                         <div class="my-courses-top-select__box" @click="showDirections">
                             <p class="my-courses-top-select__box-text">
                                 Направления
@@ -36,7 +36,7 @@
                                 Большинство
                             </button>
                         </div>
-                    </div>
+                    </button>
                     <form class="my-courses-top__form" action="#">
                         <button class="my-courses-top__form-btn" type="button">
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -474,7 +474,10 @@ export default {
                     }
                 }
             }
-        }
+        },
+        closeSelect() {
+            document.querySelector('.my-courses-top-select').classList.remove('my-courses-top-select--active')
+        },
     }
 
 }
@@ -544,21 +547,23 @@ export default {
         font-size: 14px;
         line-height: 24px;
         text-align: center;
-        color: #FFFFFF;
+     
         padding: 4px;
         display: flex;
         justify-content: center;
         align-items: center;
         max-width: 120px;
         width: 120px;
-        background: #1294F2;
-        border: 1px solid #1294F2;
+      
         border-radius: 6px;
         transition: background 0.3s, color 0.3s;
 
+        color: #1294F2;
+        border: 1px solid #1294F2;
+        transition: border 0.3s, background 0.3s, color 0.3s;
         &:hover {
-            background: transparent;
-            color: #1294F2;
+            background: #1294F2;
+            color: #fff;
         }
     }
 

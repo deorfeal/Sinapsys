@@ -597,12 +597,9 @@ export default {
         display: flex;
         justify-content: center;
         align-items: center;
-        color: #FFFFFF;
-
-        background: #1294F2;
         border-radius: 6px;
 
-        border: 1px solid transparent;
+
         transition: background 0.3s, color 0.3s, border 0.3s;
 
         @include adaptiv-value('font-size', 20, 16, 1);
@@ -610,10 +607,12 @@ export default {
         @include adaptiv-value('padding', 13, 6, 1);
         @include adaptiv-value('width', 180, 160, 1);
         @include adaptiv-value('max-width', 180, 160, 1);
+        color: #1294F2;
+        border: 1px solid #1294F2;
+        transition: border 0.3s, background 0.3s, color 0.3s;
         &:hover {
-            background: #fff;
-            color: #1294F2;
-            border: 1px solid #1294F2;
+            background: #1294F2;
+            color: #fff;
         }
     }
 }

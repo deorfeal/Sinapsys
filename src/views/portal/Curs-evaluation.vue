@@ -131,12 +131,12 @@ export default {
     &__buttons-link {
         line-height: 24px;
         text-align: center;
-        color: #1294F2;
+    
         display: flex;
         justify-content: center;
         align-items: center;
         padding: 12px;
-        border: 1px solid #1294F2;
+   
         width: 285px;
         max-width: 285px;
         border-radius: 6px;
@@ -144,6 +144,9 @@ export default {
         @include adaptiv-value('padding', 12, 6, 1);
         transition: background 0.3s, color 0.3s;
 
+        color: #1294F2;
+        border: 1px solid #1294F2;
+        transition: border 0.3s, background 0.3s, color 0.3s;
         &:hover {
             background: #1294F2;
             color: #fff;
@@ -156,22 +159,23 @@ export default {
         display: flex;
         justify-content: center;
         align-items: center;
-        color: #FFFFFF;
+   
         @include adaptiv-value('font-size', 20, 16, 1);
         @include adaptiv-value('padding', 13, 6, 1);
         width: 230px;
         max-width: 230px;
 
-        background: #1294F2;
         border-radius: 6px;
 
         border: 1px solid transparent;
         transition: background 0.3s, color 0.3s, border 0.3s;
 
+        color: #1294F2;
+        border: 1px solid #1294F2;
+        transition: border 0.3s, background 0.3s, color 0.3s;
         &:hover {
-            background: #fff;
-            color: #1294F2;
-            border: 1px solid #1294F2;
+            background: #1294F2;
+            color: #fff;
         }
     }
 }

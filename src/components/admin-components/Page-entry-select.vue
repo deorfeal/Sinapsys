@@ -32,6 +32,10 @@ export default {
             required: false,
             default: 0,
         },
+        selectStatus: {
+            type: Boolean,
+            required: false,
+        }
     },
     data() {
         return {
@@ -46,6 +50,11 @@ export default {
     mounted() {
         this.$emit("input", this.selected);
     },
+    watch: {
+        selectStatus() {
+            console.log( 'smt 2' )
+        }
+    }
 };
 </script>
   

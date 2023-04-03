@@ -6,7 +6,7 @@
             <Header :searchIsActive="false" :title="'Планирование'" @openSideMenu="SideMenuToActive" :isAdmin="true" />
             <main class="main main-planing">
                 <section class="main__planing planing">
-                    <swiper class="planing__swiper planing-swiper swiper" :modules="modules" :slides-per-view="1" :speed="1"
+                    <swiper class="planing__swiper planing-swiper swiper" :allowTouchMove="false" :modules="modules" :slides-per-view="1" :speed="1"
                         :space-between="200" navigation :pagination="{ clickable: true, }" :loop="true" @swiper="onSwiper"
                         @slideChange="onSlideChange">
                         <swiper-slide class="planing-swiper__slide planing-swiper-slide">

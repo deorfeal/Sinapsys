@@ -26,7 +26,8 @@
                     </div>
                     <div class="fishing-attacks__inner">
                         <swiper class="fishing-attacks__swiper fishing-attacks-swiper swiper mix item-first"
-                            :modules="modules" :slides-per-view="1" :speed="1" :space-between="200" navigation
+                        :allowTouchMove="false"
+                        :modules="modules" :slides-per-view="1" :speed="1" :space-between="200" navigation
                             :pagination="{ clickable: true, }" :loop="true" @swiper="onSwiper" @slideChange="onSlideChange">
                             <swiper-slide class="fishing-attacks-swiper__slide fishing-attacks-swiper-slide">
                                 <div class="fishing-attacks-swiper-slide__inner">
@@ -722,6 +723,7 @@
                             </swiper-slide>
                         </swiper>
                         <swiper class="fishing-attacks__swiper fishing-attacks-swiper swiper mix item-second"
+                        :allowTouchMove="false"
                             :modules="modules" :slides-per-view="1" :speed="1" :space-between="200" navigation
                             :pagination="{ clickable: true, }" :loop="true" @swiper="onSwiper" @slideChange="onSlideChange">
                             <swiper-slide class="fishing-attacks-swiper__slide fishing-attacks-swiper-slide">
@@ -2310,17 +2312,20 @@ export default {
 
         svg path {
             transition: fill 0.3s;
-            fill: #fff;
+            fill: #1294F2;
         }
 
         transition: background 0.3s, border 0.3s, color 0.3s;
         border: 1px solid transparent;
+        color: #1294F2;
+        background: #fff;
+        border: 1px solid #1294F2;
+        transition: border 0.3s, background 0.3s, color 0.3s;
         &:hover {
-            background: transparent;
-            border: 1px solid #1294F2;
-            color: #1294F2;
+            background: #1294F2;
+            color: #fff;
             svg path {
-                fill: #1294F2;
+                fill: #fff;
             }
         }
     }
@@ -2692,7 +2697,9 @@ export default {
         border: 1px solid #1294F2;
         border-radius: 6px;
 
-        &:last-child {
+    
+        transition: border 0.3s, background 0.3s, color 0.3s;
+        &:hover {
             background: #1294F2;
             color: #fff;
         }
@@ -2885,8 +2892,14 @@ export default {
         justify-content: center;
         align-items: center;
         text-align: center;
-        color: #FFFFFF;
-        background: #1294F2;
+        color: #1294F2;
+        background: #fff;
+        border: 1px solid #1294F2;
+        transition: border 0.3s, background 0.3s, color 0.3s;
+        &:hover {
+            background: #1294F2;
+            color: #fff;
+        }
         border-radius: 6px;
         width: 200px;
     }
@@ -2915,6 +2928,11 @@ export default {
         border-radius: 6px;
 
         &:last-child {
+      
+        }
+   
+        transition: border 0.3s, background 0.3s, color 0.3s;
+        &:hover {
             background: #1294F2;
             color: #fff;
         }

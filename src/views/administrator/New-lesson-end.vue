@@ -26,14 +26,14 @@
                             <p class="new-lesson-item__text">
                                 Название
                             </p>
-                            <input class="new-lesson-item__input" type="text"
-                                value="Что делать, если мою электронную почту взломали?">
+                            <input class="new-lesson-item__input" type="text" placeholder="Что делать, если мою электронную почту взломали?"
+                                >
                         </div>
                         <div class="new-lesson__item new-lesson-item">
                             <p class="new-lesson-item__text">
                                 Описание
                             </p>
-                            <textarea class="new-lesson-item__textarea" name="textAreaLesson" id="" cols="30" rows="10">Как правило, электронная почта — ваш основной идентификатор в сети. С электронной почтой сопряжены практически все важные аккаунты — социальные сети, интернет-банкинг, личные кабинеты на других сайтах и сервисах.</textarea>
+                            <textarea class="new-lesson-item__textarea" name="textAreaLesson" id="" cols="30" rows="10" placeholder="Как правило, электронная почта — ваш основной идентификатор в сети. С электронной почтой сопряжены практически все важные аккаунты — социальные сети, интернет-банкинг, личные кабинеты на других сайтах и сервисах."></textarea>
                         </div>
                         <div class="new-lesson__item new-lesson-item">
                             <p class="new-lesson-item__text">
@@ -215,7 +215,7 @@
                                         </svg>
                                     </button>
                                 </div>
-                                <textarea class="new-lesson-item-box__textarea" name="" id="" cols="30" rows="10">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </textarea>
+                                <textarea class="new-lesson-item-box__textarea" name="" id="" cols="30" rows="10" placeholder="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. "></textarea>
                             </div>
                         </div>
                     </div>
@@ -292,6 +292,11 @@ export default {
     .new-lesson-item__input {
         width: 610px;
         max-width: 610px;
+        &:focus {
+            &::placeholder {
+                opacity: 0;
+            }
+        }
     }
 
     .new-lesson-item:nth-child(4) {
@@ -315,6 +320,11 @@ export default {
     .new-lesson-item-box__textarea {
         height: 227px;
         min-height: 227px;
+        &:focus {
+            &::placeholder {
+                opacity: 0;
+            }
+        }
     }
 }
 

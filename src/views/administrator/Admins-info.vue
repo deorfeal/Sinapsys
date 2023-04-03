@@ -7,6 +7,7 @@
             <main class="main main-admins-info">
                 <section class="main__users-info users-info">
                     <swiper class="users-info__swiper users-info-swiper swiper" :modules="modules" :slides-per-view="1"
+                    :allowTouchMove="false"
                         :speed="1" :space-between="200" navigation :pagination="{ clickable: true, }" :loop="true"
                         @swiper="onSwiper" @slideChange="onSlideChange">
                         <swiper-slide class="users-info-swiper__slide users-info-swiper-slide">
@@ -998,8 +999,17 @@ export default {
             padding: 12px;
 
             width: 140px;
-            background: #1294F2;
+            color: #1294F2;
+            background: #fff;
             border: 1px solid #1294F2;
+            transition: border 0.3s, background 0.3s, color 0.3s;
+            &:hover {
+                background: #1294F2;
+                color: #fff;
+                svg path {
+                    fill: #fff;
+                }
+            }
             border-radius: 6px;
             gap: 5px;
             span:first-child {
@@ -1012,18 +1022,7 @@ export default {
             }
             svg path {
                 transition: fill 0.3s;
-                fill: #fff;
-            }
-
-            transition: background 0.3s, border 0.3s, color 0.3s;
-            border: 1px solid transparent;
-            &:hover {
-                background: transparent;
-                border: 1px solid #1294F2;
-                color: #1294F2;
-                svg path {
-                    fill: #1294F2;
-                }
+                fill: #1294F2;
             }
         }
     }

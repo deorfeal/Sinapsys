@@ -63,14 +63,13 @@ export default {
     }
 
     &__link {
-        color: #FFFFFF;
-        background: #1294F2;
+ 
         border-radius: 6px;
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
-        border: 1px solid transparent;
+        background: #fff;
         transition: background 0.3s, color 0.3s, border 0.3s;
         flex-wrap: wrap;
         @include adaptiv-value('font-size', 20, 16, 1);
@@ -78,10 +77,12 @@ export default {
         @include adaptiv-value('padding', 12, 6, 1);
         @include adaptiv-value('width', 285, 220, 1);
         @include adaptiv-value('max-width', 285, 220, 1);
+        color: #1294F2;
+        border: 1px solid #1294F2;
+        transition: border 0.3s, background 0.3s, color 0.3s;
         &:hover {
-            background: #fff;
-            color: #1294F2;
-            border: 1px solid #1294F2;
+            background: #1294F2;
+            color: #fff;
         }
     }
 }

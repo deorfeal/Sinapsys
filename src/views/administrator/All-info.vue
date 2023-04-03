@@ -31,7 +31,7 @@
                                 <button class="all-info-top__btn" type="button">
                                     Импорт и синхронизация
                                 </button>
-                                <a class="all-info-top__link" data-fancybox href="#new-user">
+                                <a class="all-info-top__link"  data-fancybox href="#new-user">
                                     <svg width="33" height="32" viewBox="0 0 33 32" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -68,6 +68,7 @@
                             <div class="all-info__inner">
                                 <swiper
                                     class="all-info__swiper all-info-swiper all-info-swiper--first swiper mix item-first"
+                                    :allowTouchMove="false"
                                     :modules="modules" :slides-per-view="1" :speed="1" :space-between="200" navigation
                                     :pagination="{ clickable: true, }" :loop="true" @swiper="onSwiper"
                                     @slideChange="onSlideChange">
@@ -994,6 +995,7 @@
                                 </swiper>
                                 <swiper
                                     class="all-info__swiper all-info-swiper all-info-swiper--second swiper mix item-second"
+                                    :allowTouchMove="false"
                                     :modules="modules" :slides-per-view="1" :speed="1" :space-between="200" navigation
                                     :pagination="{ clickable: true, }" :loop="true" @swiper="onSwiper"
                                     @slideChange="onSlideChange">
@@ -1764,6 +1766,7 @@
                                 </swiper>
                                 <swiper
                                     class="all-info__swiper all-info-swiper all-info-swiper--third swiper mix item-third"
+                                    :allowTouchMove="false"
                                     :modules="modules" :slides-per-view="1" :speed="1" :space-between="200" navigation
                                     :pagination="{ clickable: true, }" :loop="true" @swiper="onSwiper"
                                     @slideChange="onSlideChange">
@@ -2266,6 +2269,19 @@ export default {
 
 <style lang="scss">
 @import '../../assets/scss/vars';
+
+.fancybox__track {
+    transform: unset !important;
+}
+
+.fancybox__container {
+    opacity: 1 !important;
+    --fancybox-opacity: 1 !important;
+}
+
+.fancybox__carousel.is-draggable .fancybox__slide, .fancybox__carousel.is-draggable .fancybox__slide .fancybox__content {
+    cursor: default;
+}
 
 .main-all-info {
     padding: 25px 25px 35px 55px;
@@ -2934,8 +2950,10 @@ export default {
         color: #1294F2;
         border-radius: 6px;
         width: 150px;
-
-        &:last-child {
+        color: #1294F2;
+   
+        transition: border 0.3s, background 0.3s, color 0.3s;
+        &:hover {
             background: #1294F2;
             color: #fff;
         }
@@ -3041,7 +3059,11 @@ export default {
         border-radius: 6px;
         width: 150px;
 
-        &:last-child {
+        color: #1294F2;
+        background: #fff;
+        border: 1px solid #1294F2;
+        transition: border 0.3s, background 0.3s, color 0.3s;
+        &:hover {
             background: #1294F2;
             color: #fff;
         }

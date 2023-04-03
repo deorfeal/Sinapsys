@@ -85,20 +85,22 @@ export default {
     align-items: center;
     align-self: flex-start;
     text-align: center;
-    background: #1294F2;
+   
     border-radius: 6px;
     width: 160px;
     max-width: 160px;
     padding: 8px;
-    color: #FFFFFF;
+ 
 
-    border: 1px solid transparent;
+
     transition: background 0.3s, color 0.3s, border 0.3s;
-    &:hover {
-        background: #fff;
-        color: #1294F2;
+    color: #1294F2;
         border: 1px solid #1294F2;
-    }
+        transition: border 0.3s, background 0.3s, color 0.3s;
+        &:hover {
+            background: #1294F2;
+            color: #fff;
+        }
 }
 .main-settings {
     .profile-info {

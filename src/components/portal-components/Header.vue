@@ -38,10 +38,10 @@
             </div>
             <div class="header-user-nav__box header-user-nav-box">
                 <div class="header-user-nav-box__user header-user-nav-box-user">
-                    <a class="header-user-nav-box-user__link" href="#" @click="openProfileWindow">
+                    <button class="header-user-nav-box-user__link" href="#" tabindex="0" @blur="closeSelect" @click="openProfileWindow" type="button">
                         <img class="header-user-nav-box-user__link-img" src="../../../public/images/header-user-icon.svg"
                             alt="user-icon">
-                    </a>
+                    </button>
                     <div class="header-user-nav-box-user__column">
                         <p class="header-user-nav-box-user__column-text">
                             Аида Кожабай
@@ -50,7 +50,7 @@
                             {{firstCurrentText}}
                         </p>
                     </div>
-                    <button class="header-user-nav-box-user__button" @click="openProfileWindow">
+                    <button class="header-user-nav-box-user__button" tabindex="0" @blur="closeSelect" @click="openProfileWindow">
                         <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M4.5 6L8.5 10L12.5 6" stroke="#151D48" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" />
@@ -121,7 +121,10 @@ export default {
             } else {
                 document.querySelector('.header-user-nav-box').classList.add('header-user-nav-box--active')
             }
-        }
+        }, 
+        closeSelect() {
+            document.querySelector('.header-user-nav-box').classList.remove('header-user-nav-box--active')
+        },
     },
     data() {
         return {

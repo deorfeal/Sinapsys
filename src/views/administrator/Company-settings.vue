@@ -216,10 +216,8 @@ export default {
 
     &__btn {
         font-weight: 500;
-        background: #1294F2;
         border-radius: 6px;
         text-align: center;
-        color: #FFFFFF;
         padding: 8px;
         display: flex;
         justify-content: center;
@@ -233,11 +231,13 @@ export default {
         @include adaptiv-value("max-width", 145, 130, 1);
 
         transition: background 0.3s, border 0.3s, color 0.3s;
-        border: 1px solid transparent;
+        color: #1294F2;
+        background: #fff;
+        border: 1px solid #1294F2;
+        transition: border 0.3s, background 0.3s, color 0.3s;
         &:hover {
-            background: transparent;
-            border: 1px solid #1294F2;
-            color: #1294F2;
+            background: #1294F2;
+            color: #fff;
         }
     }
 }

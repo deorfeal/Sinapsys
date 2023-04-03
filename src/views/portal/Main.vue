@@ -966,7 +966,7 @@ export default {
         top: 50%;
         left: 50%;
         transform: translateX(-50%) translateY(-50%);
-        background-image: url(../../public/images/reg-two-tick-icon.svg);
+        background-image: url(../../../public/images/reg-two-tick-icon.svg);
         background-repeat: no-repeat;
         background-size: cover;
     }
@@ -1049,20 +1049,22 @@ export default {
         font-weight: 500;
         @include adaptiv-value('font-size', 16, 14, 1);
         line-height: 24px;
-        color: #FFFFFF;
+
         text-align: center;
 
-        background: #1294F2;
-        border: 1px solid #1294F2;
+      
         border-radius: 6px;
         @include adaptiv-value('padding', 12, 6, 1);
         margin-left: auto;
         margin-right: auto;
         transition: background 0.3s, color 0.3s;
 
+        color: #1294F2;
+        border: 1px solid #1294F2;
+        transition: border 0.3s, background 0.3s, color 0.3s;
         &:hover {
-            background: transparent;
-            color: #1294F2;
+            background: #1294F2;
+            color: #fff;
         }
     }
 }

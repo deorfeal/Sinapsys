@@ -307,9 +307,7 @@ export default {
         justify-content: center;
         align-items: center;
         text-align: center;
-        background: #1294F2;
-        color: #fff;
-        border: 1px solid #1294F2;
+  
         border-radius: 6px;
 
         @include adaptiv-value('font-size', 16, 14, 1);
@@ -317,12 +315,14 @@ export default {
         @include adaptiv-value('max-width', 140, 115, 1);
         @include adaptiv-value('padding', 10, 4, 1);
 
-        border: 1px solid transparent;
+    
         transition: background 0.3s, color 0.3s, border 0.3s;
+        color: #1294F2;
+        border: 1px solid #1294F2;
+        transition: border 0.3s, background 0.3s, color 0.3s;
         &:hover {
-            background: #fff;
-            color: #1294F2;
-            border: 1px solid #1294F2;
+            background: #1294F2;
+            color: #fff;
         }
     }
 

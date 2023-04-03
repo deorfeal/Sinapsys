@@ -232,18 +232,16 @@ export default {
         justify-content: center;
         align-items: center;
         text-align: center;
-        color: #FFFFFF;
-        background: #1294F2;
-        border: 1px solid #1294F2;
         border-radius: 6px;
 
 
         transition: background 0.3s, border 0.3s, color 0.3s;
-        border: 1px solid transparent;
+        color: #1294F2;
+        border: 1px solid #1294F2;
+        transition: border 0.3s, background 0.3s, color 0.3s;
         &:hover {
-            background: transparent;
-            border: 1px solid #1294F2;
-            color: #1294F2;
+            background: #1294F2;
+            color: #fff;
         }
     }
 

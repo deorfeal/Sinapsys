@@ -74,7 +74,7 @@
                                 <p class="new-planing-box__text">
                                     Группа
                                 </p>
-                                <NewCursSelect :selectStatus="this.selectIsDisabled"
+                                <NewCursSelect
                                     :options="['Фин кафедра', 'Фин кафедра 1', 'Фин кафедра 2', 'Фин кафедра 3']"
                                     :default="'Выберите'" class="select select-first" />
                             </div>
@@ -211,9 +211,7 @@ export default {
         align-items: center;
         font-weight: 500;
         text-align: center;
-        color: #FFFFFF;
-        background: #1294F2;
-        border: 1px solid #1294F2;
+       
         border-radius: 6px;
 
         transition: background 0.3s, border 0.3s, color 0.3s;
@@ -226,10 +224,13 @@ export default {
         @include adaptiv-value("width", 140, 130, 1);
         @include adaptiv-value("max-width", 140, 130, 1);
 
+        color: #1294F2;
+        background: #fff;
+        border: 1px solid #1294F2;
+        transition: border 0.3s, background 0.3s, color 0.3s;
         &:hover {
-            background: transparent;
-            border: 1px solid #1294F2;
-            color: #1294F2;
+            background: #1294F2;
+            color: #fff;
         }
     }
 }
@@ -360,6 +361,11 @@ justify-content: center;
             line-height: 24px;
             color: #96A5B8;
             font-weight: 500;
+        }
+        &:focus {
+            &::placeholder {
+                opacity: 0;
+            }
         }
     }
 

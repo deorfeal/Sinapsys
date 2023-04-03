@@ -144,7 +144,7 @@ export default {
     font-size: 16px;
     line-height: 24px;
     color: #96A5B8;
-    padding: 10px 0;
+    padding: 10px 5px;
     padding-left: 1em;
     cursor: pointer;
     user-select: none;

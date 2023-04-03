@@ -351,9 +351,6 @@ export default {
         text-align: center;
         justify-content: center;
         align-items: center;
-        color: #FFFFFF;
-        background: #1294F2;
-        border: 1px solid #1294F2;
         border-radius: 6px;
 
         @include adaptiv-value("font-size", 16, 14, 1);
@@ -363,11 +360,13 @@ export default {
         @include adaptiv-value("max-width", 185, 150, 1);
 
         transition: background 0.3s, border 0.3s, color 0.3s;
-        border: 1px solid transparent;
+        color: #1294F2;
+        background: #fff;
+        border: 1px solid #1294F2;
+        transition: border 0.3s, background 0.3s, color 0.3s;
         &:hover {
-            background: transparent;
-            border: 1px solid #1294F2;
-            color: #1294F2;
+            background: #1294F2;
+            color: #fff;
         }
     }
 
@@ -407,8 +406,6 @@ export default {
     }
 
     &__button {
-        background: #1294F2;
-        border: 1px solid #1294F2;
         border-radius: 6px;
         display: flex;
         justify-content: center;
@@ -416,7 +413,7 @@ export default {
         text-align: center;
 
         font-weight: 500;
-        color: #fff;
+      
 
         @include adaptiv-value("font-size", 16, 14, 1);
         @include adaptiv-value("line-height", 24, 16, 1);
@@ -425,11 +422,13 @@ export default {
         @include adaptiv-value("max-width", 185, 150, 1);
 
         transition: background 0.3s, border 0.3s, color 0.3s;
-        border: 1px solid transparent;
+        color: #1294F2;
+        background: #fff;
+        border: 1px solid #1294F2;
+        transition: border 0.3s, background 0.3s, color 0.3s;
         &:hover {
-            background: transparent;
-            border: 1px solid #1294F2;
-            color: #1294F2;
+            background: #1294F2;
+            color: #fff;
         }
     }
 }
@@ -586,10 +585,8 @@ export default {
         display: flex;
         justify-content: center;
         align-items: center;
-        background: #1294F2;
-        border: 1px solid #1294F2;
         border-radius: 6px;
-        color: #FFFFFF;
+
 
         @include adaptiv-value("font-size", 16, 14, 1);
         @include adaptiv-value("line-height", 24, 16, 1);
@@ -598,11 +595,13 @@ export default {
         @include adaptiv-value("max-width", 235, 200, 1);
 
         transition: background 0.3s, border 0.3s, color 0.3s;
-        border: 1px solid transparent;
+        color: #1294F2;
+        background: #fff;
+        border: 1px solid #1294F2;
+        transition: border 0.3s, background 0.3s, color 0.3s;
         &:hover {
-            background: transparent;
-            border: 1px solid #1294F2;
-            color: #1294F2;
+            background: #1294F2;
+            color: #fff;
         }
     }
 
