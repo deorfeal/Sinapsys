@@ -6,7 +6,7 @@
             <Header :searchIsActive="false" :title="'Каталог'" @openSideMenu="SideMenuToActive" :isAdmin="false"/>
             <main class="main main-my-courses main-big-catalog">
                 <section class="main__my-courses-top my-courses-top">
-                    <button class="my-courses-top__select my-courses-top-select" tabindex="0" @blur="closeSelect" type="button">
+                    <div class="my-courses-top__select my-courses-top-select" tabindex="0" @blur="closeSelect">
                         <div class="my-courses-top-select__box" @click="showDirections">
                             <p class="my-courses-top-select__box-text">
                                 Направления
@@ -36,7 +36,7 @@
                                 Большинство
                             </button>
                         </div>
-                    </button>
+                    </div>
                     <form class="my-courses-top__form" action="#">
                         <button class="my-courses-top__form-btn" type="button">
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">

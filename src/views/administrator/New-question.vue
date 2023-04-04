@@ -404,6 +404,15 @@ export default {
             margin: unset;
         }
 
+        input {
+            @include adaptiv-value("font-size", 16, 12, 1);
+            @include adaptiv-value("line-height", 24, 15, 1);
+            &::placeholder {
+                @include adaptiv-value("font-size", 16, 12, 1);
+                @include adaptiv-value("line-height", 24, 15, 1);
+            }
+        }
+
         .container input:nth-child(1) {
             width: 860px;
             background: unset;

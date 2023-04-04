@@ -17,7 +17,7 @@
 
                                 Создать курс
                             </button>
-                            <button class="admin-catalog-top__select admin-catalog-top-select" tabindex="0" @blur="closeSelect" type="button" @click="openSelect">
+                            <div class="admin-catalog-top__select admin-catalog-top-select" tabindex="0" @blur="closeSelect" @click="openSelect">
                                 <div class="admin-catalog-top-select__box">
                                     <p class="admin-catalog-top-select__box-text">
                                         Направление
@@ -47,7 +47,7 @@
                                         Кибербезопастность
                                     </button>
                                 </div>
-                            </button>
+                            </div>
                             <form class="admin-catalog-top__form" action="#">
                                 <input class="admin-catalog-top__form-input" type="text" placeholder="Поиск">
                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
